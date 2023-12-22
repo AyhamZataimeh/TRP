@@ -1,7 +1,18 @@
-nav {
+.main-nav  {
+    /* background-color: rgb(0,46,93); */
     background-color: orange;
+
     position: relative;
     height: 75px;
+}
+
+.show-dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu  li:hover a {
+    color: white;
+    background-color: orange;
 }
 
 nav .logo {
@@ -11,10 +22,40 @@ nav .logo {
     border-radius: 50%;
 }
 
-nav li {
+.main-nav {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+
+    
+}
+.main-nav .media {
+    margin-right: 30px;
+}
+.main-nav div li {
+    color: white;
+    margin-left: 10px;
+    transition: .5s;
+    width: 50;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+
+    &:hover {
+        cursor: pointer;
+        color :orange;
+        /* transform: scale(1.1); */
+        border: 1px solid white;
+        background-color: white;
+        };
+
+}
+
+.header li {
 
     list-style: none;
-    color: white;
+    color: orange;
     padding: 10px;
     margin-left: 10px;
     width: 180px;
@@ -26,9 +67,9 @@ nav li {
 
     &:hover {
     cursor: pointer;
-    color :orange;
+    color :white;
     border: 1px solid white;
-    background-color: white;
+    background-color: orange;
     };
     
 }

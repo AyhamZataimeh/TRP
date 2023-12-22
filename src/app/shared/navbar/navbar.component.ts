@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  displyMenu: boolean= false;
   ngOnInit(): void {
    
+  }
+
+  showMenu() {
+    this.displyMenu= !this.displyMenu
   }
 
 }
