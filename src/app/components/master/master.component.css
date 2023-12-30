@@ -1,0 +1,101 @@
+.landing-page-image {
+
+    animation: laning-page-image 2s both
+}
+
+@keyframes laning-page-image {
+
+    from
+    {
+        transform: scale(0);
+    }
+    to 
+    {
+        transform: scale(1);
+
+    }
+    
+}
+
+.landing-page-text{
+    position: absolute;
+    left: 36%;
+    top: 23%;
+    FONT-SIZE: 47px;
+
+    z-index: 1;
+    color: white;
+    animation: langing-page-text 2s both;
+    animation-delay: 2s;
+    text-transform: capitalize
+}
+
+.landing-page-logo {
+    width: 11%;
+    position: absolute;
+    top: 48%;
+    border-radius: 50%;
+    background: white;
+    animation: landing-page-logo 2s both;
+    animation-delay: 2s;
+    z-index: 1;
+}
+
+.black {
+    position: absolute;
+    width: 100%;
+    /* height: 606px; */
+    height: 759px;
+
+    background: black;
+    top: 0%;
+    opacity: 0.5;
+    /* left: 10%; */
+    animation: black 2s both
+}
+
+@keyframes black {
+    from
+    {
+        transform: scale(0);
+    }
+    to 
+    {
+        transform: scale(1);
+
+    }
+}
+@keyframes langing-page-text {
+
+    from
+    {
+        opacity: 0;
+        left: 20%;
+
+    }
+    to
+    {
+        opacity: 1;
+        left: 27%;
+
+    }
+    
+}
+
+@keyframes landing-page-logo  {
+
+    from 
+    {
+        opacity: 0;
+        left: 53%;
+
+    }
+    to 
+    {
+        opacity: 1;
+        left: 44%;
+
+
+    }
+    
+}
