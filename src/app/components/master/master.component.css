@@ -82,6 +82,53 @@
     
 }
 
+.vision-mission-show-animation {
+    /* background-color: red; */
+    animation: vision-mission-show  1s both;
+
+}
+
+.vision-mission-hide-animation {
+    /* background-color: red; */
+    animation: vision-mission-hide  1s both;
+
+}
+.vision-mission {
+    /* text-align: center; */
+    margin-top: 10px;
+
+}
+
+@keyframes vision-mission-show  {
+
+    from 
+    {
+        transform: translateX(0%);
+    }
+    to
+    {
+        transform: translateX(25%);
+
+
+    }
+    
+}
+
+@keyframes vision-mission-hide  {
+
+    from 
+    {
+        transform: translateX(25%);
+
+    }
+    to
+    {
+        transform: translateX(0%);
+
+
+    }
+    
+}
 @keyframes landing-page-logo  {
 
     from 
