@@ -99,6 +99,87 @@
 
 }
 
+.what-is-trp{
+    display: flex;
+ 
+    justify-content: space-between;
+
+}
+.what-is-trp-main,
+.about-us-main,
+.target-groups-main {
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 97%;
+    margin: 20px;
+}
+.about-us-text {
+    color: orange;
+    width: 92%;
+    text-align: justify;
+    padding: 30px;
+    animation: trp-text  2s both;
+    animation-delay: 2s;
+    }
+
+
+.target-groups-text {
+    color: orange;
+    width: 120%;
+    text-align: justify;
+    padding: 30px;
+    animation: trp-text  2s both;
+    animation-delay: 2s;
+
+    }
+.what-is-trp-main .header,
+.about-us-main  .header,
+.target-groups-main .header  {
+    color: orange;
+    text-align: center;
+}
+
+.trp-text {
+    color: orange;
+    width: 50%;
+    text-align: justify;
+    padding: 30px;
+    animation: trp-text  2s both;
+    animation-delay: 2s;
+
+
+}
+
+.trp-image img {
+    padding: 10px;
+    animation: trp-image  2s both;
+}
+
+@keyframes trp-text {
+    from {
+
+        opacity: 0;
+    }
+    to {
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes trp-image {
+
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(100px);
+        opacity: 1;
+    }
+    
+}
 @keyframes vision-mission-show  {
 
     from 

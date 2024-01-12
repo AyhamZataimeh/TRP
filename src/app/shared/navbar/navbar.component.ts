@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Sections } from '../enums/enums.model';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Output("selectedSection")selectedSection: EventEmitter<number>= new EventEmitter<number>();
   displyMenu: boolean= false;
+
+  public get AboutUs():Sections.AboutUs {
+    return Sections.AboutUs;
+  }
+
+  public get  TargetGroups():Sections.TargetGroups {
+    return Sections.TargetGroups;
+  }
+
+  public get WhatIsTrp():Sections.WhatIsTrp {
+    return Sections.WhatIsTrp;
+  }
   ngOnInit(): void {
    
   }
 
   showMenu() {
     this.displyMenu= !this.displyMenu
+  }
+
+  sctionRedirectHandler(event:number) 
+  {
+    this.selectedSection.emit(event);
   }
 
 }

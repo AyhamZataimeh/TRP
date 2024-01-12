@@ -1,5 +1,9 @@
-<app-navbar></app-navbar>
+<app-navbar (selectedSection)="sctionRedirectHandler($event)"></app-navbar>
 
+
+<!-- <button class="btn btn-primary" (click)="sctionRedirectHandler(1)">
+    Click
+</button> -->
 <div class="row">
     <div class="col-md-12 col-sm-6 col-xs-12" style="text-align: center;">
         <div class="landing-page" style="position: relative;">
@@ -17,14 +21,80 @@
         </div>
     </div>
     
-    <div class="col-md-12 col-sm-6 col-xs-12"  id="vision">
-        <h1>asdasdas</h1>
-        <h1>asdasdas</h1>
-        <h1>asdasdas</h1>
-        <h1>asdasdas</h1>
-        <h1>asdasdas</h1>
+ 
+
+    <div class="col-md-12 col-sm-12 col-xs-12 about-us-main" id="aboutUs">
+        <div class="header">
+            <h1 >About Us ?</h1>
+
+        </div>
+        <div class="what-is-trp">
+          
 
         
+            <div class="about-us-text">
+                <h5>
+                    We are a team of teachers in Jordan with a vision: “Conversation is the gateway to the English language,” and we teach conversation in the fun, natural way without using paper, pen, or blackboard, with a combined experience of the curriculum writing staff and teachers amounting to approximately 25 years                </h5>
+            </div>
+
+      
+            <div class="trp-image">
+                <img src="../../../assets//images/About-us.jpeg" width="50%">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main" id="whatIsTrp">
+        <div class="header">
+            <h1 >What's Is TRP ?</h1>
+
+        </div>
+        <div class="what-is-trp">
+          
+
+        
+            <div class="trp-text">
+                <h5>
+                    It is a system that was invented in 1970 to teach language by combining body language, play, and simulation, so that the student can practice and learn the language in a natural way through conversation and without returning to the rules, fluently and without hesitation.
+                </h5>
+            </div>
+
+      
+            <div class="trp-image">
+                <img src="../../../assets//images/what-is-trp.jpeg" width="50%">
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main" id="targetgroups">
+        <div class="header">
+            <h1 >Target Groups</h1>
+
+        </div>
+        <div class="what-is-trp">
+          
+
+        
+            <div class="target-groups-text ">
+                <h5>
+                    (A) Category : This category includes children from the age of 4 to 7 years, and the child masters 50 to 100 sentences at a rate of 75 sentences per level.
+                    <br>
+                    (B) Category : This category includes children from 8 to 13 years old, and the child masters 100 to 200 sentences at a rate of 150 sentences per level
+                                    </h5>
+            </div>
+
+      
+            <div class="trp-image">
+                <img src="../../../assets//images/target-groups.jpeg" width="50%">
+
+            </div>
+        </div>
+
     </div>
 </div>
 
