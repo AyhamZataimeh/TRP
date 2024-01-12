@@ -156,6 +156,10 @@
     animation: trp-image  2s both;
 }
 
+.trp-image-target-group img {
+    padding: 10px;
+    animation: trp-image  2s both;
+}
 @keyframes trp-text {
     from {
 

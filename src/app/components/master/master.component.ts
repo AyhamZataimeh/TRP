@@ -26,14 +26,47 @@ export class MasterComponent implements OnInit {
     return Sections.WhatIsTrp;
   }
   ngOnInit(): void {
-    console.log( document.getElementById("whatIsTrp")?.getBoundingClientRect());
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const targetgroups = document.getElementById("targetgroups");
+      // const targetgroups = document.getElementById("targetgroups");
+      // const targetgroups = document.getElementById("targetgroups");
+
+  
+      // Create an intersection observer
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  // If the target element is in view, add the animation class
+                  console.log(true);
+                  document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+                  document.getElementById("trpImage")?.classList.add("trp-image");
+
+                  
+                  // targetgroups?.classList.add("animate");
+              } else {
+                  console.log(false);
+                  document.getElementById("target-groups-text")?.classList.remove("target-groups-text");
+                  document.getElementById("trpImage")?.classList.remove("trp-image");
+
+                  // If the target element is out of view, remove the animation class
+                  // targetgroups?.classList.remove("animate");
+              }
+          });
+      }, { threshold: 0.5 }); // Adjust the threshold as needed
+  
+      // Start observing the target element
+      observer.observe(targetgroups as HTMLElement);
+  });
+   
+
     
    
    
   }
   state = 'hide';
   constructor(public el: ElementRef) { }
-  
+
   sctionRedirectHandler(event:number) 
   {
     if(event == this.AboutUs) {
@@ -54,13 +87,18 @@ export class MasterComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"])
 onWindowScroll() {
+  // console.log("window.pageYOffset",window.pageYOffset);
+  document.documentElement.offsetTop
+  // console.log( "whatIsTrp",document.getElementById("whatIsTrp")?.offsetTop);
+  // console.log( "targetgroups",document.getElementById("targetgroups")?.clientHeight);
+  
 //In chrome and some browser scroll is given to body tag
  this.pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
 let max = document.documentElement.scrollHeight;
 
 
-console.log("pos=",this.pos);
-console.log("max=",max);
+// console.log("pos=",document.documentElement.offsetTop);
+// console.log("max=",max);
 // if(pos== 2079 ) {
 
 // }
