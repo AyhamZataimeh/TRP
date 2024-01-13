@@ -29,34 +29,73 @@ export class MasterComponent implements OnInit {
 
     document.addEventListener("DOMContentLoaded", function () {
       const targetgroups = document.getElementById("targetgroups");
-      // const targetgroups = document.getElementById("targetgroups");
-      // const targetgroups = document.getElementById("targetgroups");
+      const vision = document.getElementById("vision");
+      const aboutUs = document.getElementById("aboutUs");
+      const whatIsTrp = document.getElementById("whatIsTrp");
 
+
+     
+
+
+ window.addEventListener("scroll", function () {
+        if (isElementInViewport(aboutUs)) {
+          
+            // If the element is in the viewport, add your logic here
+            document.getElementById("aboutUsText")?.classList.add("about-us-text");
+            document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
+      aboutUs?.classList.remove("hide-section");
+
+    } else {
+
+        }
+
+        if (isElementInViewport(whatIsTrp)) {
+
+
+
+          
+            // If the element is in the viewport, add your logic here
+            document.getElementById("trpText")?.classList.add("trp-text");
+            document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+      aboutUs?.classList.remove("hide-section");
+
+    } else {
+
+        }
+
+        if (isElementInViewport(targetgroups)) {
+          
+            // If the element is in the viewport, add your logic here
+            document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+            document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+      aboutUs?.classList.remove("hide-section");
+
+    } else {
+
+        }
+
+    if (isElementInViewport(vision)) {
+      console.log(true);
+
+          vision?.classList.add("vision-mission-show-animation");
+
+
+    } else {
+      console.log(false);
+
+        }
+    });
+    function isElementInViewport(el: any) {
+      const rect = el.getBoundingClientRect();
   
-      // Create an intersection observer
-      const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  // If the target element is in view, add the animation class
-                  console.log(true);
-                  document.getElementById("target-groups-text")?.classList.add("target-groups-text");
-                  document.getElementById("trpImage")?.classList.add("trp-image");
+      return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+  }
 
-                  
-                  // targetgroups?.classList.add("animate");
-              } else {
-                  console.log(false);
-                  document.getElementById("target-groups-text")?.classList.remove("target-groups-text");
-                  document.getElementById("trpImage")?.classList.remove("trp-image");
-
-                  // If the target element is out of view, remove the animation class
-                  // targetgroups?.classList.remove("animate");
-              }
-          });
-      }, { threshold: 0.5 }); // Adjust the threshold as needed
-  
-      // Start observing the target element
-      observer.observe(targetgroups as HTMLElement);
   });
    
 
@@ -64,21 +103,23 @@ export class MasterComponent implements OnInit {
    
    
   }
+
+
   state = 'hide';
   constructor(public el: ElementRef) { }
 
   sctionRedirectHandler(event:number) 
   {
     if(event == this.AboutUs) {
-      document.getElementById("aboutUs")?.scrollIntoView(false);
+      document.getElementById("aboutUs")?.scrollIntoView();
 
     }
     if(event == this.WhatIsTrp) {
-      document.getElementById("whatIsTrp")?.scrollIntoView(false);
+      document.getElementById("whatIsTrp")?.scrollIntoView();
 
     }
     if(event == this.TargetGroups) {
-      document.getElementById("targetgroups")?.scrollIntoView(false);
+      document.getElementById("targetgroups")?.scrollIntoView();
 
     }
     

@@ -101,9 +101,15 @@
 
 .what-is-trp{
     display: flex;
- 
     justify-content: space-between;
 
+
+}
+
+.what-is-trp-show {
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
 }
 .what-is-trp-main,
 .about-us-main,
@@ -113,6 +119,7 @@
     box-shadow: 0px 0px 10px gray;
     width: 97%;
     margin: 20px;
+   
 }
 .about-us-text {
     color: orange;
@@ -159,6 +166,30 @@
 .trp-image-target-group img {
     padding: 10px;
     animation: trp-image  2s both;
+}
+
+.trp-image-about-us img {
+    padding: 10px;
+    opacity: 0;
+
+    animation: trp-image  2s both;
+}
+
+.hide-section {
+    opacity: 0;
+
+}
+
+@keyframes hide-section {
+    from 
+    {
+        opacity: 1;
+    }
+    to 
+    {
+        opacity: 0;
+    }
+    
 }
 @keyframes trp-text {
     from {
