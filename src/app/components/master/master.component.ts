@@ -34,6 +34,21 @@ export class MasterComponent implements OnInit {
       const whatIsTrp = document.getElementById("whatIsTrp");
 
 
+      const animatedDiv = document.querySelector(".animated-div");
+
+      // Create an intersection observer
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  // If the target element is in view, add the animation class
+                  vision?.classList.add("vision-mission-show-animation");
+               
+                } 
+          });
+      }, { threshold: 0.5 }); // Adjust the threshold as needed
+  
+      // Start observing the target element
+      observer.observe(vision as HTMLElement);
      
 
 
@@ -41,8 +56,12 @@ export class MasterComponent implements OnInit {
         if (isElementInViewport(aboutUs)) {
           
             // If the element is in the viewport, add your logic here
+            document.getElementById("aboutUsParent")?.classList.replace("about-us","about-us-show");
+
             document.getElementById("aboutUsText")?.classList.add("about-us-text");
             document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
+
+            
       aboutUs?.classList.remove("hide-section");
 
     } else {
@@ -51,24 +70,24 @@ export class MasterComponent implements OnInit {
 
         if (isElementInViewport(whatIsTrp)) {
 
-
-
+          document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp","what-is-trp-show");
           
-            // If the element is in the viewport, add your logic here
             document.getElementById("trpText")?.classList.add("trp-text");
             document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
-      aboutUs?.classList.remove("hide-section");
+
+
+
 
     } else {
 
         }
 
         if (isElementInViewport(targetgroups)) {
+          document.getElementById("targetGroupsParent")?.classList.replace("target-groups","target-groups-show");
+
           
-            // If the element is in the viewport, add your logic here
             document.getElementById("target-groups-text")?.classList.add("target-groups-text");
             document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
-      aboutUs?.classList.remove("hide-section");
 
     } else {
 
@@ -109,25 +128,46 @@ export class MasterComponent implements OnInit {
   constructor(public el: ElementRef) { }
 
   sctionRedirectHandler(event:number) 
+
   {
-    if(event == this.AboutUs) {
-      document.getElementById("aboutUs")?.scrollIntoView();
+    document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp","what-is-trp-show");
+          
+    document.getElementById("trpText")?.classList.add("trp-text");
+    document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+    document.getElementById("targetGroupsParent")?.classList.replace("target-groups","target-groups-show");
 
-    }
-    if(event == this.WhatIsTrp) {
-      document.getElementById("whatIsTrp")?.scrollIntoView();
+          
+    document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+    document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+    document.getElementById("aboutUsParent")?.classList.replace("about-us","about-us-show");
 
-    }
-    if(event == this.TargetGroups) {
-      document.getElementById("targetgroups")?.scrollIntoView();
+    document.getElementById("aboutUsText")?.classList.add("about-us-text");
+    document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
 
-    }
+    setTimeout(()=>{
+      if(event == this.AboutUs) {
+        document.getElementById("aboutUs")?.scrollIntoView();
+  
+      }
+      if(event == this.WhatIsTrp) {
+        document.getElementById("whatIsTrp")?.scrollIntoView();
+  
+      }
+      if(event == this.TargetGroups) {
+          
+          document.getElementById("targetgroups")?.scrollIntoView(false);
+
+      }
+    },)
+  
     
   }
   pos:  number = 0;
 
   @HostListener("window:scroll", ["$event"])
 onWindowScroll() {
+
+
   // console.log("window.pageYOffset",window.pageYOffset);
   document.documentElement.offsetTop
   // console.log( "whatIsTrp",document.getElementById("whatIsTrp")?.offsetTop);

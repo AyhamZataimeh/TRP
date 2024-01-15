@@ -102,7 +102,46 @@
 .what-is-trp{
     display: flex;
     justify-content: space-between;
+    visibility: hidden;
 
+
+}
+
+
+.what-is-trp-show{
+    display: flex;
+    justify-content: space-between;
+    visibility: visible;
+
+
+
+}
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+}
+
+
+
+.about-us-show {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    visibility: visible;
+}
+
+.target-groups {
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+}
+
+.target-groups-show {
+    display: flex;
+    justify-content: space-between;
+    visibility: visible;
+    flex-direction: row-reverse;
 
 }
 
@@ -116,13 +155,15 @@
 .target-groups-main {
     border: 1px solid white;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
+    box-shadow: 0px 0px 1px black;
     width: 97%;
     margin: 20px;
    
 }
+
+
 .about-us-text {
-    color: orange;
+    color: black;
     width: 92%;
     text-align: justify;
     padding: 30px;
@@ -132,7 +173,7 @@
 
 
 .target-groups-text {
-    color: orange;
+    color: black;
     width: 120%;
     text-align: justify;
     padding: 30px;
@@ -145,10 +186,22 @@
 .target-groups-main .header  {
     color: orange;
     text-align: center;
+    padding: 10px;
+    /* &:hover {
+        cursor: pointer;
+        border: 1px solid orange;
+        background-color: orange;
+        color: white;
+        transform: scale(1.1);
+        border-radius: 10px;
+
+
+    } */
+    
 }
 
 .trp-text {
-    color: orange;
+    color: black;
     width: 50%;
     text-align: justify;
     padding: 30px;
@@ -156,22 +209,23 @@
     animation-delay: 2s;
 
 
+
 }
 
 .trp-image img {
     padding: 10px;
-    animation: trp-image  2s both;
+    animation: what-is-trp-image 2s both;
+
 }
 
 .trp-image-target-group img {
     padding: 10px;
     animation: trp-image  2s both;
+
 }
 
 .trp-image-about-us img {
     padding: 10px;
-    opacity: 0;
-
     animation: trp-image  2s both;
 }
 
@@ -203,14 +257,27 @@
 
 }
 
-@keyframes trp-image {
+
+@keyframes what-is-trp-image {
 
     from {
-        transform: translateX(200px);
+        transform: translateX(300px);
         opacity: 0;
     }
     to {
-        transform: translateX(100px);
+        transform: translateX(220px);
+        opacity: 1;
+    }
+    
+}
+@keyframes trp-image {
+
+    from {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(29px);
         opacity: 1;
     }
     
