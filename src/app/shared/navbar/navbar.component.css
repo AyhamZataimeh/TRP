@@ -1,38 +1,16 @@
-.main-nav  {
-    /* background-color: rgb(0,46,93); */
-    background-color: #f77f00;
-
-    position: relative;
-    height: 75px;
-}
-
-.show-dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu  li:hover a {
-    color: white;
-    background-color: #f77f00;
-}
-
-nav .logo {
-    animation: logo both alternate 5s;
-    animation-delay: 1s;
-    background-color: white;
-    border-radius: 50%;
-}
-
 .main-nav {
+    background-color: #f77f00;
+    position: relative;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     height: 10%;
-
-    
 }
+
 .main-nav .media {
     margin-right: 30px;
 }
+
 .main-nav div li {
     color: white;
     margin-left: 10px;
@@ -44,12 +22,27 @@ nav .logo {
 
     &:hover {
         cursor: pointer;
-        color :#f77f00;
+        color: #f77f00;
         /* transform: scale(1.1); */
         border: 1px solid white;
         background-color: white;
-        };
+    }
+}
 
+.show-dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li:hover a {
+    color: white;
+    background-color: #f77f00;
+}
+
+nav .logo {
+    animation: logo both alternate 5s;
+    animation-delay: 1s;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .header li {
@@ -66,56 +59,60 @@ nav .logo {
     transition: .1s ease-in;
 
     &:hover {
-    cursor: pointer;
-    color :white;
-    border: 1px solid white;
-    background-color: #f77f00;
-    };
-    
+        cursor: pointer;
+        color: white;
+        border: 1px solid white;
+        background-color: #f77f00;
+    }
+
+    ;
+
 }
 
 .nav-item {
-    animation:  nav-items both alternate 1s;
+    animation: nav-items both alternate 1s;
     animation-delay: 2s;
 }
 
 
 
 @keyframes nav-items {
-    from 
-    {
+    from {
         opacity: 0;
     }
-    to 
-    {
+
+    to {
         opacity: 1;
 
     }
-    
+
 }
 
 @keyframes logo {
 
-    0%
-    {
-        
-        transform: rotate(0deg)  translateX(-60);
+    0% {
+
+        transform: rotate(0deg) translateX(-60);
     }
-    50%
-    {
-        transform:  rotate(360deg) translateX(10px);
+
+    50% {
+        transform: rotate(360deg) translateX(10px);
 
 
     }
-    75% 
-    {
+
+    75% {
         transform: scale(1.1);
     }
-    100%
-    {
-            transform: scale(1);
-    
-    }
 
-    
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+    }
 }
