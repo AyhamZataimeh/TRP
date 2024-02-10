@@ -1,3 +1,23 @@
+.landing-page {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    background: url(../../../assets/images/landing-page.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    animation: landing-page-animation 2s both;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
 .landing-page-image {
 
     animation: laning-page-image 2s both
@@ -5,101 +25,105 @@
 
 @keyframes laning-page-image {
 
-    from
-    {
+    from {
         transform: scale(0);
     }
-    to 
-    {
+
+    to {
         transform: scale(1);
 
     }
-    
 }
 
-.landing-page-text{
-    position: absolute;
-    left: 36%;
-    top: 23%;
-    FONT-SIZE: 47px;
+.landing-page-logo {
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+    border-radius: 50%;
+    background: white;
+    animation: landing-page-logo 1.3s both;
+    animation-delay: 2s;
+    z-index: 4;
+}
 
+.landing-page-text {
+    margin-top: 30px;
+    font-size: 47px;
+    padding: 0 10px;
     z-index: 1;
     color: white;
     animation: langing-page-text 2s both;
     animation-delay: 2s;
-    text-transform: capitalize
+    text-transform: capitalize;
+    z-index: 4;
 }
 
-.landing-page-logo {
-    width: 11%;
+.landing-page-logo-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+}
+
+.overlay {
     position: absolute;
-    top: 2%;
-    border-radius: 50%;
-    background: white;
-    animation: landing-page-logo 2s both;
-    animation-delay: 2s;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0%;
     z-index: 1;
 }
 
-.black {
-    position: absolute;
-    width: 100%;
-    /* height: 606px; */
-    height: 759px;
-
-    background: black;
-    top: 0%;
-    opacity: 0.5;
-    /* left: 10%; */
-    animation: black 2s both
-}
-
-@keyframes black {
-    from
-    {
+@keyframes landing-page-animation {
+    from {
         transform: scale(0);
     }
-    to 
-    {
+
+    to {
         transform: scale(1);
 
     }
 }
+
 @keyframes langing-page-text {
 
-    from
-    {
+    from {
         opacity: 0;
-        left: 20%;
+        transform: translateX(-25%);
 
     }
-    to
-    {
+
+    to {
         opacity: 1;
-        left: 27%;
+        transform: translateX(0%);
 
     }
-    
+
 }
 
 .vision-mission-show-animation {
     /* background-color: red; */
-    animation: vision-mission-show  1s both;
+    animation: vision-mission-show 1.5s .5s both;
 
 }
 
 .vision-mission-hide-animation {
     /* background-color: red; */
-    animation: vision-mission-hide  1s both;
+    animation: vision-mission-hide 1s both;
 
 }
+
 .vision-mission {
-    /* text-align: center; */
+    background: url(../../../assets//images/Vision&mission.jpeg) no-repeat center center;
+    background-size: contain;
+    width: 70%;
+    height: 480px;
     margin-top: 10px;
-
+    opacity: 0;
 }
 
-.what-is-trp{
+.what-is-trp {
     display: flex;
     justify-content: space-between;
     visibility: hidden;
@@ -108,7 +132,7 @@
 }
 
 
-.what-is-trp-show{
+.what-is-trp-show {
     display: flex;
     justify-content: space-between;
     visibility: visible;
@@ -116,6 +140,7 @@
 
 
 }
+
 .about-us {
     display: flex;
     justify-content: space-between;
@@ -150,6 +175,7 @@
     justify-content: space-between;
     opacity: 1;
 }
+
 .what-is-trp-main,
 .about-us-main,
 .target-groups-main {
@@ -158,7 +184,7 @@
     box-shadow: 0px 0px 1px black;
     width: 97%;
     margin: 20px;
-   
+
 }
 
 
@@ -167,9 +193,9 @@
     width: 92%;
     text-align: justify;
     padding: 30px;
-    animation: trp-text  2s both;
+    animation: trp-text 2s both;
     animation-delay: 2s;
-    }
+}
 
 
 .target-groups-text {
@@ -177,13 +203,14 @@
     width: 120%;
     text-align: justify;
     padding: 30px;
-    animation: trp-text  2s both;
+    animation: trp-text 2s both;
     animation-delay: 2s;
 
-    }
+}
+
 .what-is-trp-main .header,
-.about-us-main  .header,
-.target-groups-main .header  {
+.about-us-main .header,
+.target-groups-main .header {
     color: orange;
     text-align: center;
     padding: 10px;
@@ -197,7 +224,7 @@
 
 
     } */
-    
+
 }
 
 .trp-text {
@@ -205,7 +232,7 @@
     width: 50%;
     text-align: justify;
     padding: 30px;
-    animation: trp-text  2s both;
+    animation: trp-text 2s both;
     animation-delay: 2s;
 
 
@@ -220,13 +247,13 @@
 
 .trp-image-target-group img {
     padding: 10px;
-    animation: trp-image  2s both;
+    animation: trp-image 2s both;
 
 }
 
 .trp-image-about-us img {
     padding: 10px;
-    animation: trp-image  2s both;
+    animation: trp-image 2s both;
 }
 
 .hide-section {
@@ -235,26 +262,25 @@
 }
 
 @keyframes hide-section {
-    from 
-    {
+    from {
         opacity: 1;
     }
-    to 
-    {
+
+    to {
         opacity: 0;
     }
-    
 }
+
 @keyframes trp-text {
     from {
 
         opacity: 0;
     }
+
     to {
 
         opacity: 1;
     }
-
 }
 
 
@@ -264,68 +290,82 @@
         transform: translateX(300px);
         opacity: 0;
     }
+
     to {
         transform: translateX(220px);
         opacity: 1;
     }
-    
 }
+
 @keyframes trp-image {
 
     from {
         transform: translateX(0px);
         opacity: 0;
     }
+
     to {
         transform: translateX(29px);
         opacity: 1;
     }
-    
-}
-@keyframes vision-mission-show  {
-
-    from 
-    {
-        transform: translateX(0%);
-    }
-    to
-    {
-        transform: translateX(25%);
-
-
-    }
-    
 }
 
-@keyframes vision-mission-hide  {
+@keyframes vision-mission-show {
 
-    from 
-    {
-        transform: translateX(25%);
-
-    }
-    to
-    {
-        transform: translateX(0%);
-
-
-    }
-    
-}
-@keyframes landing-page-logo  {
-
-    from 
-    {
+    from {
         opacity: 0;
-        left: 53%;
-
+        transform: translateX(-50%);
     }
-    to 
-    {
+
+    to {
         opacity: 1;
-        left: 44%;
-
-
+        transform: translateX(0%)
     }
-    
+}
+
+@keyframes vision-mission-hide {
+
+    from {
+        transform: translateX(25%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes landing-page-logo {
+
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .intro {
+        margin-top: 30px;
+    }
+
+    .landing-page-logo {
+        width: 125px;
+        height: 125px;
+    }
+
+    .landing-page-text {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .vision-mission {
+        width: 90%;
+        height: 260px;
+    }
 }
