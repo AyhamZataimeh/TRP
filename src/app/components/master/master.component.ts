@@ -25,6 +25,56 @@ export class MasterComponent implements OnInit {
   public get WhatIsTrp():Sections.WhatIsTrp {
     return Sections.WhatIsTrp;
   }
+
+  workTeamList :any[]=[
+    {
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },
+    {
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },{
+      name: "Ayham",
+      position: "Softeare Engenering",
+      image: "../../../assets/images/logo.jpg"
+
+    },
+  ]
   ngOnInit(): void {
 
     document.addEventListener("DOMContentLoaded", function () {

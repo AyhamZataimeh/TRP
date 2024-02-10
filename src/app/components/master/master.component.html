@@ -110,3 +110,26 @@
     </div>
     <!-- </div> -->
 </div>
+
+<div class="slider">
+    <div class="silder-header">
+        <h1>Work Team</h1>
+    </div>
+
+    <div class="slider-content">
+        <i class="fa fa-left-arrow"></i>
+        <div class="slider-image" >
+            <div class="images" *ngFor="let workTeam of workTeamList ">
+                <img [src]="workTeam.image" alt="" srcset="" width="20%">
+                <h2>{{ workTeam.name }}</h2>
+                <h3>{{ workTeam.position }}</h3>
+            </div>
+          
+          
+
+
+
+        </div>
+    </div>
+</div>
+
