@@ -9,7 +9,6 @@ import { Sections } from '../enums/enums.model';
 export class NavbarComponent implements OnInit {
 
   @Output("selectedSection")selectedSection: EventEmitter<number>= new EventEmitter<number>();
-  displyMenu: boolean= false;
 
   public get AboutUs():Sections.AboutUs {
     return Sections.AboutUs;
@@ -24,10 +23,6 @@ export class NavbarComponent implements OnInit {
   }
   ngOnInit(): void {
    
-  }
-
-  showMenu() {
-    this.displyMenu= !this.displyMenu
   }
 
   sctionRedirectHandler(event:number) 
