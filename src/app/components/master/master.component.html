@@ -1,7 +1,6 @@
 <app-navbar (selectedSection)="sctionRedirectHandler($event)"></app-navbar>
 
 <div class="container-fluid">
-    <!-- <div class="row"> -->
     <div class="row">
         <div class="col-12">
             <div class="landing-page">
@@ -15,23 +14,17 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="vision-mission" id="vision">
             </div>
         </div>
     </div>
-
     <div class="col-md-12 col-sm-12 col-xs-12 about-us-main" id="aboutUs">
         <div class="header">
             <h1>About Us ?</h1>
-
         </div>
         <div class="about-us" id="aboutUsParent">
-
-
-
             <div id="aboutUsText">
                 <h5>
                     We are a team of teachers in Jordan with a vision: “Conversation is the gateway to the English
@@ -39,25 +32,16 @@
                     blackboard, with a combined experience of the curriculum writing staff and teachers amounting to
                     approximately 25 years </h5>
             </div>
-
-
             <div id="trpAboutUsImage">
                 <img src="../../../assets//images/About-us.jpeg" width="60%">
-
             </div>
         </div>
-
     </div>
-
     <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main" id="whatIsTrp">
         <div class="header">
             <h1>What's Is TPR ?</h1>
-
         </div>
         <div class="what-is-trp" id="whatIsTrpParent">
-
-
-
             <div id="trpText">
                 <h5>
                     It is a system that was invented in 1970 to teach language by combining body language, play, and
@@ -65,26 +49,16 @@
                     conversation and without returning to the rules, fluently and without hesitation.
                 </h5>
             </div>
-
-
             <div id="whatIsTrpImage">
                 <img src="../../../assets//images/what-is-trp.jpeg" width="60%">
-
             </div>
         </div>
-
     </div>
-
-
     <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main" id="targetgroups">
         <div class="header">
             <h1>Target Groups</h1>
-
         </div>
         <div class="target-groups" id="targetGroupsParent">
-
-
-
             <div id="target-groups-text">
                 <h5>
                     <span style="font-weight: bold;">(A) Category :</span> This category includes children from the age
@@ -95,41 +69,65 @@
                     years old, and the child masters 100 to 200 sentences at a rate of 150 sentences per level
                 </h5>
             </div>
-
-
             <div id="targetgroupsImage">
                 <img src="../../../assets//images/target-groups.jpeg" width="60%">
-
             </div>
         </div>
-
     </div>
     <div>
-
-
-    </div>
-    <!-- </div> -->
 </div>
 
 <div class="slider">
     <div class="silder-header">
         <h1>Work Team</h1>
     </div>
-
     <div class="slider-content">
         <i class="fa fa-left-arrow"></i>
-        <div class="slider-image" >
+        <div class="slider-image">
             <div class="images" *ngFor="let workTeam of workTeamList ">
                 <img [src]="workTeam.image" alt="" srcset="" width="20%">
                 <h2>{{ workTeam.name }}</h2>
                 <h3>{{ workTeam.position }}</h3>
             </div>
-          
-          
-
-
-
         </div>
     </div>
 </div>
-
+ <div id="carousel_demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="carousel-caption">
+                <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
+                    I don't know what will.This was the very best explanation of frameworks for brginners
+                    that I've ever seen.
+                </p>
+                <img src="https://i.imgur.com/lE89Aey.jpg">
+                <div id="image-caption">Nick Doe</div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
+                    I don't know what will.This was the very best explanation of frameworks for brginners
+                    that I've ever seen.</p>
+                <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
+                <div id="image-caption">Cromption Greves</div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
+                    I don't know what will.This was the very best explanation of frameworks for brginners
+                    that I've ever seen.</p>
+                <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+                <div id="image-caption">Harry Mon</div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel_demo" data-slide="prev">
+        <i class='fa fa-arrow-left'></i>
+    </a>
+    <a class="carousel-control-next" href="#carousel_demo" data-slide="next">
+        <i class='fa fa-arrow-right'></i>
+    </a>
+ </div>
+</div>
