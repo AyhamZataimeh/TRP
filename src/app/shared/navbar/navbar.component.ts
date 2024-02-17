@@ -4,7 +4,8 @@ import { Sections } from '../enums/enums.model';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  providers:[]
 })
 export class NavbarComponent implements OnInit {
 
@@ -21,6 +22,10 @@ export class NavbarComponent implements OnInit {
   public get WhatIsTrp():Sections.WhatIsTrp {
     return Sections.WhatIsTrp;
   }
+
+  public get WorkTeam(): Sections.WorkTeam {
+    return Sections.WorkTeam
+  }
   ngOnInit(): void {
    
   }
@@ -30,4 +35,10 @@ export class NavbarComponent implements OnInit {
     this.selectedSection.emit(event);
   }
 
+
+  onChangeLanguage(language: string) {
+    localStorage.setItem("language",language);
+    window.location.reload();
+  
+  }
 }

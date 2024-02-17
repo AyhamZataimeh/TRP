@@ -26,6 +26,9 @@ export class MasterComponent implements OnInit {
     return Sections.WhatIsTrp;
   }
 
+  public get WorkTeam(): Sections.WorkTeam {
+    return Sections.WorkTeam
+  }
   workTeamList :any[]=[
     {
       name: "Ayham",
@@ -208,6 +211,10 @@ export class MasterComponent implements OnInit {
           document.getElementById("targetgroups")?.scrollIntoView(false);
 
       }
+      if(event == this.WorkTeam) {
+        document.getElementById("workTeam")?.scrollIntoView(false);
+
+      }
     },)
   
     
@@ -218,26 +225,14 @@ export class MasterComponent implements OnInit {
 onWindowScroll() {
 
 
-  // console.log("window.pageYOffset",window.pageYOffset);
   document.documentElement.offsetTop
-  // console.log( "whatIsTrp",document.getElementById("whatIsTrp")?.offsetTop);
-  // console.log( "targetgroups",document.getElementById("targetgroups")?.clientHeight);
-  
-//In chrome and some browser scroll is given to body tag
+
  this.pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
-let max = document.documentElement.scrollHeight;
 
 
-// console.log("pos=",document.documentElement.offsetTop);
-// console.log("max=",max);
-// if(pos== 2079 ) {
 
-// }
-
-
-// pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
-//  if(pos == max )   {
-//  //Do your action here
-//  }
 }
+
+
+
 }

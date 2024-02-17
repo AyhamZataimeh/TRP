@@ -1,0 +1,27 @@
+{
+    "NAVBAR": {
+        "ABOUT_US":"About Us",
+        "WHAT_IS_TPR":"What is TPR",
+        "WORK_TEAM":"Work Team",
+        "TARGET_GROUPS":"Target groups",
+        "CONTACT_INFO":"Contact Info",
+        "COURSE_REGISTER":"Courses Register",
+        "SUBMITTING_JOB":"Submitting Job",
+        "SERVICES":" Services",
+        "CONVRSATION_CORUSES":"Conversation Coruses",
+        "TEACHERS_COURSES":"Teachers Coruses",
+        "LATEST_NEWS":"Latest News",
+        "LANGUAGES":"Languages",
+        "COURSES_ADDRESS":"Courses Address",
+        "LOGIN":"Login"
+    },
+    "MASTER": {
+        "WE_DO_IT_BECAUSE_WE_LOVE_IT":"WE DO IT BECAUSE WE LOVE IT",
+        "ABOUT_US":"About Us ?",
+        "WHAT_IS_TPR":"What is TPR ?",
+        "TARGET_GROUPS":"Target groups",
+        "WORK_TEAM":"Work Team"
+    }
+ 
+
+}

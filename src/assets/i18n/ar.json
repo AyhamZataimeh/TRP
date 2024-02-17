@@ -1,0 +1,27 @@
+{
+    "NAVBAR": {
+        "ABOUT_US": "معلومات عنا",
+        "WHAT_IS_TPR": "ما هو TPR",
+        "WORK_TEAM": "فريق العمل",
+        "TARGET_GROUPS": "المجموعات المستهدفة",
+        "CONTACT_INFO": "معلومات الاتصال",
+        "COURSE_REGISTER": "تسجيل الدورات",
+        "SUBMITTING_JOB": "تقديم الوظيفة",
+        "SERVICES": "الخدمات",
+        "CONVRSATION_CORUSES": "دورات المحادثة",
+        "TEACHERS_COURSES": "دورات المعلمين",
+        "LATEST_NEWS": "أحدث الأخبار",
+        "LANGUAGES": "اللغات",
+        "COURSES_ADDRESS": "عنوان الدورات",
+        "LOGIN": "تسجيل الدخول"
+    },
+    "MASTER": {
+        "WE_DO_IT_BECAUSE_WE_LOVE_IT":"نحن نفعل ذلك لأننا نحب ذلك",
+        "ABOUT_US": "معلومات عنا",
+        "WHAT_IS_TPR": "ما هو TPR",
+        "WORK_TEAM": "فريق العمل",
+        "TARGET_GROUPS": "المجموعات المستهدفة"
+    }
+ 
+
+}

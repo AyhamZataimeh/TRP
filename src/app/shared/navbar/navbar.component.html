@@ -22,52 +22,52 @@
       </span>
       <ul class="navbar-nav">
         <li class="nav-item" (click)="sctionRedirectHandler(AboutUs)">
-          <a class="nav-link active" href="#">About Us</a>
+          <a class="nav-link active" href="#">{{ "NAVBAR.ABOUT_US" | translate }}</a>
         </li>
         <li class="nav-item" (click)="sctionRedirectHandler(WhatIsTrp)">
-          <a class="nav-link" href="#">What Is TPR </a>
+          <a class="nav-link" href="#"> {{ "NAVBAR.WHAT_IS_TPR" | translate }}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Work Item</a>
+        <li class="nav-item" (click)="sctionRedirectHandler(WorkTeam)">
+          <a class="nav-link" href="#">{{ "NAVBAR.WORK_TEAM" | translate }}</a>
         </li>
         <li class="nav-item" (click)="sctionRedirectHandler(TargetGroups)">
-          <a class="nav-link" href="#">Target groups</a>
+          <a class="nav-link" href="#">{{ "NAVBAR.TARGET_GROUPS" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact Info</a>
+          <a class="nav-link" href="#">{{ "NAVBAR.CONTACT_INFO" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Courses Register</a>
+          <a class="nav-link" href="#">{{ "NAVBAR.COURSE_REGISTER" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Submitting Job </a>
+          <a class="nav-link" href="#">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-            Services
+            {{ "NAVBAR.SERVICES" | translate }}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Conversation Coruses</a>
+            <li><a class="dropdown-item" href="#">{{ "NAVBAR.CONVRSATION_CORUSES" | translate }}</a>
             </li>
-            <li><a class="dropdown-item" href="#">Teachers Coruses</a></li>
+            <li><a class="dropdown-item" href="#">{{ "NAVBAR.TEACHERS_COURSES" | translate }}</a></li>
             <hr class="dropdown-divider">
-            <li><a class="dropdown-item" href="#">Latest News </a></li>
-            <li><a class="dropdown-item" href="#">Languages</a></li>
+            <li><a class="dropdown-item" href="#">{{ "NAVBAR.LATEST_NEWS" | translate }}</a></li>
+            <li><a class="dropdown-item" href="#">{{ "NAVBAR.LANGUAGES" | translate }}</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://tpr-system.tpr.foundation/site/login" target="_blank">Courses Address </a>
+          <a class="nav-link" href="https://tpr-system.tpr.foundation/site/login" target="_blank">{{ "NAVBAR.COURSES_ADDRESS" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://tpr-system.tpr.foundation/site/login" target="_blank">Login </a>
+          <a class="nav-link" href="https://tpr-system.tpr.foundation/site/login" target="_blank">{{ "NAVBAR.LOGIN" | translate }} </a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
             <i class="fa fa-language"></i>
           </a>
           <ul class="dropdown-menu lang-menu">
-            <li><a class="dropdown-item" href="#">English</a></li>
-            <li><a class="dropdown-item" href="#">العربية</a></li>
+            <li><a class="dropdown-item"  (click)="onChangeLanguage('en')">English</a></li>
+            <li><a class="dropdown-item"  (click)="onChangeLanguage('ar')">العربية</a></li>
           </ul>
         </li>
       </ul>
