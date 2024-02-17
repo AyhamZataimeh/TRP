@@ -3,7 +3,13 @@ body {
     background-color: #ffefd3e8;
 }
 
-div {
+.en-language {
     font-family: 'Montserrat', sans-serif;
 
 }
+
+.ar-language {
+font-family: "Tajawal", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  }
