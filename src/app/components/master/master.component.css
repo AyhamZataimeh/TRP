@@ -182,7 +182,7 @@
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: 0px 0px 1px black;
-    width: 97%;
+    width: auto;
     margin: 20px;
 
 }
@@ -265,7 +265,7 @@
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: 0px 0px 1px black;
-    width: 97%;
+    width: auto;
     margin: 20px;
     text-align: center;
     display: none;
@@ -443,12 +443,25 @@
 @keyframes what-is-trp-image {
 
     from {
-        transform: translateX(300px);
+        transform: translateX(250px);
         opacity: 0;
     }
 
     to {
-        transform: translateX(220px);
+        transform: translateX(190px);
+        opacity: 1;
+    }
+}
+
+@keyframes what-is-trp-image-mobile {
+
+    from {
+        transform: translateX(250px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -462,6 +475,19 @@
 
     to {
         transform: translateX(29px);
+        opacity: 1;
+    }
+}
+
+@keyframes trp-image-mobile {
+
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -526,6 +552,42 @@
 
     .landing-page-text {
         font-size: 40px;
+    }
+
+    .about-us-show {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .what-is-trp-show {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .trp-text {
+        width: auto;
+    }
+
+    .trp-image img  {
+        animation: what-is-trp-image-mobile 2s both;
+    }
+
+    .target-groups-show {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .target-groups-text {
+        width: auto
+    }
+
+    .trp-image-target-group img {
+        animation: trp-image-mobile 2s both;
+    
+    }
+    
+    .trp-image-about-us img {
+        animation: trp-image-mobile 2s both;
     }
 }
 
