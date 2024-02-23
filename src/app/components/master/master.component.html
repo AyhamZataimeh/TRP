@@ -1,19 +1,15 @@
 <app-navbar (selectedSection)="sctionRedirectHandler($event)"></app-navbar>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="landing-page">
-                <div class="intro">
-                    <div class="landing-page-logo">
-                        <img src="../../../assets//images/logo-removebg-preview.png" class="landing-page-logo-image">
-                    </div>
-                    <h2 class="landing-page-text"> {{ "MASTER.WE_DO_IT_BECAUSE_WE_LOVE_IT" | translate}}</h2>
-                </div>
-                <div class="overlay"></div>
-            </div>
+<div class="landing-page">
+    <div class="intro">
+        <div class="landing-page-logo">
+            <img src="../../../assets//images/logo-removebg-preview.png" class="landing-page-logo-image">
         </div>
+        <h2 class="landing-page-text"> {{ "MASTER.WE_DO_IT_BECAUSE_WE_LOVE_IT" | translate}}</h2>
     </div>
+    <div class="overlay"></div>
+</div>
+<div class="container-fluid">
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="vision-mission" id="vision">
@@ -76,58 +72,53 @@
     </div>
     <div>
     </div>
-
-    <div class="slider" id="workTeam">
+    <!-- Start Web View Carousel -->
+    <div class="slider d-none d-sm-block" id="workTeam">
         <div class="silder-header">
             <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
         </div>
         <div class="slider-content">
             <i class="fa fa-left-arrow"></i>
             <div class="slider-image">
-                <div class="images" *ngFor="let workTeam of workTeamList ">
-                    <img [src]="workTeam.image" alt="" srcset="" width="20%">
+                <div class="images" *ngFor="let workTeam of workTeamList">
+                    <div class="avatar-box">
+                        <img class="avatar-image" [src]="workTeam.image" [alt]="workTeam.name">
+                    </div>
                     <h2>{{ workTeam.name }}</h2>
                     <h3>{{ workTeam.position }}</h3>
                 </div>
             </div>
         </div>
     </div>
-    <div id="carousel_demo" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
-                        I don't know what will.This was the very best explanation of frameworks for brginners
-                        that I've ever seen.
-                    </p>
-                    <img src="https://i.imgur.com/lE89Aey.jpg">
-                    <div id="image-caption">Nick Doe</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
-                        I don't know what will.This was the very best explanation of frameworks for brginners
-                        that I've ever seen.</p>
-                    <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
-                    <div id="image-caption">Cromption Greves</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code,
-                        I don't know what will.This was the very best explanation of frameworks for brginners
-                        that I've ever seen.</p>
-                    <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
-                    <div id="image-caption">Harry Mon</div>
-                </div>
-            </div>
+    <!-- End Web View Carousel -->
+
+    <!-- Start Mobile View Carousel -->
+    <div class="carousel-container d-block d-sm-none">
+        <div class="silder-header">
+            <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
         </div>
-        <a class="carousel-control-prev" href="#carousel_demo" data-slide="prev">
-            <i class='fa fa-arrow-left'></i>
-        </a>
-        <a class="carousel-control-next" href="#carousel_demo" data-slide="next">
-            <i class='fa fa-arrow-right'></i>
-        </a>
+        <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of workTeamList; let index = index; let isFirst = first"
+                    [ngClass]="{active:isFirst}">
+                    <div class="carousel-caption">
+                        <div class="avatar-box">
+                            <img class="avatar-image" [src]="item.image" [alt]="item.name">
+                        </div>
+                        <h2 class="worker-name">{{ item.name | translate }}</h2>
+                        <h3 class="worker-position">{{ item.position | translate }}</h3>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev">
+                <span style="font-weight: bold;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
+    <!-- End Mobile View Carousel -->
 </div>

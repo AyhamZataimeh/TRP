@@ -108,8 +108,7 @@
 }
 
 .main-nav .lang-menu {
-    left: auto;
-    right: 0;
+    inset-inline-start: -100px;
 }
 
 @keyframes nav-items {

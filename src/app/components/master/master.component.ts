@@ -31,51 +31,58 @@ export class MasterComponent implements OnInit {
   }
   workTeamList :any[]=[
     {
+      id: 1,
       name: "Ayham",
-      position: "Softeare Engenering",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
     },
     {
-      name: "Ayham",
-      position: "Softeare Engenering",
+      id: 2,
+      name: "Mahmoud",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
-    },{
-      name: "Ayham",
-      position: "Softeare Engenering",
+    },
+    {
+      id: 3,
+      name: "Omar",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
-    },{
-      name: "Ayham",
-      position: "Softeare Engenering",
+    },
+    {
+      id: 4,
+      name: "Mahmoud",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
-    },{
+    },
+    {
+      id: 5,
       name: "Ayham",
-      position: "Softeare Engenering",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
-    },{
+    },
+    {
+      id: 6,
+      name: "Mahmoud",
+      position: "Software Engineering",
+      image: "../../../assets/images/logo.jpg"
+    },
+    {
+      id: 7,
       name: "Ayham",
-      position: "Softeare Engenering",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
-    },{
+    },
+    {
+      id: 8,
+      name: "Ahmad",
+      position: "Software Engineering",
+      image: "../../../assets/images/logo.jpg"
+    },
+    {
+      id: 9,
       name: "Ayham",
-      position: "Softeare Engenering",
+      position: "Software Engineering",
       image: "../../../assets/images/logo.jpg"
-
-    },{
-      name: "Ayham",
-      position: "Softeare Engenering",
-      image: "../../../assets/images/logo.jpg"
-
-    },{
-      name: "Ayham",
-      position: "Softeare Engenering",
-      image: "../../../assets/images/logo.jpg"
-
     },
   ]
   ngOnInit(): void {
