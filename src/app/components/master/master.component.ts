@@ -32,58 +32,41 @@ export class MasterComponent implements OnInit {
   workTeamList :any[]=[
     {
       id: 1,
-      name: "Ayham",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
+      name: "Othman Khawaja",
+      position: "GM",
+      image: "../../../assets/images/avatar-1.jpeg"
     },
     {
       id: 2,
-      name: "Mahmoud",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
+      name: "Mohammed shaheen",
+      position: "SAM",
+      image: "../../../assets/images/avatar-2.jpeg"
     },
     {
       id: 3,
-      name: "Omar",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
+      name: "Zakaria bello",
+      position: "CHR",
+      image: "../../../assets/images/avatar-3.jpeg"
     },
     {
       id: 4,
-      name: "Mahmoud",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
+      name: "Othman Khawaja",
+      position: "GM",
+      image: "../../../assets/images/avatar-1.jpeg"
     },
     {
       id: 5,
-      name: "Ayham",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
+      name: "Mohammed shaheen",
+      position: "SAM",
+      image: "../../../assets/images/avatar-2.jpeg"
     },
     {
       id: 6,
-      name: "Mahmoud",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
+      name: "Zakaria bello",
+      position: "CHR",
+      image: "../../../assets/images/avatar-3.jpeg"
     },
-    {
-      id: 7,
-      name: "Ayham",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
-    },
-    {
-      id: 8,
-      name: "Ahmad",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
-    },
-    {
-      id: 9,
-      name: "Ayham",
-      position: "Software Engineering",
-      image: "../../../assets/images/logo.jpg"
-    },
+
   ]
   ngOnInit(): void {
 
