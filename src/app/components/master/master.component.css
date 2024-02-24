@@ -302,11 +302,6 @@
     display: flex;
 }
 
-.slider-image img {
-    margin-right: 10px;
-}
-
-
 .slider-image .images {
     display: flex;
     flex-direction: column;
@@ -315,7 +310,7 @@
     border: 1px solid white;
     background: #f77f00;
     text-align: center;
-    height: 200px;
+    height: 230px;
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -376,7 +371,7 @@
 
 /* ===== End Carousel ===== */
 
-/* Start Avatar Styles */
+/* ==== Start Avatar Styles ==== */
 .avatar-box {
     display: flex;
     width: 70px;
@@ -385,16 +380,17 @@
     align-items: center;
     border-radius: 50%;
     margin-bottom: 10px;
+    transform: scale(1.3);
 }
 
 .avatar-image {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-/* End Avatar Styles */
+/* ==== End Avatar Styles ==== */
 
 @keyframes hide-section {
     from {
