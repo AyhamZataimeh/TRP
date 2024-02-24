@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 about-us-main" id="aboutUs">
+    <div class="col-md-12 col-sm-12 col-xs-12 about-us-main section-mob-v" id="aboutUs">
         <div class="header">
             <h1>{{ "MASTER.ABOUT_US" | translate}}</h1>
         </div>
@@ -29,11 +29,11 @@
                     approximately 25 years </h5>
             </div>
             <div id="trpAboutUsImage">
-                <img src="../../../assets//images/About-us.jpeg" width="60%">
+                <img src="../../../assets//images/About-us.jpeg" class="section-images">
             </div>
         </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main" id="whatIsTrp">
+    <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main section-mob-v" id="whatIsTrp">
         <div class="header">
             <h1>{{ "MASTER.WHAT_IS_TPR" | translate}}</h1>
         </div>
@@ -46,11 +46,11 @@
                 </h5>
             </div>
             <div id="whatIsTrpImage">
-                <img src="../../../assets//images/what-is-trp.jpeg" width="60%">
+                <img src="../../../assets//images/what-is-trp.jpeg" class="section-images">
             </div>
         </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main" id="targetgroups">
+    <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main section-mob-v" id="targetgroups">
         <div class="header">
             <h1>{{ "MASTER.TARGET_GROUPS" | translate}}</h1>
         </div>
@@ -66,14 +66,14 @@
                 </h5>
             </div>
             <div id="targetgroupsImage">
-                <img src="../../../assets//images/target-groups.jpeg" width="60%">
+                <img src="../../../assets//images/target-groups.jpeg" class="section-images">
             </div>
         </div>
     </div>
     <div>
     </div>
     <!-- Start Web View Carousel -->
-    <div class="slider d-none d-sm-block" id="workTeam">
+    <div class="slider d-none d-sm-block section-mob-v" id="workTeam">
         <div class="silder-header">
             <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
         </div>
@@ -84,8 +84,9 @@
                     <div class="avatar-box">
                         <img class="avatar-image" [src]="workTeam.image" [alt]="workTeam.name">
                     </div>
-                    <h2>{{ workTeam.name }}</h2>
-                    <h3>{{ workTeam.position }}</h3>
+                    <h2 class="mb-0 mt-2">{{ workTeam.name }}</h2>
+                    <div class="work-team-section-line"></div>
+                    <h3 class="mt-1">{{ workTeam.position }}</h3>
                 </div>
             </div>
         </div>
@@ -93,7 +94,7 @@
     <!-- End Web View Carousel -->
 
     <!-- Start Mobile View Carousel -->
-    <div class="carousel-container d-block d-sm-none">
+    <div class="carousel-container d-block d-sm-none section-mob-v">
         <div class="silder-header">
             <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
         </div>
@@ -102,11 +103,12 @@
                 <div class="carousel-item" *ngFor="let item of workTeamList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
-                        <div class="avatar-box">
+                        <div class="avatar-box mob-v">
                             <img class="avatar-image" [src]="item.image" [alt]="item.name">
                         </div>
-                        <h2 class="worker-name">{{ item.name | translate }}</h2>
-                        <h3 class="worker-position">{{ item.position | translate }}</h3>
+                        <h2 class="worker-name mob-v">{{ item.name | translate }}</h2>
+                        <div class="work-team-section-line"></div>
+                        <h3 class="worker-position mob-v">{{ item.position | translate }}</h3>
                     </div>
                 </div>
             </div>

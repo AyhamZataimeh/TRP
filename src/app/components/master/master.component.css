@@ -215,17 +215,7 @@
     color: orange;
     text-align: center;
     padding: 10px;
-    /* &:hover {
-        cursor: pointer;
-        border: 1px solid orange;
-        background-color: orange;
-        color: white;
-        transform: scale(1.1);
-        border-radius: 10px;
-
-
-    } */
-
+    margin-top: 15px
 }
 
 .trp-text {
@@ -235,15 +225,11 @@
     padding: 30px;
     animation: trp-text 2s both;
     animation-delay: 2s;
-
-
-
 }
 
 .trp-image img {
     padding: 10px;
     animation: what-is-trp-image 2s both;
-
 }
 
 .trp-image-target-group img {
@@ -310,7 +296,7 @@
     border: 1px solid white;
     background: #f77f00;
     text-align: center;
-    height: 230px;
+    height: 250px;
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -326,13 +312,14 @@
 .silder-header {
     text-align: center;
     color: orange;
-    margin: 10px 0;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 /* ===== Start Carousel ===== */
 
 .carousel-container {
-    padding: 20px;
+    padding: 15px;
 }
 
 #carouselCaptions {
@@ -369,6 +356,20 @@
     color: #FFFFFF;
 }
 
+#carouselCaptions .worker-name.mob-v,
+#carouselCaptions .worker-position.mob-v {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#carouselCaptions .worker-name {
+    margin-bottom: 2px;
+}
+
+#carouselCaptions .worker-position {
+    margin-top: 10px;
+}
+
 /* ===== End Carousel ===== */
 
 /* ==== Start Avatar Styles ==== */
@@ -379,8 +380,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     transform: scale(1.3);
+}
+
+.avatar-box.mob-v {
+    margin-bottom: 25px;
 }
 
 .avatar-image {
@@ -391,6 +396,18 @@
 }
 
 /* ==== End Avatar Styles ==== */
+
+.section-images {
+    width: 60%;
+    height: auto
+}
+
+.work-team-section-line {
+    width: 100%;
+    height: 1.5px;
+    background-color: #FFFFFF;
+    margin: 5px 0
+}
 
 @keyframes hide-section {
     from {
@@ -554,11 +571,27 @@
     .trp-image-about-us img {
         animation: trp-image-mobile 2s both;
     }
+
+    .carousel-inner {
+        border-radius: 10px !important;
+    }
+
+    .section-mob-v {
+        background-color: #FFFFFF !important;
+        border: 2px solid #f77f00;
+    }
+
+    .section-images {
+        padding: 0 !important;
+        margin-bottom: 10px;
+        width: 80%;
+        border-radius: 10px !important;
+    }
 }
 
 @media screen and (max-width: 991px) {
     .vision-mission {
         width: 90%;
-        height: 260px;
+        height: 290px;
     }
 }

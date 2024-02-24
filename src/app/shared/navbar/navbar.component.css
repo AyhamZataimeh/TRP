@@ -166,6 +166,7 @@
         width: calc(100vw / 3);
         height: auto;
         margin: auto;
+        animation: none;
     }
 
     .upper-nav {
