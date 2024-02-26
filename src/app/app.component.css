@@ -1,8 +1,11 @@
 body {
     /* font-family:; */
-    background-color: #ffefd3e8;
+    background-color: #ffefd3e8 !important;
 }
 
+.main-box {
+    background-color: #ffefd3e8 !important;
+}
 .en-language {
     font-family: 'Montserrat', sans-serif;
 
