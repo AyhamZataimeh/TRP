@@ -26,6 +26,11 @@ export class NavbarComponent implements OnInit {
   public get WorkTeam(): Sections.WorkTeam {
     return Sections.WorkTeam
   }
+
+  public get MobileViewWorkTeam(): Sections.MobileViewWorkTeam {
+    return Sections.MobileViewWorkTeam
+  }
+
   ngOnInit(): void {
    
   }

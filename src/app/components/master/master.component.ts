@@ -29,6 +29,11 @@ export class MasterComponent implements OnInit {
   public get WorkTeam(): Sections.WorkTeam {
     return Sections.WorkTeam
   }
+
+  public get MobileViewWorkTeam(): Sections.MobileViewWorkTeam {
+    return Sections.MobileViewWorkTeam;
+  }
+
   workTeamList :any[]=[
     {
       id: 1,
@@ -204,6 +209,9 @@ export class MasterComponent implements OnInit {
       if(event == this.WorkTeam) {
         document.getElementById("workTeam")?.scrollIntoView(false);
 
+      }
+      if(event == this.MobileViewWorkTeam) {
+        document.getElementById("MobileViewWorkTeam")?.scrollIntoView(false);
       }
     },)
   

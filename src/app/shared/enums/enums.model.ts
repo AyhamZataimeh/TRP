@@ -3,6 +3,5 @@ export enum Sections {
     WhatIsTrp  = 2,
     TargetGroups  = 3,
     WorkTeam =  4,
-
-
+    MobileViewWorkTeam = 5
 }
