@@ -14,13 +14,16 @@
         "LANGUAGES": "اللغات",
         "COURSES_ADDRESS": "عنوان الدورات",
         "LOGIN": "تسجيل الدخول"
+
     },
     "MASTER": {
         "WE_DO_IT_BECAUSE_WE_LOVE_IT":"نحن نفعل ذلك لأننا نحب ذلك",
         "ABOUT_US": "معلومات عنا",
         "WHAT_IS_TPR": "ما هو TPR",
         "WORK_TEAM": "فريق العمل",
-        "TARGET_GROUPS": "المجموعات المستهدفة"
+        "TARGET_GROUPS": "المجموعات المستهدفة",
+        "PARTNERS":"Our Partners"
+
     }
  
 

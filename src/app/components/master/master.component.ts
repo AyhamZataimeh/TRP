@@ -1,13 +1,25 @@
 import { Component ,  HostListener, ElementRef, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {Sections} from "../../shared/enums/enums.model"
+import {Sections} from "../../shared/enums/enums.model";
+
 
 
 @Component({
   selector: 'app-master',
   templateUrl: './master.component.html',
   styleUrls: ['./master.component.css'],
-
+  animations:[
+    trigger('slideAnimation', [
+      transition(':increment', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('500ms ease-out', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':decrement', [
+        style({ transform: 'translateX(100%)' }),
+        animate('500ms ease-out', style({ transform: 'translateX(0)' })),
+      ]),
+    ]),
+  ]
   
  
 })
@@ -33,6 +45,10 @@ export class MasterComponent implements OnInit {
   public get MobileViewWorkTeam(): Sections.MobileViewWorkTeam {
     return Sections.MobileViewWorkTeam;
   }
+  interval: any;
+  currentIndex = 0;
+
+
 
   workTeamList :any[]=[
     {
@@ -72,7 +88,45 @@ export class MasterComponent implements OnInit {
       image: "../../../assets/images/avatar-3.jpeg"
     },
 
-  ]
+  ];
+
+  clientsList:any[]= [
+    {
+      image: "../../assets/images/client-1.jpeg"
+        },
+    {
+      image: "../../assets/images/client-2.jpeg"
+        },
+    {
+      image: "../../assets/images/client-3.jpeg"
+        },
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+    {
+      image: "../../assets/images/client-5.jpeg"
+        },
+    {
+      image: "../../assets/images/client-6.jpeg"
+        },
+    {
+      image: "../../assets/images/client-7.jpeg"
+    },
+  
+    {
+      image: "../../assets/images/client-7.jpeg"
+    },
+  
+    {
+      image: "../../assets/images/client-7.jpeg"
+    },
+  
+    
+    
+ 
+  ];
+
+  translateX:number= this.clientsList.length - 2;
   ngOnInit(): void {
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -166,11 +220,28 @@ export class MasterComponent implements OnInit {
   });
    
 
-    
+    this.startSlider();
    
    
   }
 
+  startSlider() {
+    this.interval = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.clientsList.length;
+    }, 1000); // Change slide every 3 seconds (adjust as needed)
+  }
+  slideWidth = 100;
+  calculateAnimationDuration(): string {
+    // Calculate animation duration based on the number of items in the list
+    return "10";
+  }
+
+
+
+  calculateTranslateX(): string {
+    // Calculate translateX value based on the number of items in the list
+    return `calc(-${this.slideWidth}% * ${this.clientsList.length})`;
+  }
 
   state = 'hide';
   constructor(public el: ElementRef) { }

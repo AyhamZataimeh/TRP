@@ -80,13 +80,31 @@
         </div>
         <div class="slider-section">
             <div class="slider-card" *ngFor="let workTeam of workTeamList">
-                <div class="slider-inner">
+                <div class="slider-inner mt-3">
                     <div class="avatar-box">
                         <img class="avatar-image" [src]="workTeam.image" [alt]="workTeam.name">
                     </div>
                     <h3 class="workTeam-name">{{ workTeam.name }}</h3>
                     <div class="work-team-section-line"></div>
                     <h4 class="workTeam-position">{{ workTeam.position }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients sections -->
+
+    <div class="team-slider d-none d-sm-block section-mob-v" id="workTeam"  >
+        <div class="silder-header">
+            <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
+        </div>
+        <div class="clinet-slider-section"  >
+            <div class="clients-slider-card"   *ngFor="let client of clientsList">
+                <div class="slider-inner mt-3">
+                    <div class="avatar-box">
+                        <img class="avatar-image" [src]="client.image" alt="Client">
+                    </div>
+                 
                 </div>
             </div>
         </div>
@@ -170,7 +188,7 @@
         <hr>
         <li class="fa fa-envelope nav-item mb-2"> <a style="padding-left: 10px" href="mailto:info@tpr.foundation" class="text-muted text-decoration-none">info@tpr.foundation</a></li>
         <hr>
-        <li class="fa fa-map-marker nav-item mb-2"> <a style="padding-left: 10px" class="text-muted text-decoration-none" target="_blank" href="https://www.google.com/maps/place/%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B3%D8%A8%D8%A7%D9%82%E2%80%AD/@31.9610607,35.9741584,17z/data=!3m1!4b1!4m6!3m5!1s0x151b5ff8dc38b7b1:0xc74791f63c3ac65f!8m2!3d31.9610607!4d35.9741584!16s%2Fg%2F11hyfbvbjl?entry=ttu">
+        <li class="fa fa-map-marker nav-item mb-2"> <a style="padding-left: 10px" class="text-muted text-decoration-none" target="_blank" href="https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9">
             South Marka  - Racing Club - Al-Fidaa Street</a></li>
 
 

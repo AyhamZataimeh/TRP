@@ -53,7 +53,7 @@
     z-index: 1;
     color: white;
     animation: langing-page-text 2s both;
-    animation-delay: 2s;
+    animation-delay: 1s;
     text-transform: capitalize;
     z-index: 4;
 }
@@ -230,18 +230,30 @@
 }
 
 .trp-image img {
-    padding: 10px;
+    padding: 0 !important;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 10px !important;
+    /* padding: 10px; */
     animation: what-is-trp-image 2s both;
 }
 
 .trp-image-target-group img {
-    padding: 10px;
+    padding: 0 !important;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 10px !important;
+    /* padding: 10px; */
     animation: trp-image 2s both;
 
 }
 
 .trp-image-about-us img {
-    padding: 10px;
+    padding: 0 !important;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 10px !important;
+    /* padding: 10px; */
     animation: trp-image 2s both;
 }
 
@@ -288,6 +300,37 @@
     transition: .5s;
 }
 
+.clinet-slider-section {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    padding: 10px 10px 15px;
+
+}
+.clients-slider-card {
+    width: 340px;
+    border-radius: 10px;
+    height: 250px;
+    margin-inline-end: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: none;
+    transition: .5s;
+    animation: client 8s linear alternate  infinite ;
+
+}
+
+@keyframes client {
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% * 5)); /* Adjust the number of slides */
+      }
+    
+}
 .slider-card:hover {
     cursor: pointer;
     transform: scale(1.06);
@@ -394,8 +437,8 @@
 /* ==== Start Avatar Styles ==== */
 .avatar-box {
     display: flex;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
@@ -513,7 +556,7 @@ footer .fa-arrow-right {
     }
 
     to {
-        transform: translateX(190px);
+        transform: translateX(110px);
         opacity: 1;
     }
 }
@@ -667,4 +710,8 @@ footer .fa-arrow-right {
         width: 90%;
         height: 290px;
     }
+}
+
+.section-images {
+    
 }
