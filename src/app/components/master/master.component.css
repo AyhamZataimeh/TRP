@@ -641,16 +641,22 @@ footer .fa-arrow-right {
 
 @media screen and (max-width: 767px) {
     .intro {
-        margin-top: 30px;
+        margin-top: 8px;
+        max-height: 70%;
+    }
+
+    .landing-page {
+        height: calc(100vh - 450px);
     }
 
     .landing-page-logo {
-        width: 125px;
-        height: 125px;
+        width: 90px;
+        height: 90px;
     }
 
     .landing-page-text {
-        font-size: 40px;
+        margin-top: 25px;
+        font-size: 28px;
     }
 
     .about-us-show {
