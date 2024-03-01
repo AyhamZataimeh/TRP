@@ -169,6 +169,10 @@
         animation: none;
     }
 
+    .main-nav .logo img {
+        transform: scale(1.13);
+    }
+
     .upper-nav {
         flex-direction: column;
     }

@@ -64,7 +64,6 @@
     transform: scale(1.12);
     background-position: center;
     background-size: contain;
-    border-radius: 10px !important;
 }
 
 .overlay {
@@ -199,6 +198,7 @@
     text-align: justify;
     padding: 30px;
     animation: trp-text 2s both;
+    animation-delay: 2s;
 }
 
 
@@ -208,6 +208,7 @@
     text-align: justify;
     padding: 30px;
     animation: trp-text 2s both;
+    animation-delay: 2s;
 
 }
 
@@ -226,6 +227,7 @@
     text-align: justify;
     padding: 30px;
     animation: trp-text 2s both;
+    animation-delay: 2s;
 }
 
 .trp-image img {
