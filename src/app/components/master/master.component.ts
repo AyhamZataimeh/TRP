@@ -116,15 +116,18 @@ export class MasterComponent implements OnInit {
     {
       image: "../../assets/images/client-7.jpeg"
     },
-  
     {
       image: "../../assets/images/client-7.jpeg"
     },
   
-    
-    
- 
   ];
+
+  get sliderStyles() {
+    const numSlides = this.clientsList.length;
+    return {
+      '--num-slides': numSlides - 2.9
+    };
+  }
 
   translateX:number= this.clientsList.length - 2;
   ngOnInit(): void {
@@ -220,27 +223,13 @@ export class MasterComponent implements OnInit {
   });
    
 
-    this.startSlider();
-   
    
   }
 
-  startSlider() {
-    this.interval = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.clientsList.length;
-    }, 1000); // Change slide every 3 seconds (adjust as needed)
-  }
-  slideWidth = 100;
-  calculateAnimationDuration(): string {
-    // Calculate animation duration based on the number of items in the list
-    return "10";
-  }
 
-
-
-  calculateTranslateX(): string {
-    // Calculate translateX value based on the number of items in the list
-    return `calc(-${this.slideWidth}% * ${this.clientsList.length})`;
+  slider: any;
+  addAnimation() {
+   document.getElementById("workTeam")?.setAttribute('--num-slides',"7")
   }
 
   state = 'hide';

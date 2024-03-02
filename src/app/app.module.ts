@@ -8,11 +8,13 @@ import { MasterComponent } from './components/master/master.component';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './shared/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MasterComponent
+    MasterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

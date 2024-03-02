@@ -198,7 +198,6 @@
     text-align: justify;
     padding: 30px;
     animation: trp-text 2s both;
-    animation-delay: 2s;
 }
 
 
@@ -208,7 +207,6 @@
     text-align: justify;
     padding: 30px;
     animation: trp-text 2s both;
-    animation-delay: 2s;
 
 }
 
@@ -227,7 +225,6 @@
     text-align: justify;
     padding: 30px;
     animation: trp-text 2s both;
-    animation-delay: 2s;
 }
 
 .trp-image img {
@@ -319,7 +316,7 @@
     text-align: center;
     flex: none;
     transition: .5s;
-    animation: client 8s linear alternate  infinite ;
+    animation: client 10s linear alternate  infinite ;
 
 }
 
@@ -328,7 +325,7 @@
         transform: translateX(0);
       }
       100% {
-        transform: translateX(calc(-100% * 5)); /* Adjust the number of slides */
+        transform: translateX(calc(-100% * var(--num-slides))); /* Adjust the number of slides */
       }
     
 }
@@ -474,58 +471,7 @@
 
 /* Footer Section */
 
-footer {
-    background-color: #f77f0020 ;
-}
-footer h4,
-footer .fa {
-    color: #f77f00;
-}
 
-footer li {
-
-    transition: .5s;
-
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.09);
-    }
-
-
-
-}
-footer hr {
-    width: 68%;
-
-}
-
-footer .media  {
-    margin-top: 20px;
-    padding-top: 10px;
-    display: inline-block;
-    margin-left: 15px;
-    border: 1px solid;
-    border-color: white;
-    background: white;
-    padding-top: 10px;
-    width: 63px !important;
-    height: 63px !important;
-    text-align: center;
-    border-radius: 50%;
-    transition: .5s;
-    font-size: 30px;
-
-    &:hover {
-        background-color: #f77f0050;
-        cursor: pointer;
-        transform: scale(1.14);
-    }
-}
-
-footer .fa-arrow-right {
-    color: #f77f00;
-
-}
 @keyframes hide-section {
     from {
         opacity: 1;
