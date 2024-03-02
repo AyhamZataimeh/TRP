@@ -1,64 +1,66 @@
-
-
-<footer class="row row-cols-12 py-5 my-5 border-top">
-    <div class="col-md-3 p-3 ml-2">
-        <h4 class="font-weight-bold" style="text-wrap: nowrap;">Total physical response </h4>
-        <h4 class="font-weight-bold" style="text-wrap: nowrap;">for teaching English</h4>
+<footer class="py-5 mt-5 border-top">
+  <div class="container-fluid">
+    <div class="row text-center text-center text-md-start">
+      <div class="col-12 col-md-4 mb-5 mb-md-0">
+        <h5 class="font-weight-bold" style="text-wrap: nowrap;">Total physical response </h5>
+        <h5 class="font-weight-bold" style="text-wrap: nowrap;">for teaching English</h5>
         <div class="row">
-            <div class="col-12">
-                <a href="https://www.facebook.com/tpr.foundation.jo" target="_blank" class="media"><li class="fa fa-facebook   "></li></a> 
-                <a href="https://www.instagram.com/tpr.foundation/" target="_blank" class="media"><li class="fa fa-instagram  "></li></a>
-               <a href="https://www.youtube.com/@TotalPhysicslResponse" target="_blank" class="media"><li class="fa fa-youtube  "></li></a> 
-            </div>
+          <div class="col">
+            <a href="https://www.facebook.com/tpr.foundation.jo" target="_blank" class="media">
+              <li class="fa fa-facebook   "></li>
+            </a>
+            <a href="https://www.instagram.com/tpr.foundation/" target="_blank" class="media">
+              <li class="fa fa-instagram  "></li>
+            </a>
+            <a href="https://www.youtube.com/@TotalPhysicslResponse" target="_blank" class="media">
+              <li class="fa fa-youtube  "></li>
+            </a>
+          </div>
         </div>
-        
-    
-    </div>
+      </div>
+      <div class="col-12 col-md-4 mb-5 mb-md-0">
+        <h5 class="font-weight-bold">Short Link</h5>
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"
+              (click)="sectionHandler(AboutUs)"> <span class="text-muted pl-2">{{ "NAVBAR.ABOUT_US" | translate
+                }}</span></a></li>
+          <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span
+                class="text-muted pl-2">Our Services</span></a></li>
+          <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span
+                class="text-muted pl-2">Latest Blogs</span></a></li>
+          <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span
+                class="text-muted pl-2">{{ "NAVBAR.COURSE_REGISTER" | translate }}</span></a></li>
+          <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span
+                class="text-muted pl-2">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</span></a></li>
 
-    <div class="col">
+        </ul>
+      </div>
 
-    </div>
-
-    <div class="col p-3">
-      <h4 class="font-weight-bold">Short Link</h4>
-
-      <ul class="nav flex-column mt-4">
-        <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right" (click)="sectionHandler(AboutUs)"> <span class="text-muted pl-2">{{ "NAVBAR.ABOUT_US" | translate }}</span></a></li>
-        <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span class="text-muted pl-2">Our Services</span></a></li>
-        <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span class="text-muted pl-2">Latest Blogs</span></a></li>
-        <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span class="text-muted pl-2">{{ "NAVBAR.COURSE_REGISTER" | translate }}</span></a></li>
-        <li class="nav-item m-2  "><a href="#" class="nav-link p-0  fa fa-arrow-right"> <span class="text-muted pl-2">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</span></a></li>
-
-      </ul>
-    </div>
-
-    <div class="col">
+      <!-- <div class="col"> -->
       <!-- <h5>Section</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-      </ul> -->
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul> -->
+      <!-- </div> -->
+
+      <div class="col-12 col-md-4 mb-5 mb-md-0">
+        <h5 class="font-weight-bold">Contact Us</h5>
+        <ul class="nav flex-column mt-4">
+          <li class="fa fa-phone nav-item mb-2"> <a style="padding-left: 10px" href="tel:+96297026511"
+              class="text-muted text-decoration-none">+96297026511</a></li>
+          <hr>
+          <li class="fa fa-envelope nav-item mb-2"> <a style="padding-left: 10px" href="mailto:info@tpr.foundation"
+              class="text-muted text-decoration-none">info@tpr.foundation</a></li>
+          <hr>
+          <li class="fa fa-map-marker nav-item mb-2"> <a style="padding-left: 10px"
+              class="text-muted text-decoration-none" target="_blank" href="https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9">
+              South Marka - Racing Club - Al-Fidaa Street</a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="col p-3">
-      <h4 class="font-weight-bold">Contact Us</h4>
-      <ul class="nav flex-column mt-4">
-        <li class="fa fa-phone nav-item mb-2"> <a style="padding-left: 10px" href="tel:+96297026511" class="text-muted text-decoration-none" >+96297026511</a></li>
-        <hr>
-        <li class="fa fa-envelope nav-item mb-2"> <a style="padding-left: 10px" href="mailto:info@tpr.foundation" class="text-muted text-decoration-none">info@tpr.foundation</a></li>
-        <hr>
-        <li class="fa fa-map-marker nav-item mb-2"> <a style="padding-left: 10px" class="text-muted text-decoration-none" target="_blank" href="https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9">
-            Tabarbour location 
-
-Sewar Al-mas complex 
-Second floor 
-Office 24t</a></li>
-
-
-
-      </ul>
-    </div>
-  </footer>
+  </div>
+</footer>
