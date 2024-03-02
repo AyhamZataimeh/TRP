@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Sections } from '../enums/enums.model';
+import { MasterService } from '../master.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +9,27 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  public get AboutUs():Sections.AboutUs {
+    return Sections.AboutUs;
+  }
+
+  public get  TargetGroups():Sections.TargetGroups {
+    return Sections.TargetGroups;
+  }
+
+  public get WhatIsTrp():Sections.WhatIsTrp {
+    return Sections.WhatIsTrp;
+  }
+
+  public get WorkTeam(): Sections.WorkTeam {
+    return Sections.WorkTeam
+  }
+
+  constructor(private masterService: MasterService){}
+
+
+  sectionHandler(sectionId: number) {
+  
+    this.masterService.sectionRedierct.next(sectionId);
+  }
 }

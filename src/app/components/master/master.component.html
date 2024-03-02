@@ -99,7 +99,7 @@
             <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
         </div>
         <div class="clinet-slider-section"  >
-            <div class="clients-slider-card"   *ngFor="let client of clientsList">
+            <div class="clients-slider-card" [ngClass]="selectedLang == 'en' ? 'clients-slider-card-en-animation' : 'clients-slider-card-ar-animation'"   *ngFor="let client of clientsList">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
                         <img class="avatar-image" [src]="client.image" alt="Client">

@@ -1,6 +1,7 @@
 import { Component ,  HostListener, ElementRef, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import {Sections} from "../../shared/enums/enums.model";
+import { MasterService } from 'src/app/shared/master.service';
 
 
 
@@ -130,8 +131,13 @@ export class MasterComponent implements OnInit {
   }
 
   translateX:number= this.clientsList.length - 2;
+  selectedLang!: any;
   ngOnInit(): void {
+    this.selectedLang = localStorage.getItem('language');
 
+    this.masterService.sectionRedierct.subscribe((sectionId: number)=>{
+      this.sctionRedirectHandler(sectionId);
+    })
     document.addEventListener("DOMContentLoaded", function () {
       const targetgroups = document.getElementById("targetgroups");
       const vision = document.getElementById("vision");
@@ -233,7 +239,7 @@ export class MasterComponent implements OnInit {
   }
 
   state = 'hide';
-  constructor(public el: ElementRef) { }
+  constructor(public el: ElementRef, private masterService: MasterService) { }
 
   sctionRedirectHandler(event:number) 
 

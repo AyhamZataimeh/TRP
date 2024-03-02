@@ -316,16 +316,34 @@
     text-align: center;
     flex: none;
     transition: .5s;
-    animation: client 10s linear alternate  infinite ;
 
 }
 
-@keyframes client {
+.clients-slider-card-en-animation {
+    animation: en-client 10s linear alternate  infinite ;
+
+}
+
+.clients-slider-card-ar-animation {
+    animation: ar-client 10s linear alternate  infinite ;
+
+}
+@keyframes en-client {
     0% {
         transform: translateX(0);
       }
       100% {
         transform: translateX(calc(-100% * var(--num-slides))); /* Adjust the number of slides */
+      }
+    
+}
+
+@keyframes ar-client {
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(100% * var(--num-slides))); /* Adjust the number of slides */
       }
     
 }
