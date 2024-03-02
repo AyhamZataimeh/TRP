@@ -1,10 +1,8 @@
 footer {
-    background-color: #f77f0020 ;
-    position: absolute;
-    width: 101%;
+    background-color: #f77f0020;
 }
 
-footer h4,
+footer h5,
 footer .fa {
     color: #f77f00;
 }
@@ -17,13 +15,10 @@ footer li {
         cursor: pointer;
         transform: scale(1.09);
     }
-
-
-
 }
-footer hr {
-    width: 68%;
 
+footer hr {
+    width: 68%
 }
 
 footer .media  {
@@ -52,4 +47,10 @@ footer .media  {
 footer .fa-arrow-right {
     color: #f77f00;
 
+}
+
+@media screen and (max-width: 767px) {
+    footer hr {
+        width: 100%;
+    }
 }
