@@ -399,7 +399,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 
 #carouselCaptions .carousel-control-next-icon,
@@ -453,6 +453,7 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    /* margin-top: 10px; */
 }
 
 /* ==== End Avatar Styles ==== */
