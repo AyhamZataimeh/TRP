@@ -269,6 +269,17 @@
     border-radius: 10px
 }
 
+.client-slider {
+    border: 1px solid #f77f00;
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0px 0px 1px black;
+    border-radius: 10px;
+    height: 276px;
+
+}
+
 .slider-section {
     display: flex;
     flex-direction: row;
@@ -309,23 +320,24 @@
     width: 340px;
     border-radius: 10px;
     height: 250px;
-    margin-inline-end: 20px;
+    /* margin-inline-end: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
-    flex: none;
+    flex: none; */
+    margin-left: 50px;
     transition: .5s;
 
 }
 
 .clients-slider-card-en-animation {
-    animation: en-client 10s linear alternate  infinite ;
+    animation: en-client 3s linear alternate  infinite ;
 
 }
 
 .clients-slider-card-ar-animation {
-    animation: ar-client 10s linear alternate  infinite ;
+    animation: ar-client 3s linear alternate  infinite ;
 
 }
 @keyframes en-client {

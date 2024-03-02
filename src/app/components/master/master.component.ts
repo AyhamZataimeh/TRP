@@ -126,7 +126,7 @@ export class MasterComponent implements OnInit {
   get sliderStyles() {
     const numSlides = this.clientsList.length;
     return {
-      '--num-slides': numSlides - 2.9
+      '--num-slides': numSlides - 7
     };
   }
 
