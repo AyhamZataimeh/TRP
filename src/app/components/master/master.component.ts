@@ -123,6 +123,45 @@ export class MasterComponent implements OnInit {
   
   ];
 
+  latestNewsList = [
+    {
+      id: 1,
+      name: "Othman Khawaja",
+      position: "GM",
+      image: "../../../assets/images/avatar-1.jpeg"
+    },
+    {
+      id: 2,
+      name: "Mohammed shaheen",
+      position: "SAM",
+      image: "../../../assets/images/avatar-2.jpeg"
+    },
+    {
+      id: 3,
+      name: "Zakaria bello",
+      position: "CHR",
+      image: "../../../assets/images/avatar-3.jpeg"
+    },
+    {
+      id: 4,
+      name: "Othman Khawaja",
+      position: "GM",
+      image: "../../../assets/images/avatar-1.jpeg"
+    },
+    {
+      id: 5,
+      name: "Mohammed shaheen",
+      position: "SAM",
+      image: "../../../assets/images/avatar-2.jpeg"
+    },
+    {
+      id: 6,
+      name: "Zakaria bello",
+      position: "CHR",
+      image: "../../../assets/images/avatar-3.jpeg"
+    },
+  ]
+
   get sliderStyles() {
     const numSlides = this.clientsList.length;
     return {
@@ -132,7 +171,19 @@ export class MasterComponent implements OnInit {
 
   translateX:number= this.clientsList.length - 2;
   selectedLang!: any;
+
+  latestNewsDots:any[]=[];
+
+  
+  latestNewsScroll() {
+    let number = Math.ceil(this.latestNewsList.length / 2);
+    for (let index = 0; index < number; index++) {
+      this.latestNewsDots.push("*");
+    }
+
+  }
   ngOnInit(): void {
+    this.latestNewsScroll();
     this.selectedLang = localStorage.getItem('language');
 
     this.masterService.sectionRedierct.subscribe((sectionId: number)=>{
