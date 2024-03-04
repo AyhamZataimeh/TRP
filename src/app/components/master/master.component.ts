@@ -175,15 +175,21 @@ export class MasterComponent implements OnInit {
   latestNewsDots:any[]=[];
 
   
-  latestNewsScroll() {
+  latestNewsDotsCount() {
     let number = Math.ceil(this.latestNewsList.length / 2);
     for (let index = 0; index < number; index++) {
       this.latestNewsDots.push("*");
     }
 
   }
+
+  onLatesNewsScroll(index: number) {
+
+    document.getElementById("latestNews")?.scrollBy({"left":600});
+
+  }
   ngOnInit(): void {
-    this.latestNewsScroll();
+    this.latestNewsDotsCount();
     this.selectedLang = localStorage.getItem('language');
 
     this.masterService.sectionRedierct.subscribe((sectionId: number)=>{

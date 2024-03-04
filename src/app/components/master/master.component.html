@@ -136,7 +136,7 @@
         </div>
 
         <footer>
-            <p *ngFor="let i of latestNewsDots" class="text-muted px-1">.</p>
+            <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)">.</p>
         </footer>
     </div>
 
