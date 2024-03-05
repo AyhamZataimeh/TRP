@@ -1,4 +1,4 @@
-import { Component ,  HostListener, ElementRef, OnInit } from '@angular/core';
+import { Component ,  HostListener, ElementRef, OnInit, NgZone } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import {Sections} from "../../shared/enums/enums.model";
 import { MasterService } from 'src/app/shared/master.service';
@@ -176,17 +176,31 @@ export class MasterComponent implements OnInit {
 
   
   latestNewsDotsCount() {
-    let number = Math.ceil(this.latestNewsList.length / 2);
+    let number = Math.floor(this.latestNewsList.length / 3);
     for (let index = 0; index < number; index++) {
-      this.latestNewsDots.push("*");
+      this.latestNewsDots.push(index);
     }
 
   }
+latestNewSlider: number = 1;
+  get latestNewsSliderStyle() {
+    
+    return {
+      '--latest-news-num-slides': this.latestNewSlider *  5
+    };
+  }
 
+ 
   onLatesNewsScroll(index: number) {
 
-    document.getElementById("latestNews")?.scrollBy({"left":600});
+    this.latestNewSlider= index;
 
+    document.getElementById("cardSlider")?.classList.remove("card-slide");
+    document.getElementById("cardSlider")?.classList.add("card-slide");
+
+    
+
+ 
   }
   ngOnInit(): void {
     this.latestNewsDotsCount();
@@ -296,7 +310,7 @@ export class MasterComponent implements OnInit {
   }
 
   state = 'hide';
-  constructor(public el: ElementRef, private masterService: MasterService) { }
+  constructor(public el: ElementRef, private masterService: MasterService, private ngZone: NgZone) { }
 
   sctionRedirectHandler(event:number) 
 

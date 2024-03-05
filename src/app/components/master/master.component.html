@@ -113,17 +113,17 @@
 
 
     <!-- Latest News Section -->
-
-    <div class="team-slider d-none d-sm-block section-mob-v" id="latestNews" style="overflow-x: hidden;">
+<section>
+    <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews" [style]="latestNewsSliderStyle"   >
         <div class="silder-header">
             <h1>Latest News</h1>
         </div>
-        <div class="slider-section" style="width: 180%;height: 24rem;" >
-            <div class="card" style="    width: 120rem;
+        <div class="slider-section" style="width: 200%;height: 24rem;" id="cardSlider">
+            <div class="card" style="    width: 120rem; 
             " *ngFor="let latestNews of latestNewsList" >
                         <img class="card-img-top" [src]="latestNews.image" [alt]="latestNews.name" width="20%" height="200px" >
                         <div class="card-body">
-                            <p class="card-text">{{ latestNews.name }}</p>
+                            <p class="card-text font-weight-bold">{{ latestNews.name }}</p>
 
                         </div>
 
@@ -135,10 +135,13 @@
             </div>
         </div>
 
-        <footer>
-            <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)">.</p>
-        </footer>
+        
     </div>
+    <footer>
+        <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)">.</p>
+    </footer>
+</section>
+
 
 
 
