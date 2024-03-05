@@ -208,7 +208,7 @@ latestNewSlider: number = 1;
 
     this.masterService.sectionRedierct.subscribe((sectionId: number)=>{
       this.sctionRedirectHandler(sectionId);
-    })
+    });
     document.addEventListener("DOMContentLoaded", function () {
       const targetgroups = document.getElementById("targetgroups");
       const vision = document.getElementById("vision");

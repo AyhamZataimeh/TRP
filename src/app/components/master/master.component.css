@@ -571,13 +571,17 @@ footer p:focus {
 /* Latest News Slider */
 
 .latest-news-slider {
+
+    overflow-x: hidden;
+}
+
+section {
     border: 1px solid #f77f00;
     background-color: white;
     padding: 10px;
     margin: 20px;
     box-shadow: 0px 0px 1px black;
     border-radius: 10px;
-    overflow-x: hidden;
 }
 
 @keyframes hide-section {
