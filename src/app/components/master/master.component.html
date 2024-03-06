@@ -73,7 +73,7 @@
     <div>
     </div>
 
-    <!-- Start Web View Carousel -->
+    <!-- Start Web View Work Team Carousel -->
     <div class="team-slider d-none d-sm-block section-mob-v" id="workTeam" >
         <div class="silder-header">
             <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
@@ -91,10 +91,41 @@
             </div>
         </div>
     </div>
+    <!-- End Web View Work Team Carousel -->
 
-    <!-- Clients sections -->
+    <!-- Start Mobile View Work Team Carousel -->
+    <div class="carousel-container d-block d-sm-none section-mob-v" id="MobileViewWorkTeam">
+        <div class="silder-header">
+            <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
+        </div>
+        <div id="carouselCaptionsWorkTeam" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of workTeamList; let index = index; let isFirst = first"
+                    [ngClass]="{active:isFirst}">
+                    <div class="carousel-caption">
+                        <div class="avatar-box mob-v">
+                            <img class="avatar-image" [src]="item.image" [alt]="item.name">
+                        </div>
+                        <h2 class="worker-name mob-v">{{ item.name | translate }}</h2>
+                        <div class="work-team-section-line"></div>
+                        <h3 class="worker-position mob-v">{{ item.position | translate }}</h3>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCaptionsWorkTeam" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCaptionsWorkTeam" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- End Mobile View Work Team Carousel -->
 
-    <div class="client-slider d-none d-sm-block section-mob-v" id="workTeam" [style]="sliderStyles"  >
+    <!-- Start Web View Clients Section -->
+    <div class="client-slider d-none d-sm-block section-mob-v" id="clientsSection" [style]="sliderStyles">
         <div class="silder-header">
             <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
         </div>
@@ -110,75 +141,60 @@
             </div>
         </div>
     </div>
+    <!-- End Web View Clients Section -->
 
-
-    <!-- Latest News Section -->
-<section>
-    <div class="silder-header">
-        <h1>Latest News</h1>
-    </div>
-    <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews" [style]="latestNewsSliderStyle"   >
-       
-        <div class="slider-section" style="width: 200%;height: 24rem;" id="cardSlider">
-            <div class="card" style="    width: 120rem; 
-            " *ngFor="let latestNews of latestNewsList" >
-                        <img class="card-img-top" [src]="latestNews.image" [alt]="latestNews.name" width="20%" height="200px" >
-                        <div class="card-body">
-                            <p class="card-text font-weight-bold">{{ latestNews.name }}</p>
-
-                        </div>
-
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-outline-danger pull-right">Read More</a>
-
-                        </div>
-                
-            </div>
-        </div>
-
-        
-    </div>
-    <footer>
-        <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)">.</p>
-    </footer>
-</section>
-
-
-
-
-    <!-- End Latest News Section -->
-
-    <!-- End Web View Carousel -->
-
-    <!-- Start Mobile View Carousel -->
-    <div class="carousel-container d-block d-sm-none section-mob-v" id="MobileViewWorkTeam">
+    <!-- Start Mobile View Clients Section Carousel -->
+    <div class="carousel-container d-block d-sm-none section-mob-v" id="clientsSection">
         <div class="silder-header">
-            <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
+            <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
         </div>
-        <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
+        <div id="carouselCaptionsClients" class="carousel slide" data-ride="carousel" data-interval="3000">
             <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let item of workTeamList; let index = index; let isFirst = first"
+                <div class="carousel-item" *ngFor="let item of clientsList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
                         <div class="avatar-box mob-v">
                             <img class="avatar-image" [src]="item.image" [alt]="item.name">
                         </div>
-                        <h2 class="worker-name mob-v">{{ item.name | translate }}</h2>
-                        <div class="work-team-section-line"></div>
-                        <h3 class="worker-position mob-v">{{ item.position | translate }}</h3>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev">
-                <span style="font-weight: bold;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <a class="carousel-control-prev" href="#carouselCaptionsClients" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselCaptions" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselCaptionsClients" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
     </div>
-    <!-- End Mobile View Carousel -->
+    <!-- End Mobile View Clients Section Carousel -->
+
+    <!-- Start Latest News Section -->
+    <section>
+        <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews" [style]="latestNewsSliderStyle">
+            <div class="silder-header">
+                <h1>Latest News</h1>
+            </div>
+            <div class="slider-section" style="width: 200%;height: 24rem;" id="cardSlider">
+                <div class="card" style="    width: 120rem; 
+                " *ngFor="let latestNews of latestNewsList" >
+                    <img class="card-img-top" [src]="latestNews.image" [alt]="latestNews.name" width="20%" height="200px">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">{{ latestNews.name }}</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline-danger pull-right">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)">.</p>
+        </footer>
+    </section>
+    <!-- End Latest News Section -->
 </div>
 
