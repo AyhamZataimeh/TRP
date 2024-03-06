@@ -173,13 +173,13 @@
 
     <!-- Start Latest News Section -->
     <section>
-        <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews" [style]="latestNewsSliderStyle">
+     
+        <!-- <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews"  [style]="latestNewsSliderStyle">
             <div class="silder-header">
                 <h1>Latest News</h1>
             </div>
-            <div class="slider-section" style="width: 200%;height: 24rem;" id="cardSlider">
-                <div class="card" style="    width: 120rem; 
-                " *ngFor="let latestNews of latestNewsList" >
+            <div class="latest-news-slider-section"  id="cardSlider">
+                <div class="card latest-news-slider-card" *ngFor="let latestNews of latestNewsList" >
                     <img class="card-img-top" [src]="latestNews.image" [alt]="latestNews.name" width="20%" height="200px">
                     <div class="card-body">
                         <p class="card-text font-weight-bold">{{ latestNews.name }}</p>
@@ -190,10 +190,46 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+      
+        <!-- <footer>
+            <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)" data-bs-slide="prev" >.</p>
+        </footer> -->
+        <div class="carousel-container" id="clientsSection">
+            <div class="silder-header">
+                <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
+            </div>
+            <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let item of filteredList; let index = index; let isFirst = first"
+                    [ngClass]="{active:isFirst}">
+                    <div class="carousel-caption" style="display: flex;
+                    flex-direction: row; justify-content: space-around;" >
+                        <div class="avatar-box mob-v" style="margin: 0 20px; width: 30%" *ngFor="let i of item;">
+                            <div class="card" style="width: 100%">
+                                <img class="card-img-top" [src]="i.image" [alt]="i.name" width="20%" height="200px">
+                                <div class="card-body">
+                                    <p class="card-text font-weight-bold">{{ i.name }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-outline-danger pull-right">Read More</a>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+                </div>
+                <a class="carousel-control-prev" href="#carouselCaptionNews" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselCaptionNews" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-        <footer>
-            <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)">.</p>
-        </footer>
     </section>
     <!-- End Latest News Section -->
 </div>

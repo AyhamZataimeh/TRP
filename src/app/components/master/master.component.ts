@@ -123,7 +123,8 @@ export class MasterComponent implements OnInit {
   
   ];
 
-  latestNewsList = [
+  latestNewsList:any = {
+  item1: [ 
     {
       id: 1,
       name: "Othman Khawaja",
@@ -142,6 +143,8 @@ export class MasterComponent implements OnInit {
       position: "CHR",
       image: "../../../assets/images/avatar-3.jpeg"
     },
+  ],
+   item2: [
     {
       id: 4,
       name: "Othman Khawaja",
@@ -156,11 +159,13 @@ export class MasterComponent implements OnInit {
     },
     {
       id: 6,
-      name: "Zakaria bello",
-      position: "CHR",
-      image: "../../../assets/images/avatar-3.jpeg"
+      name: "Mohammed shaheen",
+      position: "SAM",
+      image: "../../../assets/images/avatar-2.jpeg"
     },
-  ]
+   
+   ]
+  }
 
   get sliderStyles() {
     const numSlides = this.clientsList.length;
@@ -173,20 +178,32 @@ export class MasterComponent implements OnInit {
   selectedLang!: any;
 
   latestNewsDots:any[]=[];
-
+  filteredList:any[]=[];
   
   latestNewsDotsCount() {
-    let number = Math.floor(this.latestNewsList.length / 3);
-    for (let index = 0; index < number; index++) {
-      this.latestNewsDots.push(index);
-    }
+    // Object.entries(this.latestNewsList)
+    // // console.log(this.latestNewsList.length);
+    
+    // let number = Math.ceil(this.latestNewsList.length / 3) ;
+    // for (let index = 0; index < number; index++) {
+    //   this.latestNewsDots.push(index);
+    // }
+
+
+    const arrayObject = Object.keys(this.latestNewsList).map((key) => {
+      const value = this.latestNewsList[key];
+     this.filteredList.push(value);
+    });
+    console.log("filteredList",this.filteredList);
+    
+    return this.filteredList;
 
   }
 latestNewSlider: number = 1;
   get latestNewsSliderStyle() {
     
     return {
-      '--latest-news-num-slides': this.latestNewSlider *  5
+      '--latest-news-num-slides': this.latestNewSlider *  6
     };
   }
 
@@ -203,6 +220,12 @@ latestNewSlider: number = 1;
  
   }
   ngOnInit(): void {
+    // const containerWidth = this.latestNewsList.length * 340 + (this.latestNewsList.length + 1) * 20; // Assuming 340px width for each item and 20px margin
+// const sliderSection = document.getElementById('cardSlider');
+// if(sliderSection) {
+//   sliderSection.style.width = `${containerWidth}px`;
+
+// }
     this.latestNewsDotsCount();
     this.selectedLang = localStorage.getItem('language');
 
@@ -214,9 +237,6 @@ latestNewSlider: number = 1;
       const vision = document.getElementById("vision");
       const aboutUs = document.getElementById("aboutUs");
       const whatIsTrp = document.getElementById("whatIsTrp");
-
-
-      const animatedDiv = document.querySelector(".animated-div");
 
       // Create an intersection observer
       const observer = new IntersectionObserver(entries => {

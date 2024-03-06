@@ -382,32 +382,34 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
     flex-direction: row;
     overflow-x: hidden;
     padding: 10px 10px 15px;
+    width: 100%;
+
 }
 .latest-news-slider-card {
 
-    width: 340px;
+    width: 350px;
     border-radius: 10px;
-    height: 250px;
-    /* margin-inline-end: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    flex: none; */
-    margin-left: 50px;
+    height: 346px;
+  
+
+    margin-left: 32px;
     transition: .5s;
+    overflow: hidden;
 }
 
 .latest-news-slider-section {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    padding: 10px 10px 15px
+    padding: 10px 10px 15px;
+    height: 24rem;
+    overflow: hidden;
 }
+
 
 .card-slide {
     transition: transform .5s;
-    transform: translateX(calc(-10% * var(--latest-news-num-slides)));
+    transform: translateX(calc(-3.5% * (var(--latest-news-num-slides) )));
 }
 footer {
     display: flex;
@@ -595,10 +597,6 @@ footer p:focus {
 
 /* Latest News Slider */
 
-.latest-news-slider {
-
-    overflow-x: hidden;
-}
 
 section {
     border: 1px solid #f77f00;
