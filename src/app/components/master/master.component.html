@@ -207,9 +207,9 @@
                     flex-direction: row; justify-content: space-around;" >
                         <div class="avatar-box mob-v" style="margin: 0 20px; width: 30%" *ngFor="let i of item;">
                             <div class="card" style="width: 100%">
-                                <img class="card-img-top" [src]="i.image" [alt]="i.name" width="20%" height="200px">
+                                <img class="card-img-top" [src]="i.imagePath" [alt]="i.text" width="20%" height="200px">
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold">{{ i.name }}</p>
+                                    <p class="card-text font-weight-bold">{{ i.text }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="#" class="btn btn-outline-danger pull-right">Read More</a>

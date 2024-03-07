@@ -9,16 +9,21 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './shared/footer/footer.component';
+import { DynamicComponent } from './shared/dynamic/dynamic.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MasterComponent,
-    FooterComponent
+    FooterComponent,
+    DynamicComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,

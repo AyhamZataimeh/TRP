@@ -2,6 +2,8 @@ import { Component ,  HostListener, ElementRef, OnInit, NgZone } from '@angular/
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import {Sections} from "../../shared/enums/enums.model";
 import { MasterService } from 'src/app/shared/master.service';
+import { Blogs } from 'src/app/shared/interface/blogs';
+import { Router } from '@angular/router';
 
 
 
@@ -26,6 +28,7 @@ import { MasterService } from 'src/app/shared/master.service';
 })
 export class MasterComponent implements OnInit {
   
+  constructor(public el: ElementRef, private masterService: MasterService, private router: Router) { }
 
   public get AboutUs():Sections.AboutUs {
     return Sections.AboutUs;
@@ -126,42 +129,42 @@ export class MasterComponent implements OnInit {
   latestNewsList:any = {
   item1: [ 
     {
-      id: 1,
-      name: "Othman Khawaja",
-      position: "GM",
-      image: "../../../assets/images/avatar-1.jpeg"
-    },
-    {
-      id: 2,
-      name: "Mohammed shaheen",
-      position: "SAM",
-      image: "../../../assets/images/avatar-2.jpeg"
+      id: 3,
+      title: "Zakaria bello",
+      text: "CHR",
+      imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
       id: 3,
-      name: "Zakaria bello",
-      position: "CHR",
-      image: "../../../assets/images/avatar-3.jpeg"
+      title: "Zakaria bello",
+      text: "CHR",
+      imagePath: "../../../assets/images/avatar-3.jpeg"
+    },
+    {
+      id: 3,
+      title: "Zakaria bello",
+      text: "CHR",
+      imagePath: "../../../assets/images/avatar-3.jpeg"
     },
   ],
    item2: [
     {
-      id: 4,
-      name: "Othman Khawaja",
-      position: "GM",
-      image: "../../../assets/images/avatar-1.jpeg"
+      id: 3,
+      title: "Zakaria bello",
+      text: "CHR",
+      imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
-      id: 5,
-      name: "Mohammed shaheen",
-      position: "SAM",
-      image: "../../../assets/images/avatar-2.jpeg"
+      id: 3,
+      title: "Zakaria bello",
+      text: "CHR",
+      imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
-      id: 6,
-      name: "Mohammed shaheen",
-      position: "SAM",
-      image: "../../../assets/images/avatar-2.jpeg"
+      id: 3,
+      title: "Zakaria bello",
+      text: "CHR",
+      imagePath: "../../../assets/images/avatar-3.jpeg"
     },
    
    ]
@@ -330,7 +333,6 @@ latestNewSlider: number = 1;
   }
 
   state = 'hide';
-  constructor(public el: ElementRef, private masterService: MasterService, private ngZone: NgZone) { }
 
   sctionRedirectHandler(event:number) 
 
@@ -389,5 +391,11 @@ onWindowScroll() {
 }
 
 
+
+dynamicPageRedircation(blosgData: Blogs) {
+this.masterService.blogsData.next(blosgData);
+this.router.navigate(["/dynamic"]);
+
+}
 
 }
