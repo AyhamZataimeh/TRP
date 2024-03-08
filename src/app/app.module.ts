@@ -12,13 +12,17 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DynamicComponent } from './shared/dynamic/dynamic.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { SubmittingJobComponent } from './pages/submitting-job/submitting-job.component';
+import { CoursesRegisterComponent } from './pages/courses-register/courses-register.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MasterComponent,
     FooterComponent,
-    DynamicComponent
+    DynamicComponent,
+    SubmittingJobComponent,
+    CoursesRegisterComponent
   ],
   imports: [
     BrowserModule,

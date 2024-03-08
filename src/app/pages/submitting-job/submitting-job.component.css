@@ -1,0 +1,46 @@
+footer {
+    background-color: #f77f0020;
+}
+
+footer h5,
+footer .fa {
+    color: #f77f00;
+}
+
+footer hr {
+    width: 68%
+}
+
+footer .media  {
+    margin-top: 20px;
+    padding-top: 10px;
+    display: inline-block;
+    margin-left: 15px;
+    border: 1px solid;
+    border-color: white;
+    background: white;
+    padding-top: 10px;
+    width: 63px !important;
+    height: 63px !important;
+    text-align: center;
+    border-radius: 50%;
+    transition: .5s;
+    font-size: 30px;
+
+    &:hover {
+        background-color: #f77f0050;
+        cursor: pointer;
+        transform: scale(1.14);
+    }
+}
+
+footer .fa-arrow-right {
+    color: #f77f00;
+
+}
+
+@media screen and (max-width: 767px) {
+    footer hr {
+        width: 100%;
+    }
+}

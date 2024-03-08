@@ -22,28 +22,28 @@
       </span>
       <ul class="navbar-nav">
         <li class="nav-item" (click)="sctionRedirectHandler(AboutUs)">
-          <a class="nav-link active" href="#">{{ "NAVBAR.ABOUT_US" | translate }}</a>
+          <a class="nav-link active" >{{ "NAVBAR.ABOUT_US" | translate }}</a>
         </li>
         <li class="nav-item" (click)="sctionRedirectHandler(WhatIsTrp)">
-          <a class="nav-link" href="#"> {{ "NAVBAR.WHAT_IS_TPR" | translate }}</a>
+          <a class="nav-link" > {{ "NAVBAR.WHAT_IS_TPR" | translate }}</a>
         </li>
         <li class="nav-item d-none d-sm-block" (click)="sctionRedirectHandler(WorkTeam)">
-          <a class="nav-link" href="#">{{ "NAVBAR.WORK_TEAM" | translate }}</a>
+          <a class="nav-link" >{{ "NAVBAR.WORK_TEAM" | translate }}</a>
         </li>
         <li class="nav-item d-block d-sm-none" (click)="sctionRedirectHandler(MobileViewWorkTeam)">
-          <a class="nav-link" href="#">{{ "NAVBAR.WORK_TEAM" | translate }}</a>
+          <a class="nav-link" >{{ "NAVBAR.WORK_TEAM" | translate }}</a>
         </li>
         <li class="nav-item" (click)="sctionRedirectHandler(TargetGroups)">
-          <a class="nav-link" href="#">{{ "NAVBAR.TARGET_GROUPS" | translate }}</a>
+          <a class="nav-link" >{{ "NAVBAR.TARGET_GROUPS" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{ "NAVBAR.CONTACT_INFO" | translate }} </a>
+          <a class="nav-link" >{{ "NAVBAR.CONTACT_INFO" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{ "NAVBAR.COURSE_REGISTER" | translate }} </a>
+          <a class="nav-link"  [routerLink]="['/courses-register']">{{ "NAVBAR.COURSE_REGISTER" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</a>
+          <a class="nav-link"  [routerLink]="['/submitting-job']">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
