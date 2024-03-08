@@ -131,19 +131,19 @@ export class MasterComponent implements OnInit {
     {
       id: 3,
       title: "Zakaria bello",
-      text: "CHR",
+      text: "CHR1",
       imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
       id: 3,
       title: "Zakaria bello",
-      text: "CHR",
+      text: "CHR2",
       imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
       id: 3,
       title: "Zakaria bello",
-      text: "CHR",
+      text: "CHR3",
       imagePath: "../../../assets/images/avatar-3.jpeg"
     },
   ],
@@ -151,19 +151,19 @@ export class MasterComponent implements OnInit {
     {
       id: 3,
       title: "Zakaria bello",
-      text: "CHR",
+      text: "CHR4",
       imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
       id: 3,
       title: "Zakaria bello",
-      text: "CHR",
+      text: "CHR5",
       imagePath: "../../../assets/images/avatar-3.jpeg"
     },
     {
       id: 3,
       title: "Zakaria bello",
-      text: "CHR",
+      text: "CHR6",
       imagePath: "../../../assets/images/avatar-3.jpeg"
     },
    

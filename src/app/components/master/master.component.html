@@ -172,7 +172,7 @@
     <!-- End Mobile View Clients Section Carousel -->
 
     <!-- Start Latest News Section -->
-    <section>
+    <!-- <section> -->
      
         <!-- <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews"  [style]="latestNewsSliderStyle">
             <div class="silder-header">
@@ -197,17 +197,16 @@
         </footer> -->
         <div class="carousel-container" id="clientsSection">
             <div class="silder-header">
-                <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
+                <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
             </div>
-            <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="false">
                 <div class="carousel-inner">
                     <div class="carousel-item" *ngFor="let item of filteredList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption" style="display: flex;
-                    flex-direction: row; justify-content: space-around;" >
-                        <div class="avatar-box mob-v" style="margin: 0 20px; width: 30%" *ngFor="let i of item;">
-                            <div class="card" style="width: 100%">
-                                <img class="card-img-top" [src]="i.imagePath" [alt]="i.text" width="20%" height="200px">
+                    <div class="carousel-caption">
+                        <div class="card-container" *ngFor="let i of item;">
+                            <div class="card">
+                                <img class="card-img-top" [src]="i.imagePath" [alt]="i.text">
                                 <div class="card-body">
                                     <p class="card-text font-weight-bold">{{ i.text }}</p>
                                 </div>
@@ -230,7 +229,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    <!-- </section> -->
     <!-- End Latest News Section -->
 </div>
 
