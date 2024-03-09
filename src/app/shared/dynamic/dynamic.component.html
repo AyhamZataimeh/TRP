@@ -1,19 +1,21 @@
-<div class="contianer ">
-
-    <div class="row ">
-        <div class="col-md-5"></div>
-        <div class="col-md-6 col-sm-12 col-xs-12">
-            <h1>
-                {{blogsData.title}}
-            </h1>
-        </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-            {{blogsData.text}}
-        </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-            <img [src]="blogsData.imagePath" width="20%" alt="">
+<section class="main">
+    <div class="container">
+        <h1 class="headerText">
+            {{ blogsData.title }}
+        </h1>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="detailsText">
+                    {{ blogsData.text }}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <div class="image-box">
+                        <img [src]="blogsData.imagePath" class="personImg" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>

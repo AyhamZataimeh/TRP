@@ -170,6 +170,48 @@ export class MasterComponent implements OnInit {
    ]
   }
 
+  latestNewsListMobile:any = [
+      {
+        id: 1,
+        title: "Mahmoud Saleh",
+        text: "CHR1",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 2,
+        title: "Ayham Zataimeh",
+        text: "CHR2",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 3,
+        title: "Zakaria bello",
+        text: "CHR3",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 4,
+        title: "Zakaria bello",
+        text: "CHR4",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 5,
+        title: "Zakaria bello",
+        text: "CHR5",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 6,
+        title: "Zakaria bello",
+        text: "CHR6",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      }
+  ];
+  
+  languagesMobileList:any = [...this.latestNewsListMobile];
+ 
+
   get sliderStyles() {
     const numSlides = this.clientsList.length;
     return {
@@ -182,6 +224,7 @@ export class MasterComponent implements OnInit {
 
   latestNewsDots:any[]=[];
   filteredList:any[]=[];
+  languagesList:any[] = [];
   
   latestNewsDotsCount() {
     // Object.entries(this.latestNewsList)
@@ -199,6 +242,8 @@ export class MasterComponent implements OnInit {
     });
     console.log("filteredList",this.filteredList);
     
+    this.languagesList = [...this.filteredList]
+    console.log('languagesList: ', this.languagesList);
     return this.filteredList;
 
   }
