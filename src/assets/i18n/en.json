@@ -26,7 +26,28 @@
 
     },
     "COURSE_RIGISTER" : {
+        "RESERVE_SEAT_NOW":"Reserve a seat now",
+        "NEW_COURSE_WILL_START":"New courses will start",
+        "REGISTER_NOW":"Register Now"
 
+    },
+    "SUBMITTING_JOB": {
+        "EMPLOYMENT_APPLICATION":"Employement Application",
+        "TECHING":"Teaching English language for students younger than 14 years old without using pen paper or board.",
+        "THORUGH":"Through active learning strategies TPR systems.",
+        "SEVRAL":"We have several areas in Amman, Salt, Madaba and Aqaba.",
+        "ARRANGEMENTS":"Arrangements",
+        "DIERCT":"Direct phone call",
+        "PERSONAL_INTERVIEW":"Personal interview",
+        "TRAINING":"Training for the needed skills to be a certified TPR-trainer (14 days).",
+        "EVALUATION":"Evaluation",
+        "APPLY_HERE":"Apply Here"
+
+
+    },
+    "FOOTER":{
+        "SHORT_LINK":"Short Link",
+        "CONTACT_US":"Contact Us"
     }
  
 

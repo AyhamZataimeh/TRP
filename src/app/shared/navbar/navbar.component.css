@@ -13,7 +13,7 @@
     margin-right: 30px;
 }
 
-.upper-nav div li {
+.upper-nav div li  {
     color: white;
     margin-left: 10px;
     transition: .5s;
@@ -29,6 +29,7 @@
         background-color: white;
     }
 }
+
 
 /* ===== End Upper-Nav ===== */
 
@@ -152,6 +153,9 @@
     }
 }
 
+.contact li a {
+    color: white
+}
 /* ===== End Main-Nav ===== */
 
 @media screen and (max-width: 991px) {

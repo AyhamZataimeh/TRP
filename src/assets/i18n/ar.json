@@ -24,7 +24,32 @@
         "TARGET_GROUPS": "المجموعات المستهدفة",
         "PARTNERS":"Our Partners"
 
+    },
+    "COURSE_RIGISTER" : {
+        "RESERVE_SEAT_NOW":"احجز مقعد الآن",
+        "NEW_COURSE_WILL_START":"دورات جديدة رح تبدأ",
+        "REGISTER_NOW":"سجل الأن"
+
+
+    },
+    "SUBMITTING_JOB": {
+        "EMPLOYMENT_APPLICATION":"طلب التوظيف",
+        "TECHING":"تدريس اللغة الإنجليزية للطلاب أقل من 14 سنة بدون استخدام القلم أو السبورة.",
+        "THORUGH":"من خلال استراتيجيات التعلم النشط وأنظمة TPR.",
+        "SEVRAL":"لدينا عدة مناطق في عمان والسلط ومادبا والعقبة.",
+        "ARRANGEMENTS":"ترتيبات:",
+        "DIERCT":"اتصال هاتفي مباشر",
+        "PERSONAL_INTERVIEW":"المقابلة الشخصية",
+        "TRAINING":"التدريب على المهارات اللازمة ليكون مدرب TPR معتمد (14 يومًا).",
+        "EVALUATION":"التقييم",
+        "APPLY_HERE":"قدم هنأ"
+
+    },
+    "FOOTER":{
+        "SHORT_LINK":"أختصارات",
+        "CONTACT_US":"تواصل معنأ"
     }
+ 
  
 
 }
