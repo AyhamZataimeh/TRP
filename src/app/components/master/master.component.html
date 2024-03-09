@@ -171,7 +171,7 @@
     <!-- End Mobile View Clients Section Carousel -->
 
     <!-- Start Web-View Latest News Section -->
-    <div class="carousel-container d-none d-md-block" id="clientsSection">
+    <div class="carousel-container d-none d-md-block" id="latestNewsSection">
         <div class="silder-header">
             <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
         </div>
@@ -187,7 +187,7 @@
                                     <p class="card-text font-weight-bold">{{ i.text }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="btn btn-outline-danger pull-right"
+                                    <a class="btn btn-outline-danger pull-right"
                                         (click)="dynamicPageRedircation(i)">Read More</a>
                                 </div>
                             </div>
@@ -209,7 +209,7 @@
     <!-- End Web-View Latest News Section -->
 
     <!-- Start Mobile-View Latest News Section -->
-    <div class="carousel-container d-block d-md-none section-mob-v" id="clientsSection">
+    <div class="carousel-container d-block d-md-none section-mob-v" id="latestNewsSection">
         <div class="silder-header">
             <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
         </div>
@@ -247,7 +247,7 @@
     <!-- End Mobile-View Latest News Section -->
 
     <!-- Start Web-View Languages Section -->
-    <div class="carousel-container d-none d-md-block" id="clientsSection">
+    <div class="carousel-container d-none d-md-block" id="languagesSection">
         <div class="silder-header">
             <h1>{{ "NAVBAR.LANGUAGES" | translate}}</h1>
         </div>
@@ -263,7 +263,7 @@
                                     <p class="card-text font-weight-bold">{{ i.text }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="btn btn-outline-danger pull-right"
+                                    <a class="btn btn-outline-danger pull-right"
                                         (click)="dynamicPageRedircation(i)">Read More</a>
                                 </div>
                             </div>
@@ -285,7 +285,7 @@
     <!-- End Web-View Languages Section -->
 
     <!-- Start Mobile-View Languages Section -->
-    <div class="carousel-container d-block d-md-none section-mob-v" id="clientsSection">
+    <div class="carousel-container d-block d-md-none section-mob-v" id="languagesSection">
         <div class="silder-header">
             <h1>{{ "NAVBAR.LANGUAGES" | translate}}</h1>
         </div>
@@ -302,7 +302,7 @@
                                     <p class="card-text font-weight-bold">{{ item.text }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="#" class="btn btn-outline-danger pull-right"
+                                    <a  class="btn btn-outline-danger pull-right"
                                         (click)="dynamicPageRedircation(item)">Read More</a>
                                 </div>
                             </div>
@@ -320,31 +320,7 @@
             </a>
         </div>
     </div>
-    <!-- End Mobile-View Languages Section -->
 
-
-
-    <!-- <div class="latest-news-slider d-none d-sm-block section-mob-v" id="latestNews"  [style]="latestNewsSliderStyle">
-            <div class="silder-header">
-                <h1>Latest News</h1>
-            </div>
-            <div class="latest-news-slider-section"  id="cardSlider">
-                <div class="card latest-news-slider-card" *ngFor="let latestNews of latestNewsList" >
-                    <img class="card-img-top" [src]="latestNews.image" [alt]="latestNews.name" width="20%" height="200px">
-                    <div class="card-body">
-                        <p class="card-text font-weight-bold">{{ latestNews.name }}</p>
-                    </div>
-
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-outline-danger pull-right">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-    <!-- <footer>
-            <p *ngFor="let i of latestNewsDots; let s= index" class="text-muted px-1" (click)="onLatesNewsScroll(s)" data-bs-slide="prev" >.</p>
-        </footer> -->
 </div>
 
 <app-footer></app-footer>

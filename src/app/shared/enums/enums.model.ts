@@ -3,5 +3,8 @@ export enum Sections {
     WhatIsTrp  = 2,
     TargetGroups  = 3,
     WorkTeam =  4,
-    MobileViewWorkTeam = 5
+    MobileViewWorkTeam = 5,
+    OurPartners= 6,
+    LatestNews= 7,
+    Languages = 8,
 }

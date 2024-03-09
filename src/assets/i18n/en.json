@@ -13,7 +13,8 @@
         "LATEST_NEWS":"Latest News",
         "LANGUAGES":"Languages",
         "COURSES_ADDRESS":"Courses Address",
-        "LOGIN":"Login"
+        "LOGIN":"Login",
+        "PARTNERS":"Our Partners"
     },
     "MASTER": {
         "WE_DO_IT_BECAUSE_WE_LOVE_IT":"WE DO IT BECAUSE WE LOVE IT",
@@ -22,6 +23,9 @@
         "TARGET_GROUPS":"Target groups",
         "WORK_TEAM":"Work Team",
         "PARTNERS":"Our Partners"
+
+    },
+    "COURSE_RIGISTER" : {
 
     }
  

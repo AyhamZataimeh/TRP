@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Sections } from '../enums/enums.model';
+import { MasterService } from '../master.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -27,9 +29,20 @@ export class NavbarComponent implements OnInit {
     return Sections.WorkTeam
   }
 
+  public get OurPartners() : Sections.OurPartners {
+    return Sections.OurPartners;
+  }
+  public get LatestNews() : Sections.LatestNews {
+    return Sections.LatestNews;
+  }
+  public get Languages() : Sections.Languages {
+    return Sections.Languages;
+  }
   public get MobileViewWorkTeam(): Sections.MobileViewWorkTeam {
     return Sections.MobileViewWorkTeam
   }
+
+  constructor(private masterService: MasterService, private router: Router) {}
 
   ngOnInit(): void {
    
@@ -37,7 +50,7 @@ export class NavbarComponent implements OnInit {
 
   sctionRedirectHandler(event:number) 
   {
-    this.selectedSection.emit(event);
+    this.masterService.sectionRedierct.next(event);
   }
 
 
@@ -45,5 +58,11 @@ export class NavbarComponent implements OnInit {
     localStorage.setItem("language",language);
     window.location.reload();
   
+  }
+
+  homeRedierction() {
+    this.router.navigate(["/home"]).then(()=>{
+      window.location.reload();
+    })
   }
 }

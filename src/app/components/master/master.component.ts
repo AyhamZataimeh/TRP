@@ -45,6 +45,19 @@ export class MasterComponent implements OnInit {
   public get WorkTeam(): Sections.WorkTeam {
     return Sections.WorkTeam
   }
+  public get OurPartners() : Sections.OurPartners {
+    return Sections.OurPartners;
+  }
+
+  public get LatestNews () : Sections.LatestNews {
+    return Sections.LatestNews;
+  }
+
+
+  public get Languages() : Sections.Languages {
+    return Sections.Languages;
+  }
+
 
   public get MobileViewWorkTeam(): Sections.MobileViewWorkTeam {
     return Sections.MobileViewWorkTeam;
@@ -116,13 +129,8 @@ export class MasterComponent implements OnInit {
     {
       image: "../../assets/images/client-7.jpeg"
     },
-  
-    {
-      image: "../../assets/images/client-7.jpeg"
-    },
-    {
-      image: "../../assets/images/client-7.jpeg"
-    },
+
+    
   
   ];
 
@@ -215,7 +223,7 @@ export class MasterComponent implements OnInit {
   get sliderStyles() {
     const numSlides = this.clientsList.length;
     return {
-      '--num-slides': numSlides - 7
+      '--num-slides': numSlides - 7 
     };
   }
 
@@ -288,8 +296,12 @@ latestNewSlider: number = 1;
 
       // Create an intersection observer
       const observer = new IntersectionObserver(entries => {
+        console.log("start slider", true);
+
           entries.forEach(entry => {
               if (entry.isIntersecting) {
+                console.log("vision-mission-show-animation", true);
+                
                   // If the target element is in view, add the animation class
                   vision?.classList.add("vision-mission-show-animation");
                
@@ -415,8 +427,18 @@ latestNewSlider: number = 1;
 
       }
       if(event == this.MobileViewWorkTeam) {
-        document.getElementById("MobileViewWorkTeam")?.scrollIntoView(false);
       }
+      if(event == this.OurPartners) {
+        document.getElementById("clientsSection")?.scrollIntoView(false);
+
+        
+      } 
+      if(event == this.LatestNews ) {
+        document.getElementById("latestNewsSection")?.scrollIntoView(false);
+      } 
+      if(event == this.Languages ) {
+        document.getElementById("languagesSection")?.scrollIntoView(false);
+      } 
     },)
   
     
@@ -437,8 +459,10 @@ onWindowScroll() {
 
 
 
-dynamicPageRedircation(blosgData: Blogs) {
-this.masterService.blogsData.next(blosgData);
+dynamicPageRedircation(blogsData: Blogs) {
+  console.log("blogsData",blogsData);
+  
+this.masterService.blogsData.next(blogsData);
 this.router.navigate(["/dynamic"]);
 
 }

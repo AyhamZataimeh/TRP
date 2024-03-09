@@ -9,17 +9,12 @@ import { Blogs } from '../interface/blogs';
 })
 export class DynamicComponent implements OnInit {
 
-  blogsData: Blogs={
-    id: 3,
-    title: "Zakaria bello",
-    text: "CHR",
-    imagePath: "../../../assets/images/avatar-3.jpeg"
-  }
+  blogsData!: Blogs;
   constructor( private masterService: MasterService) {}
 
   ngOnInit(): void {
     this.masterService.blogsData.subscribe((result:Blogs )=>{
-      // this.blogsData = result;
+      this.blogsData = result;
     });
   }
 

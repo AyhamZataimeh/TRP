@@ -826,3 +826,83 @@ section {
 .section-images {
     
 }
+
+
+
+
+
+/* Latest News ID Section */
+
+#latestNewsSection .carousel-inner {
+    background-color: #FFFFFF !important;
+}
+#latestNewsSection .carousel-item {
+    height: 330px;
+}
+
+#latestNewsSection .carousel-caption {
+    margin-top: -40px;
+}
+
+#latestNewsSection .card-container {
+    height: 100%;
+}
+
+#latestNewsSection .avatar-box.mob-v {
+    width: 110px;
+    height: 110px;
+}
+
+
+#latestNewsSection .carousel-control-prev-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f77f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+#latestNewsSection  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f77f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+#latestNewsSection .carousel-caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%
+}
+
+/* Languagses ID Section */
+
+#languagesSection .carousel-inner {
+    background-color: #FFFFFF !important;
+}
+#languagesSection .carousel-item {
+    height: 330px;
+}
+
+#languagesSection .carousel-caption {
+    margin-top: -40px;
+}
+
+#languagesSection .card-container {
+    height: 100%;
+}
+
+#languagesSection .avatar-box.mob-v {
+    width: 110px;
+    height: 110px;
+}
+
+
+#languagesSection .carousel-control-prev-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f77f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+#languagesSection  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f77f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+#languagesSection .carousel-caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%
+}
