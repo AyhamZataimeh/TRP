@@ -50,7 +50,10 @@ export class NavbarComponent implements OnInit {
 
   sctionRedirectHandler(event:number) 
   {
-    this.masterService.sectionRedierct.next(event);
+    this.masterService.sectionRedierct.next({
+      sectionId: event,
+      redierctUrl:"/home"
+    });
   }
 
 

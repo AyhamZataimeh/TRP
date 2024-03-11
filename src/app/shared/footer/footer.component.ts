@@ -30,6 +30,9 @@ export class FooterComponent {
 
   sectionHandler(sectionId: number) {
   
-    this.masterService.sectionRedierct.next(sectionId);
+    this.masterService.sectionRedierct.next({
+      sectionId: sectionId,
+      redierctUrl:"/home"
+    });
   }
-}
+  }

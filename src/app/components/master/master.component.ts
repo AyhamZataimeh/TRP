@@ -4,6 +4,7 @@ import {Sections} from "../../shared/enums/enums.model";
 import { MasterService } from 'src/app/shared/master.service';
 import { Blogs } from 'src/app/shared/interface/blogs';
 import { Router } from '@angular/router';
+import { SectionRedierction } from 'src/app/shared/interface/section-redirction.model';
 
 
 
@@ -284,10 +285,8 @@ export class MasterComponent implements OnInit {
       const value = this.latestNewsList[key];
      this.filteredList.push(value);
     });
-    console.log("filteredList",this.filteredList);
     
     this.languagesList = [...this.filteredList]
-    console.log('languagesList: ', this.languagesList);
     return this.filteredList;
 
   }
@@ -302,8 +301,7 @@ latestNewSlider: number = 1;
  
   onLatesNewsScroll(index: number) {
 
-    let x: string = "";
-    x.slice(0,20)
+   
     this.latestNewSlider= index;
 
     document.getElementById("cardSlider")?.classList.remove("card-slide");
@@ -314,17 +312,21 @@ latestNewSlider: number = 1;
  
   }
   ngOnInit(): void {
-    // const containerWidth = this.latestNewsList.length * 340 + (this.latestNewsList.length + 1) * 20; // Assuming 340px width for each item and 20px margin
-// const sliderSection = document.getElementById('cardSlider');
-// if(sliderSection) {
-//   sliderSection.style.width = `${containerWidth}px`;
 
-// }
     this.latestNewsDotsCount();
     this.selectedLang = localStorage.getItem('language');
+    const vision = document.getElementById("vision");
 
-    this.masterService.sectionRedierct.subscribe((sectionId: number)=>{
-      this.sctionRedirectHandler(sectionId);
+    this.masterService.sectionRedierct.subscribe((result: SectionRedierction)=>{
+      console.log(result.sectionId);
+      
+      if(result.sectionId) {
+        this.router.navigate([result.redierctUrl]);
+        this.sctionRedirectHandler(result.sectionId);
+        vision?.classList.add("vision-mission-show-animation");
+      }
+
+
     });
     document.addEventListener("DOMContentLoaded", function () {
       const targetgroups = document.getElementById("targetgroups");
@@ -334,14 +336,12 @@ latestNewSlider: number = 1;
 
       // Create an intersection observer
       const observer = new IntersectionObserver(entries => {
-        console.log("start slider", true);
 
           entries.forEach(entry => {
               if (entry.isIntersecting) {
                 console.log("vision-mission-show-animation", true);
                 
                   // If the target element is in view, add the animation class
-                  vision?.classList.add("vision-mission-show-animation");
                
                 } 
           });
@@ -353,6 +353,9 @@ latestNewSlider: number = 1;
 
 
  window.addEventListener("scroll", function () {
+  console.log("start scroll");
+  
+ 
         if (isElementInViewport(aboutUs)) {
           
             // If the element is in the viewport, add your logic here
@@ -394,13 +397,11 @@ latestNewSlider: number = 1;
         }
 
     if (isElementInViewport(vision)) {
-      console.log(true);
 
           vision?.classList.add("vision-mission-show-animation");
 
 
     } else {
-      console.log(false);
 
         }
     });
@@ -498,7 +499,6 @@ onWindowScroll() {
 
 
 dynamicPageRedircation(blogsData: Blogs) {
-  console.log("blogsData",blogsData);
   
 this.masterService.blogsData.next(blogsData);
 this.router.navigate(["/dynamic"]);
