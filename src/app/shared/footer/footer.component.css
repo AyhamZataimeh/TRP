@@ -53,4 +53,9 @@ footer .fa-arrow-right {
     footer hr {
         width: 100%;
     }
+
+    .short-link {
+        text-align: justify;
+        align-content: center;
+    }
 }

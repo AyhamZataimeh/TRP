@@ -336,7 +336,7 @@
 }
 
 .clients-slider-card-en-animation {
-    animation: en-client 3s linear alternate  infinite ;
+    animation: en-client 3s linear alternate  infinite  ;
 
 }
 
@@ -461,7 +461,7 @@ footer p:focus {
         transform: translateX(0);
       }
       100% {
-        transform: translateX(calc(-100% * var(--num-slides))); /* Adjust the number of slides */
+        transform: translateX(calc(-110% * var(--num-slides))); /* Adjust the number of slides */
       }
     
 }
@@ -829,13 +829,42 @@ section {
 
 
 
+@media screen and (min-width: 991px) {
+    #latestNewsSection .card-container {
+        width: 25%;
+        height: 100%;
+    
+    }
+    #latestNewsSection .card {
+        height: 114%;
+        }
 
+        #languagesSection .card-container {
+            width: 25%;
+            height: 100%;
+            }
+            
+            #languagesSection .card {
+                height: 114%;
+                }
+            
+                #languagesSection .card-body {
+                    height: 23%;
+                    }
+   
+}
 
 /* Latest News ID Section */
 
 #latestNewsSection .carousel-inner {
     background-color: #FFFFFF !important;
 }
+
+
+
+#latestNewsSection .card-body {
+        height: 21%;
+        }
 #latestNewsSection .carousel-item {
     height: 330px;
 }
@@ -844,9 +873,7 @@ section {
     margin-top: -40px;
 }
 
-#latestNewsSection .card-container {
-    height: 100%;
-}
+
 
 #latestNewsSection .avatar-box.mob-v {
     width: 110px;
@@ -874,6 +901,8 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 #languagesSection .carousel-inner {
     background-color: #FFFFFF !important;
 }
+
+
 #languagesSection .carousel-item {
     height: 330px;
 }
@@ -882,9 +911,6 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
     margin-top: -40px;
 }
 
-#languagesSection .card-container {
-    height: 100%;
-}
 
 #languagesSection .avatar-box.mob-v {
     width: 110px;
@@ -905,4 +931,16 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
     flex-direction: row;
     justify-content: space-around;
     height: 100%
+}
+
+/* Card Footer */
+.card-footer a {
+    /* background-color: #f77f00; */
+    color: black;
+    transition: .5s;
+    border: 1px solid #f77f00;
+    &:hover {
+        background-color: #f77f00;
+        color: white;
+    }
 }

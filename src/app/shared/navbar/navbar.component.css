@@ -61,7 +61,7 @@
 
 .main-nav .logo img {
     width: 100%;
-    height: auto;
+    height: 100%;
     &:hover {
         cursor: pointer;
     }
@@ -114,9 +114,6 @@
 .main-nav .lang-menu {
     inset-inline-start: -100px;
 }
-.logo {
-
-}
 
 @keyframes nav-items {
     from {
@@ -154,8 +151,13 @@
 }
 
 .contact li a {
-    color: white
+    color: white;
+    &:hover {
+        color: #f77f00 !important;
+
+    }
 }
+
 /* ===== End Main-Nav ===== */
 
 @media screen and (max-width: 991px) {

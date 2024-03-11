@@ -129,7 +129,43 @@ export class MasterComponent implements OnInit {
     {
       image: "../../assets/images/client-7.jpeg"
     },
-
+  
+    {
+      image: "../../assets/images/client-7.jpeg"
+    },
+  
+    {
+      image: "../../assets/images/client-7.jpeg"
+    },
+  
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
+    {
+      image: "../../assets/images/client-4.jpeg"
+        },
+     
     
   
   ];
@@ -138,21 +174,21 @@ export class MasterComponent implements OnInit {
   item1: [ 
     {
       id: 3,
-      title: "Zakaria bello",
-      text: "CHR1",
-      imagePath: "../../../assets/images/avatar-3.jpeg"
+      title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
+      text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
+      imagePath: "../../../assets/images/image-1.jpeg"
     },
     {
       id: 3,
       title: "Zakaria bello",
       text: "CHR2",
-      imagePath: "../../../assets/images/avatar-3.jpeg"
+      imagePath: "../../../assets/images/image-2.jpeg"
     },
     {
       id: 3,
-      title: "Zakaria bello",
-      text: "CHR3",
-      imagePath: "../../../assets/images/avatar-3.jpeg"
+      title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
+      text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
+      imagePath: "../../../assets/images/landing-page.jpg"
     },
   ],
    item2: [
@@ -223,7 +259,7 @@ export class MasterComponent implements OnInit {
   get sliderStyles() {
     const numSlides = this.clientsList.length;
     return {
-      '--num-slides': numSlides - 7 
+      '--num-slides': numSlides -9
     };
   }
 
@@ -266,6 +302,8 @@ latestNewSlider: number = 1;
  
   onLatesNewsScroll(index: number) {
 
+    let x: string = "";
+    x.slice(0,20)
     this.latestNewSlider= index;
 
     document.getElementById("cardSlider")?.classList.remove("card-slide");
