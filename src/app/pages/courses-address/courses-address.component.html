@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6  col-xs-12" *ngFor =" let course of coursesAddressList">
+            <div class="card text-center font-weight-bold mt-3">
+                <div class="card-header mt-4">
+                    <p>{{ course.governaret.name}}</p>
+
+                </div>
+                <div class="card-body">
+                    <p>{{ course.location}}</p>
+                    <p style="display: block;">{{ course.Address}}</p>
+
+                    <a [href]="course.locationUrl" class="btn btn-primary " target="_blank">
+                        Location <i class="fa fa-map-marker px-2"></i>
+
+                    </a>
+                </div>
+                <div class="card-footer ">
+                    <a [href]="'tel:'+ course.phoneNumber" class="btn btn-primary" target="_blank">
+                        <span class="btn btn-primary">
+                            Call Us<i class="fa fa-phone px-2"> </i>
+
+                        </span>
+
+                    </a>
+          
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
