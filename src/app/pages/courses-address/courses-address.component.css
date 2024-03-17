@@ -40,3 +40,21 @@ text-align: center;
     border-radius: 15px;
 }
 
+
+.tpr-info {
+    background-color: #0070FFB3;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+hr {
+    background-color: white;
+    color: white;
+}
+
+.horizntal-line {
+    border: 1px solid;
+    border-color: white;
+    height: 0px;
+}
