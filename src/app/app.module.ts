@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SubmittingJobComponent } from './pages/submitting-job/submitting-job.component';
 import { CoursesRegisterComponent } from './pages/courses-register/courses-register.component';
 import { CoursesAddressComponent } from './pages/courses-address/courses-address.component';
+import { CourseAddressPrivateComponent } from './pages/course-address-private/course-address-private.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { CoursesAddressComponent } from './pages/courses-address/courses-address
     DynamicComponent,
     SubmittingJobComponent,
     CoursesRegisterComponent,
-    CoursesAddressComponent
+    CoursesAddressComponent,
+    CourseAddressPrivateComponent
   ],
   imports: [
     BrowserModule,

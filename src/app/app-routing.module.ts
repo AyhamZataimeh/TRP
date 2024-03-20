@@ -5,6 +5,7 @@ import { DynamicComponent } from './shared/dynamic/dynamic.component';
 import { SubmittingJobComponent } from './pages/submitting-job/submitting-job.component';
 import { CoursesRegisterComponent } from './pages/courses-register/courses-register.component';
 import { CoursesAddressComponent } from './pages/courses-address/courses-address.component';
+import { CourseAddressPrivateComponent } from './pages/course-address-private/course-address-private.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,9 @@ const routes: Routes = [
    {
     path:"courses-address", component: CoursesAddressComponent
    },
+  {
+   path:"courses-address-private", component: CourseAddressPrivateComponent
+  },
   {
     path:"**", redirectTo:"home"
   }
