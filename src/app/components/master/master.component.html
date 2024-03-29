@@ -175,7 +175,7 @@
         <div class="silder-header">
             <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
         </div>
-        <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item" *ngFor="let item of filteredList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
@@ -214,7 +214,7 @@
         <div class="silder-header">
             <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
         </div>
-        <div id="carouselCaptionNewsMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carouselCaptionNewsMobile" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item"
                     *ngFor="let item of latestNewsListMobile; let index = index; let isFirst = first"
@@ -252,7 +252,7 @@
         <div class="silder-header">
             <h1>{{ "NAVBAR.LANGUAGES" | translate}}</h1>
         </div>
-        <div id="carouselCaptionLanguages" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carouselCaptionLanguages" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item" *ngFor="let item of languagesList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
