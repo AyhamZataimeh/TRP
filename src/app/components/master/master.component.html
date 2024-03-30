@@ -147,13 +147,21 @@
         <div class="silder-header">
             <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
         </div>
-        <div id="carouselCaptionsClients" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="carouselCaptionsClients" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let item of clientsList; let index = index; let isFirst = first"
-                    [ngClass]="{active:isFirst}">
+                <div class="carousel-item"  *ngFor="let imageRow of clientImagesMobile;  let index = index; let isFirst = first"
+                [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
-                        <div class="avatar-box mob-v">
-                            <img class="avatar-image" [src]="item.image" [alt]="item.name">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-4 my-2" *ngFor="let image of imageRow">
+                                    <div class="clientsMobileImgContainer">
+                                        <div class="clientsMobileImgBox">
+                                            <img [src]="image" class="d-block" alt="ClientImage">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,7 +298,7 @@
         <div class="silder-header">
             <h1>{{ "NAVBAR.LANGUAGES" | translate}}</h1>
         </div>
-        <div id="carouselCaptionLanguagesMobile" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carouselCaptionLanguagesMobile" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
                 <div class="carousel-item"
                     *ngFor="let item of languagesMobileList; let index = index; let isFirst = first"
