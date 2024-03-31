@@ -13,10 +13,10 @@ export class CoursesAddressComponent implements OnInit {
       id: 1,
       governaret: {
         id: 1,
-        name:"Amman"
+        name:"عمان"
       },
-      location: "Abu nseer",
-      Address : "ي أكاديمية الأركان التفاعلية – بالقرب من مخبر الفريد – فوق أبو ليلى – الطابق الثال",
+      location: "المقابلين",
+      Address :"شارع الحرية – قرب مدرسة الحفاظ – بالقرب من كريم ماركت – مجمع النديم 2 – الطابق الثالث",
       phoneNumber: "0778158732",
       locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
     },
@@ -24,10 +24,10 @@ export class CoursesAddressComponent implements OnInit {
       id: 1,
       governaret: {
         id: 1,
-        name:"Amman"
+        name:"عمان"
       },
-      location: "Abu nseer",
-      Address : "مركز هبة السماء – مقابل كارفور – مجمع النور التجاري (فوق بيولاب) – الطابق الثاني",
+      location: "طبربور",
+      Address : "مقابل حلويات النجمة – مجمع السلام – الطابق الثاني – مكتب 205",
       phoneNumber: "0778158732",
       locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
     },
@@ -35,10 +35,10 @@ export class CoursesAddressComponent implements OnInit {
       id: 1,
       governaret: {
         id: 1,
-        name:"Amman"
+        name:"عمان"
       },
-      location: "Abu nseer",
-      Address : "st-12",
+      location: "أبو نصير",
+      Address : "في مركز سينيرجي – شارع أبو نصير – مجمع صيام التجاري (فوق ليدرز) – الطابق الثاني – مكتب 201",
       phoneNumber: "0778158732",
       locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
     },
@@ -47,9 +47,9 @@ export class CoursesAddressComponent implements OnInit {
       id: 1,
       governaret: {
         id: 1,
-        name:"Amman"
+        name:"الزرقاء الجديدة"
       },
-      location: "Abu nseer",
+      location: "في مركز وأكاديمية البركة: من شارع الكرامة، ندخل دخلة مقهى بوليوود – ثم الدخلة الثالثة من جهة اليسار – ثم ثاني دخلة عاليسار – ثم يمين ثم يسار، ثم نتحرك 200 متر  للأمام – الموقع فوق روضة عالَمي الآمن – الطابق الثاني",
       Address : "st-12",
       phoneNumber: "0778158732",
       locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"

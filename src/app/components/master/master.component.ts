@@ -215,6 +215,51 @@ export class MasterComponent implements OnInit {
    ]
   }
 
+
+  
+  languageListTest:any = {
+    item1: [ 
+      {
+        id: 3,
+        title: "Saudi Fransi for Finance Leasing and TPR",
+        text: "Honored to have been chosen by the Saudi Fransi for Finance Leasing to implement digital transformation and data visualization solutions to enhance their business",
+        imagePath: "../../../assets/images/languages-1.png"
+      },
+      {
+        id: 3,
+        title: "Prime Ministry Legislation and Opinion Bureau and TPR",
+        text: "Honored to have been chosen by the prime ministry legislation and opinion bureau to implement digital transformation solutions to boost their business",
+        imagePath: "../../../assets/images/languages-2.png"
+      },
+      {
+        id: 3,
+        title: "JoPetrol and TPR",
+        text: "We are delighted to announce the successful deployment of ImageLinks for our valued partner, JoPetrol. This innovative solution will streamline their document management processes, boost efficiency, and ensure the secure handling of data",
+        imagePath: "../../../assets/images/what-is-trp.jpeg"
+      },
+    ],
+     item2: [
+      {
+        id: 3,
+        title: "Zakaria bello",
+        text: "CHR4",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 3,
+        title: "Zakaria bello",
+        text: "CHR5",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+      {
+        id: 3,
+        title: "Zakaria bello",
+        text: "CHR6",
+        imagePath: "../../../assets/images/avatar-3.jpeg"
+      },
+     
+     ]
+    }
   latestNewsListMobile:any = [
       {
         id: 1,
@@ -272,22 +317,13 @@ export class MasterComponent implements OnInit {
   languagesList:any[] = [];
   
   latestNewsDotsCount() {
-    // Object.entries(this.latestNewsList)
-    // // console.log(this.latestNewsList.length);
-    
-    // let number = Math.ceil(this.latestNewsList.length / 3) ;
-    // for (let index = 0; index < number; index++) {
-    //   this.latestNewsDots.push(index);
-    // }
 
-
-    const arrayObject = Object.keys(this.latestNewsList).map((key) => {
-      const value = this.latestNewsList[key];
+    const arrayObject = Object.keys(this.languageListTest).map((key) => {
+      const value = this.languageListTest[key];
      this.filteredList.push(value);
     });
     
     this.languagesList = [...this.filteredList]
-    return this.filteredList;
 
   }
 latestNewSlider: number = 1;
