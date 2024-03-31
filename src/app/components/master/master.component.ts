@@ -1,6 +1,6 @@
-import { Component ,  HostListener, ElementRef, OnInit, NgZone } from '@angular/core';
+import { Component, HostListener, ElementRef, OnInit, NgZone } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {Sections} from "../../shared/enums/enums.model";
+import { Sections } from "../../shared/enums/enums.model";
 import { MasterService } from 'src/app/shared/master.service';
 import { Blogs } from 'src/app/shared/interface/blogs';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { SectionRedierction } from 'src/app/shared/interface/section-redirction.
   selector: 'app-master',
   templateUrl: './master.component.html',
   styleUrls: ['./master.component.css'],
-  animations:[
+  animations: [
     trigger('slideAnimation', [
       transition(':increment', [
         style({ transform: 'translateX(-100%)' }),
@@ -24,38 +24,38 @@ import { SectionRedierction } from 'src/app/shared/interface/section-redirction.
       ]),
     ]),
   ]
-  
- 
+
+
 })
 export class MasterComponent implements OnInit {
-  
+
   constructor(public el: ElementRef, private masterService: MasterService, private router: Router) { }
 
-  public get AboutUs():Sections.AboutUs {
+  public get AboutUs(): Sections.AboutUs {
     return Sections.AboutUs;
   }
 
-  public get  TargetGroups():Sections.TargetGroups {
+  public get TargetGroups(): Sections.TargetGroups {
     return Sections.TargetGroups;
   }
 
-  public get WhatIsTrp():Sections.WhatIsTrp {
+  public get WhatIsTrp(): Sections.WhatIsTrp {
     return Sections.WhatIsTrp;
   }
 
   public get WorkTeam(): Sections.WorkTeam {
     return Sections.WorkTeam
   }
-  public get OurPartners() : Sections.OurPartners {
+  public get OurPartners(): Sections.OurPartners {
     return Sections.OurPartners;
   }
 
-  public get LatestNews () : Sections.LatestNews {
+  public get LatestNews(): Sections.LatestNews {
     return Sections.LatestNews;
   }
 
 
-  public get Languages() : Sections.Languages {
+  public get Languages(): Sections.Languages {
     return Sections.Languages;
   }
 
@@ -68,7 +68,7 @@ export class MasterComponent implements OnInit {
 
 
 
-  workTeamList :any[]=[
+  workTeamList: any[] = [
     {
       id: 1,
       name: "Othman Khawaja",
@@ -108,137 +108,96 @@ export class MasterComponent implements OnInit {
 
   ];
 
-  clientsList:any[]= [
+  clientsList: any[] = [
     {
       image: "../../assets/images/client-1.jpeg"
-        },
+    },
     {
       image: "../../assets/images/client-2.jpeg"
-        },
+    },
     {
       image: "../../assets/images/client-3.jpeg"
-        },
+    },
     {
       image: "../../assets/images/client-4.jpeg"
-        },
+    },
     {
       image: "../../assets/images/client-5.jpeg"
-        },
+    },
     {
       image: "../../assets/images/client-6.jpeg"
-        },
+    },
     {
       image: "../../assets/images/client-7.jpeg"
     },
-  
+
     {
       image: "../../assets/images/client-7.jpeg"
     },
-  
+
     {
       image: "../../assets/images/client-7.jpeg"
     },
-  
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
+    },
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
+    },
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
+    },
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
+    },
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
+    },
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
+    },
+
     {
       image: "../../assets/images/client-4.jpeg"
-        },
-     
-    
-  
+    }
   ];
 
-  latestNewsList:any = {
-  item1: [ 
-    {
-      id: 3,
-      title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
-      text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
-      imagePath: "../../../assets/images/image-1.jpeg"
-    },
-    {
-      id: 3,
-      title: "Zakaria bello",
-      text: "CHR2",
-      imagePath: "../../../assets/images/image-2.jpeg"
-    },
-    {
-      id: 3,
-      title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
-      text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
-      imagePath: "../../../assets/images/landing-page.jpg"
-    },
-  ],
-   item2: [
-    {
-      id: 3,
-      title: "Zakaria bello",
-      text: "CHR4",
-      imagePath: "../../../assets/images/avatar-3.jpeg"
-    },
-    {
-      id: 3,
-      title: "Zakaria bello",
-      text: "CHR5",
-      imagePath: "../../../assets/images/avatar-3.jpeg"
-    },
-    {
-      id: 3,
-      title: "Zakaria bello",
-      text: "CHR6",
-      imagePath: "../../../assets/images/avatar-3.jpeg"
-    },
-   
-   ]
-  }
+  clientImagesMobile: string[][] = [
+    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */],
+    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */],
+    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */],
+    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */]
+    // Add more arrays if needed
+  ];
 
-
-  
-  languageListTest:any = {
-    item1: [ 
+  latestNewsList: any = {
+    item1: [
       {
         id: 3,
-        title: "Saudi Fransi for Finance Leasing and TPR",
-        text: "Honored to have been chosen by the Saudi Fransi for Finance Leasing to implement digital transformation and data visualization solutions to enhance their business",
-        imagePath: "../../../assets/images/languages-1.png"
+        title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
+        text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
+        imagePath: "../../../assets/images/image-1.jpeg"
       },
       {
         id: 3,
-        title: "Prime Ministry Legislation and Opinion Bureau and TPR",
-        text: "Honored to have been chosen by the prime ministry legislation and opinion bureau to implement digital transformation solutions to boost their business",
-        imagePath: "../../../assets/images/languages-2.png"
+        title: "Zakaria bello",
+        text: "CHR2",
+        imagePath: "../../../assets/images/image-2.jpeg"
       },
       {
         id: 3,
-        title: "JoPetrol and TPR",
-        text: "We are delighted to announce the successful deployment of ImageLinks for our valued partner, JoPetrol. This innovative solution will streamline their document management processes, boost efficiency, and ensure the secure handling of data",
-        imagePath: "../../../assets/images/what-is-trp.jpeg"
+        title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
+        text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
+        imagePath: "../../../assets/images/landing-page.jpg"
       },
     ],
-     item2: [
+    item2: [
       {
         id: 3,
         title: "Zakaria bello",
@@ -257,9 +216,10 @@ export class MasterComponent implements OnInit {
         text: "CHR6",
         imagePath: "../../../assets/images/avatar-3.jpeg"
       },
-     
-     ]
-    }
+
+    ]
+  }
+
   latestNewsListMobile:any = [
       {
         id: 1,
@@ -298,54 +258,62 @@ export class MasterComponent implements OnInit {
         imagePath: "../../../assets/images/avatar-3.jpeg"
       }
   ];
-  
-  languagesMobileList:any = [...this.latestNewsListMobile];
- 
+
+  languagesMobileList: any = [...this.latestNewsListMobile];
+
 
   get sliderStyles() {
     const numSlides = this.clientsList.length;
     return {
-      '--num-slides': numSlides -9
+      '--num-slides': numSlides - 9
     };
   }
 
-  translateX:number= this.clientsList.length - 2;
+  translateX: number = this.clientsList.length - 2;
   selectedLang!: any;
 
-  latestNewsDots:any[]=[];
-  filteredList:any[]=[];
-  languagesList:any[] = [];
-  
-  latestNewsDotsCount() {
+  latestNewsDots: any[] = [];
+  filteredList: any[] = [];
+  languagesList: any[] = [];
 
-    const arrayObject = Object.keys(this.languageListTest).map((key) => {
-      const value = this.languageListTest[key];
+  latestNewsDotsCount() {
+    // Object.entries(this.latestNewsList)
+    // // console.log(this.latestNewsList.length);
+    
+    // let number = Math.ceil(this.latestNewsList.length / 3) ;
+    // for (let index = 0; index < number; index++) {
+    //   this.latestNewsDots.push(index);
+    // }
+
+
+    const arrayObject = Object.keys(this.latestNewsList).map((key) => {
+      const value = this.latestNewsList[key];
      this.filteredList.push(value);
     });
-    
+
     this.languagesList = [...this.filteredList]
 
   }
-latestNewSlider: number = 1;
+  latestNewSlider: number = 1;
   get latestNewsSliderStyle() {
-    
+
     return {
-      '--latest-news-num-slides': this.latestNewSlider *  6
+      '--latest-news-num-slides': this.latestNewSlider * 6
     };
   }
 
- 
+
   onLatesNewsScroll(index: number) {
 
-   
-    this.latestNewSlider= index;
+
+    this.latestNewSlider = index;
 
     document.getElementById("cardSlider")?.classList.remove("card-slide");
     document.getElementById("cardSlider")?.classList.add("card-slide");
 
-    
 
- 
+
+
   }
   ngOnInit(): void {
 
@@ -353,10 +321,10 @@ latestNewSlider: number = 1;
     this.selectedLang = localStorage.getItem('language');
     const vision = document.getElementById("vision");
 
-    this.masterService.sectionRedierct.subscribe((result: SectionRedierction)=>{
+    this.masterService.sectionRedierct.subscribe((result: SectionRedierction) => {
       console.log(result.sectionId);
-      
-      if(result.sectionId) {
+
+      if (result.sectionId) {
         this.router.navigate([result.redierctUrl]);
         this.sctionRedirectHandler(result.sectionId);
         vision?.classList.add("vision-mission-show-animation");
@@ -373,172 +341,170 @@ latestNewSlider: number = 1;
       // Create an intersection observer
       const observer = new IntersectionObserver(entries => {
 
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                console.log("vision-mission-show-animation", true);
-                
-                  // If the target element is in view, add the animation class
-               
-                } 
-          });
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log("vision-mission-show-animation", true);
+
+            // If the target element is in view, add the animation class
+
+          }
+        });
       }, { threshold: 0.5 }); // Adjust the threshold as needed
-  
+
       // Start observing the target element
       observer.observe(vision as HTMLElement);
-     
 
 
- window.addEventListener("scroll", function () {
-  console.log("start scroll");
-  
- 
+
+      window.addEventListener("scroll", function () {
+        console.log("start scroll");
+
+
         if (isElementInViewport(aboutUs)) {
-          
-            // If the element is in the viewport, add your logic here
-            document.getElementById("aboutUsParent")?.classList.replace("about-us","about-us-show");
 
-            document.getElementById("aboutUsText")?.classList.add("about-us-text");
-            document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
+          // If the element is in the viewport, add your logic here
+          document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
 
-            
-      aboutUs?.classList.remove("hide-section");
+          document.getElementById("aboutUsText")?.classList.add("about-us-text");
+          document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
 
-    } else {
+
+          aboutUs?.classList.remove("hide-section");
+
+        } else {
 
         }
 
         if (isElementInViewport(whatIsTrp)) {
 
-          document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp","what-is-trp-show");
-          
-            document.getElementById("trpText")?.classList.add("trp-text");
-            document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+          document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
+
+          document.getElementById("trpText")?.classList.add("trp-text");
+          document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
 
 
 
 
-    } else {
+        } else {
 
         }
 
         if (isElementInViewport(targetgroups)) {
-          document.getElementById("targetGroupsParent")?.classList.replace("target-groups","target-groups-show");
+          document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
 
-          
-            document.getElementById("target-groups-text")?.classList.add("target-groups-text");
-            document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
 
-    } else {
+          document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+          document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+
+        } else {
 
         }
 
-    if (isElementInViewport(vision)) {
+        if (isElementInViewport(vision)) {
 
           vision?.classList.add("vision-mission-show-animation");
 
 
-    } else {
+        } else {
 
         }
-    });
-    function isElementInViewport(el: any) {
-      const rect = el.getBoundingClientRect();
-  
-      return (
+      });
+      function isElementInViewport(el: any) {
+        const rect = el.getBoundingClientRect();
+
+        return (
           rect.top >= 0 &&
           rect.left >= 0 &&
           rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
           rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-  }
+        );
+      }
 
-  });
-   
+    });
 
-   
+
+
   }
 
 
   slider: any;
   addAnimation() {
-   document.getElementById("workTeam")?.setAttribute('--num-slides',"7")
+    document.getElementById("workTeam")?.setAttribute('--num-slides', "7")
   }
 
   state = 'hide';
 
-  sctionRedirectHandler(event:number) 
+  sctionRedirectHandler(event: number) {
+    document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
 
-  {
-    document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp","what-is-trp-show");
-          
     document.getElementById("trpText")?.classList.add("trp-text");
     document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
-    document.getElementById("targetGroupsParent")?.classList.replace("target-groups","target-groups-show");
+    document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
 
-          
+
     document.getElementById("target-groups-text")?.classList.add("target-groups-text");
     document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
-    document.getElementById("aboutUsParent")?.classList.replace("about-us","about-us-show");
+    document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
 
     document.getElementById("aboutUsText")?.classList.add("about-us-text");
     document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
 
-    setTimeout(()=>{
-      if(event == this.AboutUs) {
+    setTimeout(() => {
+      if (event == this.AboutUs) {
         document.getElementById("aboutUs")?.scrollIntoView();
-  
-      }
-      if(event == this.WhatIsTrp) {
-        document.getElementById("whatIsTrp")?.scrollIntoView();
-  
-      }
-      if(event == this.TargetGroups) {
-          
-          document.getElementById("targetgroups")?.scrollIntoView(false);
 
       }
-      if(event == this.WorkTeam) {
+      if (event == this.WhatIsTrp) {
+        document.getElementById("whatIsTrp")?.scrollIntoView();
+
+      }
+      if (event == this.TargetGroups) {
+
+        document.getElementById("targetgroups")?.scrollIntoView(false);
+
+      }
+      if (event == this.WorkTeam) {
         document.getElementById("workTeam")?.scrollIntoView(false);
 
       }
-      if(event == this.MobileViewWorkTeam) {
+      if (event == this.MobileViewWorkTeam) {
       }
-      if(event == this.OurPartners) {
+      if (event == this.OurPartners) {
         document.getElementById("clientsSection")?.scrollIntoView(false);
 
-        
-      } 
-      if(event == this.LatestNews ) {
+
+      }
+      if (event == this.LatestNews) {
         document.getElementById("latestNewsSection")?.scrollIntoView(false);
-      } 
-      if(event == this.Languages ) {
+      }
+      if (event == this.Languages) {
         document.getElementById("languagesSection")?.scrollIntoView(false);
-      } 
+      }
     },)
-  
-    
+
+
   }
-  pos:  number = 0;
+  pos: number = 0;
 
   @HostListener("window:scroll", ["$event"])
-onWindowScroll() {
+  onWindowScroll() {
 
 
-  document.documentElement.offsetTop
+    document.documentElement.offsetTop
 
- this.pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
-
-
-
-}
+    this.pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
 
 
 
-dynamicPageRedircation(blogsData: Blogs) {
-  
-this.masterService.blogsData.next(blogsData);
-this.router.navigate(["/dynamic"]);
+  }
 
-}
+
+
+  dynamicPageRedircation(blogsData: Blogs) {
+
+    this.masterService.blogsData.next(blogsData);
+    this.router.navigate(["/dynamic"]);
+
+  }
 
 }
