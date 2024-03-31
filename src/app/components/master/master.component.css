@@ -960,3 +960,9 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
         color: white;
     }
 }
+
+
+.client-slider:hover .clients-slider-card-en-animation,
+.client-slider:hover .clients-slider-card-ar-animation {
+    animation-play-state: paused !important;
+}
