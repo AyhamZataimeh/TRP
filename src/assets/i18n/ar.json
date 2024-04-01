@@ -13,7 +13,9 @@
         "LATEST_NEWS": "أحدث الأخبار",
         "LANGUAGES": "اللغات",
         "COURSES_ADDRESS": "عنوان الدورات",
-        "LOGIN": "تسجيل الدخول"
+        "LOGIN": "تسجيل الدخول",
+        "COURSE_REGISTER_NOW":"سجل الان في الدورات القادمة"
+
 
     },
     "MASTER": {

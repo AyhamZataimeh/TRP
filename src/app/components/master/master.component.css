@@ -966,3 +966,11 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 .client-slider:hover .clients-slider-card-ar-animation {
     animation-play-state: paused !important;
 }
+
+.register {
+    position: fixed;
+    z-index: 999;
+    position: sticky;
+    left: 40%;
+    top: 0;
+}
