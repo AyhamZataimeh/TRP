@@ -837,6 +837,14 @@ section {
         width: 90%;
         height: 290px;
     }
+
+    .register {
+        left: 15% !important;
+        z-index: 999 !important;
+        position: sticky !important;
+        top: 0 !important;
+
+    }
 }
 
 .section-images {
@@ -846,6 +854,9 @@ section {
 
 
 @media screen and (min-width: 991px) {
+
+
+
     #latestNewsSection .card-container {
         width: 25%;
         height: 100%;
@@ -968,9 +979,9 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 }
 
 .register {
-    position: fixed;
     z-index: 999;
     position: sticky;
     left: 40%;
     top: 0;
+    border-radius: 10px;
 }
