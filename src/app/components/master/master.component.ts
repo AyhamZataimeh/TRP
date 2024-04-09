@@ -317,6 +317,19 @@ export class MasterComponent implements OnInit {
   }
   ngOnInit(): void {
 
+    window.onscroll = function() {
+      // When scrolling occurs, add or remove a class to an element to change its style
+      var registerationBtn = document.querySelector('.register');
+      if (registerationBtn) {
+        if (window.scrollY > 100) {
+          registerationBtn.classList.add('stickyBtnScrolling');
+        } else {
+          registerationBtn.classList.remove('stickyBtnScrolling');
+        }
+      }
+    };
+    
+
     this.latestNewsDotsCount();
     this.selectedLang = localStorage.getItem('language');
     const vision = document.getElementById("vision");
