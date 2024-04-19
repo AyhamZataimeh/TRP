@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseAddressService } from '../courses-address/course-address.service';
+import { CourseDetails } from 'src/app/shared/interface/course-details.model';
+import {Location} from "../../shared/interface/loacation.model";
 
 @Component({
   selector: 'app-course-address-private',
@@ -8,93 +11,70 @@ import { Component, OnInit } from '@angular/core';
 export class CourseAddressPrivateComponent implements OnInit {
 
 
-  coursesAddressList: any[] = [
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "ي أكاديمية الأركان التفاعلية – بالقرب من مخبر الفريد – فوق أبو ليلى – الطابق الثال",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "مركز هبة السماء – مقابل كارفور – مجمع النور التجاري (فوق بيولاب) – الطابق الثاني",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "st-12",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
+  coursesAddressList: CourseDetails[] = []
+  headerLeft: any;
+  headerCenter: any;
+  headerRight: any;
 
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "st-12",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "st-12",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "st-12",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
-    {
-      id: 1,
-      governaret: {
-        id: 1,
-        name:"Amman"
-      },
-      location: "Abu nseer",
-      Address : "st-12",
-      phoneNumber: "0778158732",
-      locationUrl:"https://maps.app.goo.gl/ZcpLjrwnCqhDbTzo9"
-    },
-  ]
+  locationId: number= 0;
+  locations:Location[]=[];
+  locationAddress: any=[];
 
 
-  constructor() {}
+  constructor(private courseAddressService: CourseAddressService) {}
 
   ngOnInit(): void {
     
+    this.getCourseDetails(0);
+    this.getCourseHeader();
+    this.getLocation();
   }
 
+  getCourseDetails(locationId:number, address:string ="") {
+
+    console.log(address);
+    
+    this.courseAddressService.getCoursesAddress(locationId).subscribe((response: any)=>{
+      if(!response.error) {
+        this.coursesAddressList= response.data;
+        if(locationId >  0 && !address) {
+          this.locationAddress= this.coursesAddressList.filter((courseAddress: CourseDetails)=> courseAddress.courcesLocation.locationsId == locationId);
+         
+        }
+
+        if(address) {
+          this.coursesAddressList = this.coursesAddressList.filter((courseDetails: CourseDetails)=> courseDetails.address.includes(address));
+        }
+      }
+    });
+  }
+
+
+  getCourseHeader() {
+    this.courseAddressService.getCourseHeader().subscribe((response: any)=>{
+      if(!response.error) {
+        this.headerLeft = response.data[0].headerLeft;
+        this.headerCenter = response.data[0].headerCenter;
+        this.headerRight = response.data[0].headerRight
+      }
+    })
+  }
   
+
+  getLocation() {
+    this.courseAddressService.getGovernartes().subscribe((response: any)=>{
+      if(!response.error) {
+        this.locations = response.data;
+      }
+    })
+  }
+
+  onLocationChange(event: any) {
+    this.locationId = event.target.value;
+    this.getCourseDetails(event.target.value);
+  }
+
+  onAddressChange(event: any) {
+   this.getCourseDetails(this.locationId, event.target.value);
+  }
 }
