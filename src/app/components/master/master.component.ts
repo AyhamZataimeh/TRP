@@ -8,6 +8,7 @@ import { SectionRedierction } from 'src/app/shared/interface/section-redirction.
 import { LandingPage } from 'src/app/shared/interface/landing-page.model';
 import { VisiionMission } from 'src/app/shared/interface/vision-misson.model';
 import { SectionDetails } from 'src/app/shared/interface/section.model';
+import { WorkTeam } from 'src/app/shared/interface/work-team.model';
 
 
 
@@ -284,6 +285,7 @@ export class MasterComponent implements OnInit {
   aboutUsSections!:SectionDetails;
   targetGroupSections!:SectionDetails;
   whatIsTprSections!:SectionDetails;
+  workTeams: WorkTeam[]=[];
 
 
 
@@ -311,11 +313,18 @@ export class MasterComponent implements OnInit {
         this.aboutUsSections= response.data[0];
         this.whatIsTprSections= response.data[1];
         this.targetGroupSections= response.data[2];
-        console.log("aboutUsSections", this.aboutUsSections);
-        console.log("whatIsTprSections", this.whatIsTprSections);
-        console.log("targetGroupSections", this.targetGroupSections);
+
 
         
+        
+      }
+    })
+  }
+
+  getWorkTeam() {
+    this.masterService.getWorkTeam().subscribe((response: any)=>{
+      if(!response.error) {
+        this.workTeams=response.data;
         
       }
     })
@@ -364,6 +373,7 @@ export class MasterComponent implements OnInit {
     this.getSections();
     this.getLandingPgae();
     this.getVisiionAndMission();
+    this.getWorkTeam();
     console.log(this.selectedLang);
     
 

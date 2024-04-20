@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Sections } from '../enums/enums.model';
 import { MasterService } from '../master.service';
+import { ContactUs } from '../interface/contact-us.model';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
 
   public get AboutUs():Sections.AboutUs {
     return Sections.AboutUs;
@@ -34,5 +35,21 @@ export class FooterComponent {
       sectionId: sectionId,
       redierctUrl:"/home"
     });
+  }
+
+  contactInfo!: ContactUs;
+
+  ngOnInit(): void {
+    this.getContactInfo();
+    
+  }
+
+  getContactInfo() {
+    this.masterService.getContactUs().subscribe((response: any)=>{
+      if(!response.error) {
+        this.contactInfo= response.data;
+        console.log("contactInfo",this.contactInfo);
+      }
+    })
   }
   }

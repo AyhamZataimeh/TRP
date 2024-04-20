@@ -8,6 +8,8 @@ import { Configuration } from './interface/configuration.model';
 import { LandingPage } from './interface/landing-page.model';
 import { VisiionMission } from './interface/vision-misson.model';
 import { SectionDetails } from './interface/section.model';
+import { WorkTeam } from './interface/work-team.model';
+import { ContactUs } from './interface/contact-us.model';
 
 
 @Injectable({
@@ -43,6 +45,13 @@ export class MasterService {
     return this.http.get<SectionDetails[]>(this.config.API+"section-details");
 }
 
+  getWorkTeam(): Observable<WorkTeam[]>{
+    return this.http.get<WorkTeam[]>(this.config.API+"work-team");
+  }
+
+  getContactUs(): Observable<ContactUs> {
+    return this.http.get<ContactUs>(this.config.API+ "contacts")
+  }
 
 
 

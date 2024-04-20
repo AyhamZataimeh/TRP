@@ -91,10 +91,12 @@
             <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
         </div>
         <div class="slider-section">
-            <div class="slider-card" id="sliderCard" *ngFor="let workTeam of workTeamList">
+            <div class="slider-card" id="sliderCard" *ngFor="let workTeam of workTeams">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <img class="avatar-image" [src]="workTeam.image" [alt]="workTeam.name">
+                        <!-- <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false"> -->
+
+                        <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name">
                     </div>
                     <h3 class="workTeam-name">{{ workTeam.name }}</h3>
                     <div class="work-team-section-line"></div>
