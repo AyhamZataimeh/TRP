@@ -9,16 +9,22 @@
 <div class="landing-page">
     <div class="intro">
         <div class="landing-page-logo">
+            <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath  class="landing-page-logo-image"> -->
             <img src="../../../assets//images/logo-removebg-preview.png" class="landing-page-logo-image">
         </div>
-        <h2 class="landing-page-text"> {{ "MASTER.WE_DO_IT_BECAUSE_WE_LOVE_IT" | translate}}</h2>
+        <h2 class="landing-page-text"> {{landingPage.header}}</h2>
     </div>
     <div class="overlay"></div>
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <div class="vision-mission" id="vision">
+            <div  id="vision" class="vision-mission" >
+                <!-- <img [src]="'../../../assets/images/'+ visionMission.imagePathEn" *ngIf="selectedLang == 'en'" alt="">
+                <img [src]="'../../../assets/images/'+ visionMission.imagePathAr"  *ngIf="selectedLang == 'ar'" alt=""> -->
+
+
+        
             </div>
         </div>
     </div>

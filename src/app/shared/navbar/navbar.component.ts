@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Sections } from '../enums/enums.model';
 import { MasterService } from '../master.service';
 import { Router } from '@angular/router';
+import { MainService } from 'src/app/pages/services/main-service.service';
+import { Services } from '../interface/services.model';
 
 @Component({
   selector: 'app-navbar',
@@ -42,10 +44,13 @@ export class NavbarComponent implements OnInit {
     return Sections.MobileViewWorkTeam
   }
 
-  constructor(private masterService: MasterService, private router: Router) {}
+  services:Services[]=[];
+
+  constructor(private masterService: MasterService, private router: Router, private mainService: MainService) {}
 
   ngOnInit(): void {
    
+    this.getServices();
   }
 
   sctionRedirectHandler(event:number) 
@@ -65,6 +70,22 @@ export class NavbarComponent implements OnInit {
 
   homeRedierction() {
     this.router.navigate(["/home"]).then(()=>{
+      window.location.reload();
+    })
+  }
+
+  getServices() {
+    this.mainService.geServices().subscribe((response: any)=>{
+      if(!response.error) {
+        this.services= response.data;
+        console.log("service", this.services);
+        
+      }
+    })
+  }
+
+  serviceRedierct(serviceId: number) {
+    this.router.navigate(["service/"+serviceId]).then(()=>{
       window.location.reload();
     })
   }

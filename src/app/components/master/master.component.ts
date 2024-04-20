@@ -5,6 +5,9 @@ import { MasterService } from 'src/app/shared/master.service';
 import { Blogs } from 'src/app/shared/interface/blogs';
 import { Router } from '@angular/router';
 import { SectionRedierction } from 'src/app/shared/interface/section-redirction.model';
+import { LandingPage } from 'src/app/shared/interface/landing-page.model';
+import { VisiionMission } from 'src/app/shared/interface/vision-misson.model';
+import { SectionDetails } from 'src/app/shared/interface/section.model';
 
 
 
@@ -275,7 +278,48 @@ export class MasterComponent implements OnInit {
   latestNewsDots: any[] = [];
   filteredList: any[] = [];
   languagesList: any[] = [];
+  landingPage!: LandingPage;
+  visionMission!: VisiionMission;
 
+  aboutUsSections!:SectionDetails;
+  targetGroupSections!:SectionDetails;
+  whatIsTprSections!:SectionDetails;
+
+
+
+  getLandingPgae() {
+    this.masterService.getLandingPage().subscribe((response: any)=>{
+      if(!response.error) {
+        this.landingPage=response.data;        
+      }
+    })
+  }
+
+  getVisiionAndMission() {
+
+    this.masterService.getImages().subscribe((response: any)=>{
+      if(!response.error) {
+        this.visionMission=response.data[0];
+        
+      }
+    })
+  }
+
+  getSections() {
+    this.masterService.searchSections().subscribe((response: any)=>{
+      if(!response.error) {
+        this.aboutUsSections= response.data[0];
+        this.whatIsTprSections= response.data[1];
+        this.targetGroupSections= response.data[2];
+        console.log("aboutUsSections", this.aboutUsSections);
+        console.log("whatIsTprSections", this.whatIsTprSections);
+        console.log("targetGroupSections", this.targetGroupSections);
+
+        
+        
+      }
+    })
+  }
   latestNewsDotsCount() {
     // Object.entries(this.latestNewsList)
     // // console.log(this.latestNewsList.length);
@@ -316,6 +360,12 @@ export class MasterComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.selectedLang = localStorage.getItem('language');
+    this.getSections();
+    this.getLandingPgae();
+    this.getVisiionAndMission();
+    console.log(this.selectedLang);
+    
 
     window.onscroll = function() {
       // When scrolling occurs, add or remove a class to an element to change its style
@@ -331,7 +381,6 @@ export class MasterComponent implements OnInit {
     
 
     this.latestNewsDotsCount();
-    this.selectedLang = localStorage.getItem('language');
     const vision = document.getElementById("vision");
 
     this.masterService.sectionRedierct.subscribe((result: SectionRedierction) => {

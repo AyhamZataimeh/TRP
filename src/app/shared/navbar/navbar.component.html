@@ -59,9 +59,9 @@
             {{ "NAVBAR.SERVICES" | translate }}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">{{ "NAVBAR.CONVRSATION_CORUSES" | translate }}</a>
+            <li *ngFor="let service of services">
+              <a class="dropdown-item" (click)="serviceRedierct(service.id)">{{service.name}}</a>
             </li>
-            <li><a class="dropdown-item" href="#">{{ "NAVBAR.TEACHERS_COURSES" | translate }}</a></li>
             <hr class="dropdown-divider">
             <li><a class="dropdown-item" (click)="sctionRedirectHandler(LatestNews)">{{ "NAVBAR.LATEST_NEWS" | translate }}</a></li>
             <li><a class="dropdown-item" (click)="sctionRedirectHandler(Languages)">{{ "NAVBAR.LANGUAGES" | translate }}</a></li>

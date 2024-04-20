@@ -54,7 +54,7 @@
     color: white;
     animation: langing-page-text 2s both;
     animation-delay: 1s;
-    text-transform: capitalize;
+    text-transform:uppercase;
     z-index: 4;
 }
 
@@ -116,6 +116,7 @@
 }
 
 .vision-mission {
+    /*   */
     background: url(../../../assets//images/Vision&mission.jpeg) no-repeat center center;
     background-size: contain;
     width: 70%;
