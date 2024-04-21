@@ -10,6 +10,9 @@ import { VisiionMission } from './interface/vision-misson.model';
 import { SectionDetails } from './interface/section.model';
 import { WorkTeam } from './interface/work-team.model';
 import { ContactUs } from './interface/contact-us.model';
+import { Clients } from './interface/clients.model';
+import { Languages } from './interface/languages.model';
+import { LatestNews } from './interface/latest-news.model';
 
 
 @Injectable({
@@ -53,6 +56,26 @@ export class MasterService {
     return this.http.get<ContactUs>(this.config.API+ "contacts")
   }
 
+  searchClients(): Observable<Clients[]> {
 
+      return this.http.get<Clients[]>(this.config.API+"partners-details");
+
+  }
+
+  getLanguages(): Observable<Languages> {
+    return this.http.get<Languages>(this.config.API + "languages",{
+      params:{
+        title: ""
+      }
+    })
+  }
+
+  getLatestNews(): Observable<LatestNews> {
+    return this.http.get<LatestNews>(this.config.API + "latest-news",{
+      params:{
+        title: ""
+      }
+    })
+  }
 
 }

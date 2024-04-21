@@ -9,6 +9,8 @@ import { LandingPage } from 'src/app/shared/interface/landing-page.model';
 import { VisiionMission } from 'src/app/shared/interface/vision-misson.model';
 import { SectionDetails } from 'src/app/shared/interface/section.model';
 import { WorkTeam } from 'src/app/shared/interface/work-team.model';
+import { Clients } from 'src/app/shared/interface/clients.model';
+import { LatestNews } from 'src/app/shared/interface/latest-news.model';
 
 
 
@@ -70,206 +72,74 @@ export class MasterComponent implements OnInit {
   interval: any;
   currentIndex = 0;
 
+  clientsList: Clients[] = [ ];
 
 
-  workTeamList: any[] = [
-    {
-      id: 1,
-      name: "Othman Khawaja",
-      position: "GM",
-      image: "../../../assets/images/avatar-1.jpeg"
-    },
-    {
-      id: 2,
-      name: "Mohammed shaheen",
-      position: "SAM",
-      image: "../../../assets/images/avatar-2.jpeg"
-    },
-    {
-      id: 3,
-      name: "Zakaria bello",
-      position: "CHR",
-      image: "../../../assets/images/avatar-3.jpeg"
-    },
-    {
-      id: 4,
-      name: "Othman Khawaja",
-      position: "GM",
-      image: "../../../assets/images/avatar-1.jpeg"
-    },
-    {
-      id: 5,
-      name: "Mohammed shaheen",
-      position: "SAM",
-      image: "../../../assets/images/avatar-2.jpeg"
-    },
-    {
-      id: 6,
-      name: "Zakaria bello",
-      position: "CHR",
-      image: "../../../assets/images/avatar-3.jpeg"
-    },
-
-  ];
-
-  clientsList: any[] = [
-    {
-      image: "../../assets/images/client-1.jpeg"
-    },
-    {
-      image: "../../assets/images/client-2.jpeg"
-    },
-    {
-      image: "../../assets/images/client-3.jpeg"
-    },
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-    {
-      image: "../../assets/images/client-5.jpeg"
-    },
-    {
-      image: "../../assets/images/client-6.jpeg"
-    },
-    {
-      image: "../../assets/images/client-7.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-7.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-7.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    },
-
-    {
-      image: "../../assets/images/client-4.jpeg"
-    }
-  ];
 
   clientImagesMobile: string[][] = [
-    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */],
-    ["../../assets/images/client-2.jpeg","../../assets/images/client-1.jpeg",  "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */],
-    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */],
-    ["../../assets/images/client-1.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-5.jpeg", "../../assets/images/client-6.jpeg", "../../assets/images/client-7.jpeg", "../../assets/images/client-4.jpeg", "../../assets/images/client-3.jpeg", "../../assets/images/client-2.jpeg", "../../assets/images/client-1.jpeg", "../../assets/images/client-7.jpeg" /* more images */]
+   
     // Add more arrays if needed
   ];
 
-  latestNewsList: any = {
-    item1: [
-      {
-        id: 3,
-        title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
-        text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
-        imagePath: "../../../assets/images/image-1.jpeg"
-      },
-      {
-        id: 3,
-        title: "Zakaria bello",
-        text: "CHR2",
-        imagePath: "../../../assets/images/image-2.jpeg"
-      },
-      {
-        id: 3,
-        title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
-        text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
-        imagePath: "../../../assets/images/landing-page.jpg"
-      },
-    ],
-    item2: [
-      {
-        id: 3,
-        title: "Zakaria bello",
-        text: "CHR4",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 3,
-        title: "Zakaria bello",
-        text: "CHR5",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 3,
-        title: "Zakaria bello",
-        text: "CHR6",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
+  latestNewsList: LatestNews[] = [
+    // item1: [
+    //   {
+    //     id: 3,
+    //     title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
+    //     text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
+    //     imagePath: "../../../assets/images/image-1.jpeg"
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Zakaria bello",
+    //     text: "CHR2",
+    //     imagePath: "../../../assets/images/image-2.jpeg"
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
+    //     text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
+    //     imagePath: "../../../assets/images/landing-page.jpg"
+    //   },
+    // ],
+    // item2: [
+    //   {
+    //     id: 3,
+    //     title: "Zakaria bello",
+    //     text: "CHR4",
+    //     imagePath: "../../../assets/images/avatar-3.jpeg"
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Zakaria bello",
+    //     text: "CHR5",
+    //     imagePath: "../../../assets/images/avatar-3.jpeg"
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Zakaria bello",
+    //     text: "CHR6",
+    //     imagePath: "../../../assets/images/avatar-3.jpeg"
+    //   },
 
     ]
-  }
 
-  latestNewsListMobile:any = [
-      {
-        id: 1,
-        title: "Mahmoud Saleh",
-        text: "CHR1",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 2,
-        title: "Ayham Zataimeh",
-        text: "CHR2",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 3,
-        title: "Zakaria bello",
-        text: "CHR3",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 4,
-        title: "Zakaria bello",
-        text: "CHR4",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 5,
-        title: "Zakaria bello",
-        text: "CHR5",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      },
-      {
-        id: 6,
-        title: "Zakaria bello",
-        text: "CHR6",
-        imagePath: "../../../assets/images/avatar-3.jpeg"
-      }
-  ];
+  latestNewsListMobile:LatestNews[] = [];
 
   languagesMobileList: any = [...this.latestNewsListMobile];
 
 
-  get sliderStyles() {
-    const numSlides = this.clientsList.length;
+  get sliderStyles() { 
+    //important test
+    
+    if(this.clientsList.length > 7) {
+      const numSlides = this.clientsList.length;
+      return {
+        '--num-slides': numSlides - 9
+      };
+    }
     return {
-      '--num-slides': numSlides - 9
+      '--num-slides':0
     };
   }
 
@@ -313,10 +183,6 @@ export class MasterComponent implements OnInit {
         this.aboutUsSections= response.data[0];
         this.whatIsTprSections= response.data[1];
         this.targetGroupSections= response.data[2];
-
-
-        
-        
       }
     })
   }
@@ -329,20 +195,47 @@ export class MasterComponent implements OnInit {
       }
     })
   }
+
+  getClinets() {
+    this.masterService.searchClients().subscribe((response: any)=>{
+      if(!response.error) {
+        this.clientsList= response.data;
+        this.customeImageClientListMobileView();
+        // console.log("clientsList", this.clientsList);
+        
+      }
+    })
+  }
+
+  getLatestNews() {
+    this.masterService.getLatestNews().subscribe((response: any)=>{
+      if(!response.error) {
+        this.latestNewsListMobile= response.data;
+        this.latestNewsList = response.data;
+        this.customeLatestNewsList();
+        
+      }
+    })
+  }
+
+  getLanguages() {
+    this.masterService.getLanguages().subscribe((response: any)=>{
+      if(!response.error) {
+        this.languagesMobileList= response.data;
+        console.log("languagesMobileList",this.languagesMobileList);
+        
+      }
+    })
+  }
   latestNewsDotsCount() {
-    // Object.entries(this.latestNewsList)
-    // // console.log(this.latestNewsList.length);
+
+    // const arrayObject = Object.keys(this.latestNewsList).map((key) => {
+    //   const value = this.latestNewsList[key];
+    //  this.filteredList.push(value);
+    // });
+
+    console.log("filteredList", this.filteredList);
     
-    // let number = Math.ceil(this.latestNewsList.length / 3) ;
-    // for (let index = 0; index < number; index++) {
-    //   this.latestNewsDots.push(index);
-    // }
-
-
-    const arrayObject = Object.keys(this.latestNewsList).map((key) => {
-      const value = this.latestNewsList[key];
-     this.filteredList.push(value);
-    });
 
     this.languagesList = [...this.filteredList]
 
@@ -374,7 +267,9 @@ export class MasterComponent implements OnInit {
     this.getLandingPgae();
     this.getVisiionAndMission();
     this.getWorkTeam();
-    console.log(this.selectedLang);
+    this.getClinets();
+    this.getLanguages();
+    this.getLatestNews();
     
 
     window.onscroll = function() {
@@ -394,7 +289,6 @@ export class MasterComponent implements OnInit {
     const vision = document.getElementById("vision");
 
     this.masterService.sectionRedierct.subscribe((result: SectionRedierction) => {
-      console.log(result.sectionId);
 
       if (result.sectionId) {
         this.router.navigate([result.redierctUrl]);
@@ -415,7 +309,6 @@ export class MasterComponent implements OnInit {
 
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log("vision-mission-show-animation", true);
 
             // If the target element is in view, add the animation class
 
@@ -429,7 +322,6 @@ export class MasterComponent implements OnInit {
 
 
       window.addEventListener("scroll", function () {
-        console.log("start scroll");
 
 
         if (isElementInViewport(aboutUs)) {
@@ -578,5 +470,47 @@ export class MasterComponent implements OnInit {
     this.router.navigate(["/dynamic"]);
 
   }
+
+
+  customeImageClientListMobileView() {
+
+    let list:any[]=[]
+    if(this.clientsList.length<=12) {
+      list.push(this.clientsList);
+      this.clientImagesMobile = list;
+      
+
+    } else {
+      this.clientsList.forEach((client: Clients)=>{
+        list.push(client);
+        
+        if(list.length == 12) {
+          this.clientImagesMobile.push(list);
+          // push to origin list
+          list=[];
+        }
+      })
+    }
+  }
+
+
+  customeLatestNewsList() {
+    
+  let list:LatestNews[][]=[];
+  let latestList: LatestNews[]=[];
+  this.latestNewsList.forEach((latest:LatestNews)=>{
+    latestList.push(latest);
+    if(latestList.length == 3) {
+      list.push(latestList);
+      list=[];
+    }
+  });
+  list.push(latestList);
+
+  console.log("list", list);
+  
+
+  }
+
 
 }

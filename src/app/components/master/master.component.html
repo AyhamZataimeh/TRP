@@ -114,15 +114,17 @@
         </div>
         <div id="carouselCaptionsWorkTeam" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let item of workTeamList; let index = index; let isFirst = first"
+                <div class="carousel-item" *ngFor="let workTeam of workTeams; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
                         <div class="avatar-box mob-v">
-                            <img class="avatar-image" [src]="item.image" [alt]="item.name">
+                            <!-- <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false"> -->
+
+                            <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg">
                         </div>
-                        <h2 class="worker-name mob-v">{{ item.name | translate }}</h2>
+                        <h2 class="worker-name mob-v">{{workTeam.name}}</h2>
                         <div class="work-team-section-line"></div>
-                        <h3 class="worker-position mob-v">{{ item.position | translate }}</h3>
+                        <h3 class="worker-position mob-v">{{workTeam.name}}</h3>
                     </div>
                 </div>
             </div>
@@ -149,7 +151,8 @@
                 *ngFor="let client of clientsList">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <img class="avatar-image" [src]="client.image" alt="Client">
+                        <!-- <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false"> -->
+                        <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client">
                     </div>
 
                 </div>
@@ -173,7 +176,9 @@
                                 <div class="col-4 my-2" *ngFor="let image of imageRow">
                                     <div class="clientsMobileImgContainer">
                                         <div class="clientsMobileImgBox">
-                                            <img [src]="image" class="d-block" alt="ClientImage">
+                                            <!-- <img class="avatar-image" [src]="'../../../assets/images/'+image.imagePath" [alt]="image.name" *ngIf="false"> -->
+
+                                            <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage">
                                         </div>
                                     </div>
                                 </div>
