@@ -11,6 +11,7 @@ import { SectionDetails } from 'src/app/shared/interface/section.model';
 import { WorkTeam } from 'src/app/shared/interface/work-team.model';
 import { Clients } from 'src/app/shared/interface/clients.model';
 import { LatestNews } from 'src/app/shared/interface/latest-news.model';
+import { Languages } from 'src/app/shared/interface/languages.model';
 
 
 
@@ -81,48 +82,50 @@ export class MasterComponent implements OnInit {
     // Add more arrays if needed
   ];
 
-  latestNewsList: LatestNews[] = [
-    // item1: [
-    //   {
-    //     id: 3,
-    //     title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
-    //     text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
-    //     imagePath: "../../../assets/images/image-1.jpeg"
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Zakaria bello",
-    //     text: "CHR2",
-    //     imagePath: "../../../assets/images/image-2.jpeg"
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
-    //     text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
-    //     imagePath: "../../../assets/images/landing-page.jpg"
-    //   },
-    // ],
-    // item2: [
-    //   {
-    //     id: 3,
-    //     title: "Zakaria bello",
-    //     text: "CHR4",
-    //     imagePath: "../../../assets/images/avatar-3.jpeg"
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Zakaria bello",
-    //     text: "CHR5",
-    //     imagePath: "../../../assets/images/avatar-3.jpeg"
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Zakaria bello",
-    //     text: "CHR6",
-    //     imagePath: "../../../assets/images/avatar-3.jpeg"
-    //   },
+  latestNewsList!:LatestNews[][] 
+  //  = {
+  //   item1: [
+  //     {
+  //       id: 3,
+  //       title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
+  //       text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
+  //       imagePath: "../../../assets/images/image-1.jpeg"
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Zakaria bello",
+  //       text: "CHR2",
+  //       imagePath: "../../../assets/images/image-2.jpeg"
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
+  //       text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
+  //       imagePath: "../../../assets/images/landing-page.jpg"
+  //     },
+  //   ],
+  //   item2: [
+  //     {
+  //       id: 3,
+  //       title: "Zakaria bello",
+  //       text: "CHR4",
+  //       imagePath: "../../../assets/images/avatar-3.jpeg"
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Zakaria bello",
+  //       text: "CHR5",
+  //       imagePath: "../../../assets/images/avatar-3.jpeg"
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Zakaria bello",
+  //       text: "CHR6",
+  //       imagePath: "../../../assets/images/avatar-3.jpeg"
+  //     },
 
-    ]
+  //   ]
+  // }
 
   latestNewsListMobile:LatestNews[] = [];
 
@@ -148,7 +151,7 @@ export class MasterComponent implements OnInit {
 
   latestNewsDots: any[] = [];
   filteredList: any[] = [];
-  languagesList: any[] = [];
+  languagesList!: Languages[][];
   landingPage!: LandingPage;
   visionMission!: VisiionMission;
 
@@ -211,8 +214,8 @@ export class MasterComponent implements OnInit {
     this.masterService.getLatestNews().subscribe((response: any)=>{
       if(!response.error) {
         this.latestNewsListMobile= response.data;
-        this.latestNewsList = response.data;
-        this.customeLatestNewsList();
+        this.latestNewsList= this.customeLatestNewsList(response.data);
+        console.log("latestNewsList",this.latestNewsList);
         
       }
     })
@@ -222,7 +225,9 @@ export class MasterComponent implements OnInit {
     this.masterService.getLanguages().subscribe((response: any)=>{
       if(!response.error) {
         this.languagesMobileList= response.data;
-        console.log("languagesMobileList",this.languagesMobileList);
+        this.languagesList= this.customeLangugesList(response.data) ;
+        console.log("languagesList",this.languagesList);
+        
         
       }
     })
@@ -234,10 +239,10 @@ export class MasterComponent implements OnInit {
     //  this.filteredList.push(value);
     // });
 
-    console.log("filteredList", this.filteredList);
+    // console.log("filteredList", this.filteredList);
     
 
-    this.languagesList = [...this.filteredList]
+    // this.languagesList = [...this.filteredList]
 
   }
   latestNewSlider: number = 1;
@@ -494,23 +499,42 @@ export class MasterComponent implements OnInit {
   }
 
 
-  customeLatestNewsList() {
+  customeLatestNewsList(latestNews: LatestNews[]): any[] {
+    debugger;
     
-  let list:LatestNews[][]=[];
+  let list:any=[];
   let latestList: LatestNews[]=[];
-  this.latestNewsList.forEach((latest:LatestNews)=>{
+  latestNews.forEach((latest:LatestNews)=>{
     latestList.push(latest);
     if(latestList.length == 3) {
       list.push(latestList);
-      list=[];
+      latestList=[];
     }
   });
   list.push(latestList);
-
-  console.log("list", list);
-  
+  return list;
 
   }
 
+
+  customeLangugesList(languages: Languages[]): any[] {
+    debugger;
+    
+  let list:any=[];
+  let languagesList: LatestNews[]=[];
+  languages.forEach((latest:LatestNews)=>{
+    languagesList.push(latest);
+    if(languagesList.length == 3) {
+      list.push(languagesList);
+      languagesList=[];
+    }
+  });
+  list.push(languagesList);
+
+
+  return list;
+  
+
+  }
 
 }

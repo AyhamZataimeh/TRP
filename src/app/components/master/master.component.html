@@ -12,7 +12,7 @@
             <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath  class="landing-page-logo-image"> -->
             <img src="../../../assets//images/logo-removebg-preview.png" class="landing-page-logo-image">
         </div>
-        <h2 class="landing-page-text"> {{landingPage.header}}</h2>
+        <h2 class="landing-page-text"> {{landingPage?.header}}</h2>
     </div>
     <div class="overlay"></div>
 </div>
@@ -206,15 +206,17 @@
         </div>
         <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let item of filteredList; let index = index; let isFirst = first"
+                <div class="carousel-item" *ngFor="let item of latestNewsList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption">
-                        <div class="card-container" *ngFor="let i of item;">
+                    <div class="carousel-caption" >
+                        <div class="card-container" *ngFor="let i of item" >
                             <div class="card">
-                                <img class="card-img-top" [src]="i.imagePath" [alt]="i.text">
+                                <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="i.text">
+
+                                <!-- <img class="card-img-top" [src]="i.imagePath" [alt]="i.text"> -->
                                 <div class="card-body">
 
-                                    <p class="card-text font-weight-bold">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : "" }}</p>
+                                    <p class="card-text font-weight-bold">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a class="btn pull-right"
@@ -251,9 +253,10 @@
                     <div class="carousel-caption">
                         <div class="card-container">
                             <div class="card">
-                                <img class="card-img-top" [src]="item.imagePath" [alt]="item.text">
+                                <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text">
+                                <!-- <img class="card-img-top" [src]="item.imagePath" [alt]="item.text"> -->
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold">{{ item.title.length > 10 ?item.title.slice(0,24) + '..' : "" }}</p>
+                                    <p class="card-text font-weight-bold">{{ item.title.length > 10 ?item.title.slice(0,24) + '..' : item.title }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a  class="btn pull-right"
@@ -288,9 +291,11 @@
                     <div class="carousel-caption">
                         <div class="card-container" *ngFor="let i of item;">
                             <div class="card">
-                                <img class="card-img-top" [src]="i.imagePath" [alt]="i.text">
+                                <img class="card-img-top"  src="../../../assets/images/image-2.jpeg" [alt]="i.text">
+
+                                <!-- <img class="card-img-top" [src]="i.imagePath" [alt]="i.text"> -->
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : "" }}</p>
+                                    <p class="card-text font-weight-bold">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a class="btn pull-right"
@@ -327,9 +332,9 @@
                     <div class="carousel-caption">
                         <div class="card-container">
                             <div class="card">
-                                <img class="card-img-top" [src]="item.imagePath" [alt]="item.text">
+                                <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text">
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold">{{ item.title.length > 10 ? item.title.slice(0,24) + '..' : "" }}</p>
+                                    <p class="card-text font-weight-bold">{{ item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a  class="btn  pull-right"
