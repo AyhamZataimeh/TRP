@@ -204,7 +204,6 @@ export class MasterComponent implements OnInit {
       if(!response.error) {
         this.clientsList= response.data;
         this.customeImageClientListMobileView();
-        // console.log("clientsList", this.clientsList);
         
       }
     })
@@ -232,19 +231,7 @@ export class MasterComponent implements OnInit {
       }
     })
   }
-  latestNewsDotsCount() {
 
-    // const arrayObject = Object.keys(this.latestNewsList).map((key) => {
-    //   const value = this.latestNewsList[key];
-    //  this.filteredList.push(value);
-    // });
-
-    // console.log("filteredList", this.filteredList);
-    
-
-    // this.languagesList = [...this.filteredList]
-
-  }
   latestNewSlider: number = 1;
   get latestNewsSliderStyle() {
 
@@ -275,6 +262,8 @@ export class MasterComponent implements OnInit {
     this.getClinets();
     this.getLanguages();
     this.getLatestNews();
+
+    
     
 
     window.onscroll = function() {
@@ -290,7 +279,6 @@ export class MasterComponent implements OnInit {
     };
     
 
-    this.latestNewsDotsCount();
     const vision = document.getElementById("vision");
 
     this.masterService.sectionRedierct.subscribe((result: SectionRedierction) => {
@@ -300,8 +288,6 @@ export class MasterComponent implements OnInit {
         this.sctionRedirectHandler(result.sectionId);
         vision?.classList.add("vision-mission-show-animation");
       }
-
-
     });
     document.addEventListener("DOMContentLoaded", function () {
       const targetgroups = document.getElementById("targetgroups");
@@ -325,12 +311,14 @@ export class MasterComponent implements OnInit {
       observer.observe(vision as HTMLElement);
 
 
-
+      
       window.addEventListener("scroll", function () {
 
 
         if (isElementInViewport(aboutUs)) {
 
+          console.log("about us");
+          
           // If the element is in the viewport, add your logic here
           document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
 
@@ -341,10 +329,12 @@ export class MasterComponent implements OnInit {
           aboutUs?.classList.remove("hide-section");
 
         } else {
+          console.log("not about us");
 
         }
 
         if (isElementInViewport(whatIsTrp)) {
+          console.log("whatIsTrp");
 
           document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
 
@@ -359,6 +349,8 @@ export class MasterComponent implements OnInit {
         }
 
         if (isElementInViewport(targetgroups)) {
+          console.log("targetgroups");
+
           document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
 
 
@@ -379,7 +371,14 @@ export class MasterComponent implements OnInit {
         }
       });
       function isElementInViewport(el: any) {
+        console.log(el);
+        
+        
         const rect = el.getBoundingClientRect();
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
         return (
           rect.top >= 0 &&

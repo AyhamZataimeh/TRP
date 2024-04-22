@@ -30,15 +30,12 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12 about-us-main section-mob-v" id="aboutUs">
         <div class="header">
-            <h1>{{ "MASTER.ABOUT_US" | translate}}</h1>
+            <h1>{{aboutUsSections.name}}</h1>
         </div>
-        <div class="about-us" id="aboutUsParent">
+        <div class="about-us" id="aboutUsParent" >
             <div id="aboutUsText">
                 <h5>
-                    We are a team of teachers in Jordan with a vision: “Conversation is the gateway to the English
-                    language,” and we teach conversation in the fun, natural way without using paper, pen, or
-                    blackboard, with a combined experience of the curriculum writing staff and teachers amounting to
-                    approximately 25 years </h5>
+                    {{aboutUsSections.name}} </h5>
             </div>
             <div id="trpAboutUsImage">
                 <img src="../../../assets//images/About-us.jpeg" class="section-images">
@@ -47,7 +44,7 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main section-mob-v" id="whatIsTrp">
         <div class="header">
-            <h1>{{ "MASTER.WHAT_IS_TPR" | translate}}</h1>
+            <h1>{{whatIsTprSections.name}}</h1>
         </div>
         <div class="what-is-trp" id="whatIsTrpParent">
             <div id="trpText">
@@ -64,17 +61,18 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main section-mob-v" id="targetgroups">
         <div class="header">
-            <h1>{{ "MASTER.TARGET_GROUPS" | translate}}</h1>
+            <h1>{{targetGroupSections.name}}</h1>
         </div>
         <div class="target-groups" id="targetGroupsParent">
             <div id="target-groups-text">
-                <h5>
-                    <span style="font-weight: bold;">(A) Category :</span> This category includes children from the age
+                <h5 class="font-weight-bold" style="    word-wrap: break-word;padding: 0 15px;">
+                    <!-- <span style="font-weight: bold;">(A) Category :</span> This category includes children from the age
                     of 4 to 7 years, and the child masters 50 to 100 sentences at a rate of 75 sentences per level.
                     <br>
                     <br>
                     <span style="font-weight: bold;">(B) Category :</span> This category includes children from 8 to 13
-                    years old, and the child masters 100 to 200 sentences at a rate of 150 sentences per level
+                    years old, and the child masters 100 to 200 sentences at a rate of 150 sentences per level -->
+                    {{targetGroupSections.textEn}}
                 </h5>
             </div>
             <div id="targetgroupsImage">
