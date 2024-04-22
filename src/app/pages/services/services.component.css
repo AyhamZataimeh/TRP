@@ -1,3 +1,13 @@
 img {
     border-radius: 10px;
 }
+
+.serviceImg {
+    min-width: 320px;
+    max-width: 50%;
+}
+
+.serviceText {
+    word-wrap: break-word;
+    padding: 0 15px;
+}
