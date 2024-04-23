@@ -28,7 +28,9 @@ export class MasterService {
   blogsData: BehaviorSubject<Blogs> = new BehaviorSubject<Blogs>({
     id:0,
     title:"",
+    titleAr:"",
     text:"",
+    textAr:"",
     imagePath:""
   });
 

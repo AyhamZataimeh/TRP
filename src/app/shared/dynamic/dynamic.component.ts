@@ -10,9 +10,11 @@ import { Blogs } from '../interface/blogs';
 export class DynamicComponent implements OnInit {
 
   blogsData!: Blogs;
+  selectedLang!: any;
   constructor( private masterService: MasterService) {}
 
   ngOnInit(): void {
+    this.selectedLang = localStorage.getItem('language');
     this.masterService.blogsData.subscribe((result:Blogs )=>{
       this.blogsData = result;
     });

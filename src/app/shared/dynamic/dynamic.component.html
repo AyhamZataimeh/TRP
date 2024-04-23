@@ -1,12 +1,18 @@
 <section class="main">
     <div class="container">
-        <h1 class="headerText">
+        <h1 class="headerText" *ngIf="selectedLang == 'en'">
             {{ blogsData.title }}
+        </h1>
+        <h1 class="headerText" *ngIf="selectedLang == 'ar'">
+            {{ blogsData.titleAr }}
         </h1>
         <div class="row">
             <div class="col-md-6">
-                <p class="detailsText">
+                <p class="detailsText" *ngIf="selectedLang == 'en'">
                     {{ blogsData.text }}
+                </p>
+                <p class="detailsText" *ngIf="selectedLang == 'ar'">
+                    {{ blogsData.textAr }}
                 </p>
             </div>
             <div class="col-md-6">
