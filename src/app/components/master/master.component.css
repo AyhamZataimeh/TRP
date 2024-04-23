@@ -770,6 +770,13 @@ section {
     border-radius: 20px;
 }
 
+.about-us-show div:nth-child(1),
+.target-groups-show div:nth-child(1),
+.what-is-trp-show div:nth-child(1) {
+   word-wrap: break-word;
+   padding-bottom: 15px;
+}
+
 @keyframes hide-section {
     from {
         opacity: 1;
@@ -1015,32 +1022,14 @@ section {
 }
 
 @media screen and (min-width: 768px) {
-    .about-us-show div:nth-child(1) {
-        width: 65%
-    }
-    
-    .about-us-show div:nth-child(2) {
-        width: 25%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .target-groups-show div:nth-child(1) {
-        width: 65%
-    }
-    
-    .target-groups-show div:nth-child(2) {
-        width: 25%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+    .about-us-show div:nth-child(1),
+    .target-groups-show div:nth-child(1),
     .what-is-trp-show div:nth-child(1) {
-        width: 65%;
+        width: 65%
     }
     
+    .about-us-show div:nth-child(2),
+    .target-groups-show div:nth-child(2),
     .what-is-trp-show div:nth-child(2) {
         width: 25%;
         display: flex;
