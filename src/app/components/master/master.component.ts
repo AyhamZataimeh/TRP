@@ -254,7 +254,7 @@ export class MasterComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.selectedLang = localStorage.getItem('currentLang');
+    this.selectedLang = localStorage.getItem('language');
     console.log(this.selectedLang);
     
     this.getSections();
@@ -317,51 +317,51 @@ export class MasterComponent implements OnInit {
       window.addEventListener("scroll", function () {
 
 
-        if (isElementInViewport(aboutUs)) {
+        // if (isElementInViewport(aboutUs)) {
 
-          console.log("about us");
+        //   console.log("about us");
           
-          // If the element is in the viewport, add your logic here
-          document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
+        //   // If the element is in the viewport, add your logic here
+        //   document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
 
-          document.getElementById("aboutUsText")?.classList.add("about-us-text");
-          document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
-
-
-          aboutUs?.classList.remove("hide-section");
-
-        } else {
-          console.log("not about us");
-
-        }
-
-        if (isElementInViewport(whatIsTrp)) {
-          console.log("whatIsTrp");
-
-          document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
-
-          document.getElementById("trpText")?.classList.add("trp-text");
-          document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+        //   document.getElementById("aboutUsText")?.classList.add("about-us-text");
+        //   document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
 
 
+        //   aboutUs?.classList.remove("hide-section");
+
+        // } else {
+        //   console.log("not about us");
+
+        // }
+
+        // if (isElementInViewport(whatIsTrp)) {
+        //   console.log("whatIsTrp");
+
+        //   document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
+
+        //   document.getElementById("trpText")?.classList.add("trp-text");
+        //   document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
 
 
-        } else {
-
-        }
-
-        if (isElementInViewport(targetgroups)) {
-          console.log("targetgroups");
-
-          document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
 
 
-          document.getElementById("target-groups-text")?.classList.add("target-groups-text");
-          document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+        // } else {
 
-        } else {
+        // }
 
-        }
+        // if (isElementInViewport(targetgroups)) {
+        //   console.log("targetgroups");
+
+        //   document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
+
+
+        //   document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+        //   document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+
+        // } else {
+
+        // }
 
         if (isElementInViewport(vision)) {
 

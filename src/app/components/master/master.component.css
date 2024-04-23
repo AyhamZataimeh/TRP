@@ -156,8 +156,18 @@
     justify-content: space-between;
     flex-direction: row-reverse;
     visibility: visible;
+    padding-bottom: 20px
+}
 
+.about-us-show div:nth-child(1) {
+    width: 65%
+}
 
+.about-us-show div:nth-child(2) {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .target-groups {
@@ -171,13 +181,36 @@
     justify-content: space-between;
     visibility: visible;
     flex-direction: row-reverse;
+    padding-bottom: 20px
+}
 
+.target-groups-show div:nth-child(1) {
+    width: 65%
+}
+
+.target-groups-show div:nth-child(2) {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .what-is-trp-show {
     display: flex;
     justify-content: space-between;
     opacity: 1;
+    padding-bottom: 20px;
+}
+
+.what-is-trp-show div:nth-child(1) {
+    width: 65%;
+}
+
+.what-is-trp-show div:nth-child(2) {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .what-is-trp-main,
@@ -639,8 +672,9 @@ footer p:focus {
 /* ==== End Avatar Styles ==== */
 
 .section-images {
-    width: 60%;
-    height: auto
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .work-team-section-line {
