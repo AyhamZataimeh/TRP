@@ -32,10 +32,14 @@
         <div class="header">
             <h1>{{aboutUsSections.name}}</h1>
         </div>
-        <div class="about-us" id="aboutUsParent" >
+        <div class="about-us-show" id="aboutUsParent" >
             <div id="aboutUsText">
-                <h5>
-                    {{aboutUsSections.name}} </h5>
+                <h5 *ngIf="selectedLang == 'en'">
+                    {{aboutUsSections.textEn}} 
+                </h5>
+                <h5 *ngIf="selectedLang == 'ar'">
+                    {{aboutUsSections.textAr}}
+                </h5>
             </div>
             <div id="trpAboutUsImage">
                 <img src="../../../assets//images/About-us.jpeg" class="section-images">
@@ -46,12 +50,13 @@
         <div class="header">
             <h1>{{whatIsTprSections.name}}</h1>
         </div>
-        <div class="what-is-trp" id="whatIsTrpParent">
+        <div class="what-is-trp-show" id="whatIsTrpParent">
             <div id="trpText">
-                <h5>
-                    It is a system that was invented in 1970 to teach language by combining body language, play, and
-                    simulation, so that the student can practice and learn the language in a natural way through
-                    conversation and without returning to the rules, fluently and without hesitation.
+                <h5 *ngIf="selectedLang == 'en'">
+                    {{whatIsTprSections.textEn}}
+                </h5>
+                <h5 *ngIf="selectedLang == 'ar'">
+                    {{whatIsTprSections.textAr}}
                 </h5>
             </div>
             <div id="whatIsTrpImage">
@@ -63,16 +68,14 @@
         <div class="header">
             <h1>{{targetGroupSections.name}}</h1>
         </div>
-        <div class="target-groups" id="targetGroupsParent">
+        <div class="target-groups-show" id="targetGroupsParent">
             <div id="target-groups-text">
-                <h5 class="font-weight-bold" style="    word-wrap: break-word;padding: 0 15px;">
-                    <!-- <span style="font-weight: bold;">(A) Category :</span> This category includes children from the age
-                    of 4 to 7 years, and the child masters 50 to 100 sentences at a rate of 75 sentences per level.
-                    <br>
-                    <br>
-                    <span style="font-weight: bold;">(B) Category :</span> This category includes children from 8 to 13
-                    years old, and the child masters 100 to 200 sentences at a rate of 150 sentences per level -->
+                <h5 class="font-weight-bold" style="    word-wrap: break-word;padding: 0 15px;" *ngIf="selectedLang == 'en'">
                     {{targetGroupSections.textEn}}
+                </h5>
+
+                <h5 *ngIf="selectedLang == 'ar'">
+                    {{targetGroupSections.textAr}}
                 </h5>
             </div>
             <div id="targetgroupsImage">
