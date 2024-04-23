@@ -159,17 +159,6 @@
     padding-bottom: 20px
 }
 
-.about-us-show div:nth-child(1) {
-    width: 65%
-}
-
-.about-us-show div:nth-child(2) {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .target-groups {
     display: flex;
     justify-content: space-between;
@@ -184,33 +173,11 @@
     padding-bottom: 20px
 }
 
-.target-groups-show div:nth-child(1) {
-    width: 65%
-}
-
-.target-groups-show div:nth-child(2) {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .what-is-trp-show {
     display: flex;
     justify-content: space-between;
     opacity: 1;
     padding-bottom: 20px;
-}
-
-.what-is-trp-show div:nth-child(1) {
-    width: 65%;
-}
-
-.what-is-trp-show div:nth-child(2) {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .what-is-trp-main,
@@ -1045,4 +1012,39 @@ section {
         height: 23%;
     }
 
+}
+
+@media screen and (min-width: 768px) {
+    .about-us-show div:nth-child(1) {
+        width: 65%
+    }
+    
+    .about-us-show div:nth-child(2) {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .target-groups-show div:nth-child(1) {
+        width: 65%
+    }
+    
+    .target-groups-show div:nth-child(2) {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .what-is-trp-show div:nth-child(1) {
+        width: 65%;
+    }
+    
+    .what-is-trp-show div:nth-child(2) {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
