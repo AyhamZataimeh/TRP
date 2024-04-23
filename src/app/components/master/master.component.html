@@ -32,15 +32,15 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12 about-us-main section-mob-v" id="aboutUs">
         <div class="header">
-            <h1>{{aboutUsSections.name}}</h1>
+            <h1>{{aboutUsSections?.name}}</h1>
         </div>
         <div class="about-us-show" id="aboutUsParent" >
             <div id="aboutUsText">
                 <h5 *ngIf="selectedLang == 'en'">
-                    {{aboutUsSections.textEn}} 
+                    {{aboutUsSections?.textEn}} 
                 </h5>
                 <h5 *ngIf="selectedLang == 'ar'">
-                    {{aboutUsSections.textAr}}
+                    {{aboutUsSections?.textAr}}
                 </h5>
             </div>
             <div id="trpAboutUsImage">
@@ -50,15 +50,18 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main section-mob-v" id="whatIsTrp">
         <div class="header">
-            <h1>{{whatIsTprSections.name}}</h1>
+            <h1>{{whatIsTprSections?.name}}</h1>
         </div>
         <div class="what-is-trp-show" id="whatIsTrpParent">
             <div id="trpText">
+                <h5>
+                    
+                </h5>
                 <h5 *ngIf="selectedLang == 'en'">
-                    {{whatIsTprSections.textEn}}
+                    {{whatIsTprSections?.textEn}}
                 </h5>
                 <h5 *ngIf="selectedLang == 'ar'">
-                    {{whatIsTprSections.textAr}}
+                    {{whatIsTprSections?.textAr}}
                 </h5>
             </div>
             <div id="whatIsTrpImage">
@@ -68,16 +71,16 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main section-mob-v" id="targetgroups">
         <div class="header">
-            <h1>{{targetGroupSections.name}}</h1>
+            <h1>{{targetGroupSections?.name}}</h1>
         </div>
         <div class="target-groups-show" id="targetGroupsParent">
             <div id="target-groups-text">
                 <h5 class="font-weight-bold" style="    word-wrap: break-word;padding: 0 15px;" *ngIf="selectedLang == 'en'">
-                    {{targetGroupSections.textEn}}
+                    {{targetGroupSections?.textEn}}
                 </h5>
 
                 <h5 *ngIf="selectedLang == 'ar'">
-                    {{targetGroupSections.textAr}}
+                    {{targetGroupSections?.textAr}}
                 </h5>
             </div>
             <div id="targetgroupsImage">

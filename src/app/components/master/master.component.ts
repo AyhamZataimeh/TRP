@@ -254,7 +254,9 @@ export class MasterComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.selectedLang = localStorage.getItem('language');
+    this.selectedLang = localStorage.getItem('currentLang');
+    console.log(this.selectedLang);
+    
     this.getSections();
     this.getLandingPgae();
     this.getVisiionAndMission();
