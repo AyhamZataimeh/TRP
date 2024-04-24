@@ -9,7 +9,7 @@
 <div class="landing-page">
     <div class="intro">
         <div class="landing-page-logo">
-            <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath  class="landing-page-logo-image"> -->
+            <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath"  class="landing-page-logo-image"> -->
             <img src="../../../assets//images/logo-removebg-preview.png" class="landing-page-logo-image">
         </div>
         <h2 class="landing-page-text" *ngIf="selectedLang == 'en'"> {{landingPage?.header}}</h2>
@@ -44,7 +44,9 @@
                 </h5>
             </div>
             <div id="trpAboutUsImage">
-                <img src="../../../assets//images/About-us.jpeg" class="section-images">
+                <!-- <img src="../../../assets//images/About-us.jpeg" class="section-images"> -->
+                <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images">
+
             </div>
         </div>
     </div>
@@ -54,9 +56,7 @@
         </div>
         <div class="what-is-trp-show" id="whatIsTrpParent">
             <div id="trpText">
-                <h5>
-                    
-                </h5>
+               
                 <h5 *ngIf="selectedLang == 'en'">
                     {{whatIsTprSections?.textEn}}
                 </h5>
@@ -65,7 +65,9 @@
                 </h5>
             </div>
             <div id="whatIsTrpImage">
-                <img src="../../../assets//images/what-is-trp.jpeg" class="section-images">
+                <img [src]="'../../../assets/images/'+whatIsTprSections.imagePath" class="section-images">
+
+                <!-- <img src="../../../assets//images/what-is-trp.jpeg" class="section-images"> -->
             </div>
         </div>
     </div>
@@ -84,7 +86,9 @@
                 </h5>
             </div>
             <div id="targetgroupsImage">
-                <img src="../../../assets//images/target-groups.jpeg" class="section-images">
+                <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images">
+
+                <!-- <img src="../../../assets//images/target-groups.jpeg" class="section-images"> -->
             </div>
         </div>
     </div>
@@ -100,9 +104,9 @@
             <div class="slider-card" id="sliderCard" *ngFor="let workTeam of workTeams">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <!-- <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false"> -->
+                        <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false">
 
-                        <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name">
+                        <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name"> -->
                     </div>
                     <h3 class="workTeam-name">{{ workTeam.name }}</h3>
                     <div class="work-team-section-line"></div>
@@ -124,9 +128,9 @@
                     [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
                         <div class="avatar-box mob-v">
-                            <!-- <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false"> -->
+                            <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name">
 
-                            <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg">
+                            <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg"> -->
                         </div>
                         <h2 class="worker-name mob-v">{{workTeam.name}}</h2>
                         <div class="work-team-section-line"></div>
@@ -157,8 +161,8 @@
                 *ngFor="let client of clientsList">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <!-- <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false"> -->
-                        <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client">
+                        <img class="avatar-image" [src]="'../../../assets/images/'+client.imagePath" [alt]="client.name" >
+                        <!-- <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client"> -->
                     </div>
 
                 </div>
@@ -182,9 +186,9 @@
                                 <div class="col-4 my-2" *ngFor="let image of imageRow">
                                     <div class="clientsMobileImgContainer">
                                         <div class="clientsMobileImgBox">
-                                            <!-- <img class="avatar-image" [src]="'../../../assets/images/'+image.imagePath" [alt]="image.name" *ngIf="false"> -->
+                                            <img class="avatar-image" [src]="'../../../assets/images/'+image.imagePath" >
 
-                                            <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage">
+                                            <!-- <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage"> -->
                                         </div>
                                     </div>
                                 </div>
@@ -217,9 +221,10 @@
                     <div class="carousel-caption" >
                         <div class="card-container" *ngFor="let i of item" >
                             <div class="card">
-                                <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="i.text">
+                                <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="i.text"> -->
+                                 <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
 
-                                <!-- <img class="card-img-top" [src]="i.imagePath" [alt]="i.text"> -->
+
                                 <div class="card-body">
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
@@ -259,8 +264,8 @@
                     <div class="carousel-caption">
                         <div class="card-container">
                             <div class="card">
-                                <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text">
-                                <!-- <img class="card-img-top" [src]="item.imagePath" [alt]="item.text"> -->
+                                <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
+                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath" [alt]="item.text">
                                 <div class="card-body">
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}</p>
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
@@ -298,9 +303,9 @@
                     <div class="carousel-caption">
                         <div class="card-container" *ngFor="let i of item;">
                             <div class="card">
-                                <img class="card-img-top"  src="../../../assets/images/image-2.jpeg" [alt]="i.text">
+                                <!-- <img class="card-img-top"  src="../../../assets/images/image-2.jpeg" [alt]="i.text"> -->
 
-                                <!-- <img class="card-img-top" [src]="i.imagePath" [alt]="i.text"> -->
+                                <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
                                 <div class="card-body">
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
@@ -341,7 +346,9 @@
                     <div class="carousel-caption">
                         <div class="card-container">
                             <div class="card">
-                                <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text">
+                                <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
+                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath" [alt]="item.text">
+
                                 <div class="card-body">
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{item.title.length > 10 ? item.titleAr.slice(0,24) + '..' : item.title }}</p>
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>

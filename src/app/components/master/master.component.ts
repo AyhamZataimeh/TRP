@@ -77,7 +77,7 @@ export class MasterComponent implements OnInit {
 
 
 
-  clientImagesMobile: string[][] = [
+  clientImagesMobile: Clients[][] = [
    
     // Add more arrays if needed
   ];
@@ -214,7 +214,6 @@ export class MasterComponent implements OnInit {
       if(!response.error) {
         this.latestNewsListMobile= response.data;
         this.latestNewsList= this.customeLatestNewsList(response.data);
-        console.log("latestNewsList",this.latestNewsList);
         
       }
     })
@@ -225,7 +224,6 @@ export class MasterComponent implements OnInit {
       if(!response.error) {
         this.languagesMobileList= response.data;
         this.languagesList= this.customeLangugesList(response.data) ;
-        console.log("languagesList",this.languagesList);
         
         
       }
@@ -255,7 +253,6 @@ export class MasterComponent implements OnInit {
   }
   ngOnInit(): void {
     this.selectedLang = localStorage.getItem('language');
-    console.log(this.selectedLang);
     
     this.getSections();
     this.getLandingPgae();
@@ -373,7 +370,6 @@ export class MasterComponent implements OnInit {
         }
       });
       function isElementInViewport(el: any) {
-        console.log(el);
         
         
         const rect = el.getBoundingClientRect();
@@ -497,6 +493,8 @@ export class MasterComponent implements OnInit {
         }
       })
     }
+
+    this.clientImagesMobile.push(list)
   }
 
 
