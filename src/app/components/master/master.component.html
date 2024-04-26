@@ -1,12 +1,9 @@
-
-
 <button class="btn btn-primary register">
-    <a  [routerLink]="['/courses-register']" class="text-decoration-none text-light">
-      {{"NAVBAR.COURSE_REGISTER_NOW" | translate}}
+    <a [routerLink]="['/courses-register']" class="text-decoration-none text-light">
+        {{"NAVBAR.COURSE_REGISTER_NOW" | translate}}
     </a>
-   
-  </button>
-<div class="landing-page">
+</button>
+<div class="landing-page" [style.background-image]="'url(' + landingPageImageURL + ')'">
     <div class="intro">
         <div class="landing-page-logo">
             <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath"  class="landing-page-logo-image"> -->
@@ -21,12 +18,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <div  id="vision" class="vision-mission" >
-                <!-- <img [src]="'../../../assets/images/'+ visionMission.imagePathEn" *ngIf="selectedLang == 'en'" alt="">
-                <img [src]="'../../../assets/images/'+ visionMission.imagePathAr"  *ngIf="selectedLang == 'ar'" alt=""> -->
-
-
-        
+            <div id="vision" class="vision-mission">
+                <div class="vision-img-box">
+                    <img src="../../../assets/images/Vision&mission.jpeg">
+                </div>
             </div>
         </div>
     </div>
@@ -34,10 +29,10 @@
         <div class="header">
             <h1>{{aboutUsSections?.name}}</h1>
         </div>
-        <div class="about-us-show" id="aboutUsParent" >
+        <div class="about-us-show" id="aboutUsParent">
             <div id="aboutUsText">
                 <h5 *ngIf="selectedLang == 'en'">
-                    {{aboutUsSections?.textEn}} 
+                    {{aboutUsSections?.textEn}}
                 </h5>
                 <h5 *ngIf="selectedLang == 'ar'">
                     {{aboutUsSections?.textAr}}
@@ -56,7 +51,7 @@
         </div>
         <div class="what-is-trp-show" id="whatIsTrpParent">
             <div id="trpText">
-               
+
                 <h5 *ngIf="selectedLang == 'en'">
                     {{whatIsTprSections?.textEn}}
                 </h5>
@@ -104,7 +99,8 @@
             <div class="slider-card" id="sliderCard" *ngFor="let workTeam of workTeams">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" >
+                        <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath"
+                            [alt]="workTeam.name" *ngIf="false">
 
                         <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name"> -->
                     </div>
@@ -128,9 +124,10 @@
                     [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
                         <div class="avatar-box mob-v">
-                            <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name">
+                            <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath"
+                                [alt]="workTeam.name">
 
-                            <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg">
+                            <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg"> -->
                         </div>
                         <h2 class="worker-name mob-v">{{workTeam.name}}</h2>
                         <div class="work-team-section-line"></div>
@@ -161,7 +158,8 @@
                 *ngFor="let client of clientsList">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <img class="avatar-image" [src]="'../../../assets/images/'+client.imagePath" [alt]="client.name" >
+                        <img class="avatar-image" [src]="'../../../assets/images/'+client.imagePath"
+                            [alt]="client.name">
                         <!-- <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client"> -->
                     </div>
 
@@ -178,15 +176,16 @@
         </div>
         <div id="carouselCaptionsClients" class="carousel slide" data-ride="carousel" data-interval="4000">
             <div class="carousel-inner">
-                <div class="carousel-item"  *ngFor="let imageRow of clientImagesMobile;  let index = index; let isFirst = first"
-                [ngClass]="{active:isFirst}">
+                <div class="carousel-item"
+                    *ngFor="let imageRow of clientImagesMobile;  let index = index; let isFirst = first"
+                    [ngClass]="{active:isFirst}">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-4 my-2" *ngFor="let image of imageRow">
                                     <div class="clientsMobileImgContainer">
                                         <div class="clientsMobileImgBox">
-                                            <img class="avatar-image" [src]="'../../../assets/images/'+image.imagePath" >
+                                            <img class="avatar-image" [src]="'../../../assets/images/'+image.imagePath">
 
                                             <!-- <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage"> -->
                                         </div>
@@ -218,20 +217,21 @@
             <div class="carousel-inner">
                 <div class="carousel-item" *ngFor="let item of latestNewsList; let index = index; let isFirst = first"
                     [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption" >
-                        <div class="card-container" *ngFor="let i of item" >
+                    <div class="carousel-caption">
+                        <div class="card-container" *ngFor="let i of item">
                             <div class="card">
                                 <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="i.text"> -->
-                                 <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
+                                <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
 
 
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length
+                                        > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
+                                        i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a class="btn pull-right"
-                                        (click)="dynamicPageRedircation(i)">Read More</a>
+                                    <a class="btn pull-right" (click)="dynamicPageRedircation(i)">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -265,14 +265,16 @@
                         <div class="card-container">
                             <div class="card">
                                 <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
-                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath" [alt]="item.text">
+                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath"
+                                    [alt]="item.text">
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}</p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{
+                                        item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
+                                        item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a  class="btn pull-right"
-                                        (click)="dynamicPageRedircation(item)">Read More</a>
+                                    <a class="btn pull-right" (click)="dynamicPageRedircation(item)">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -307,13 +309,14 @@
 
                                 <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length
+                                        > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
+                                        i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
 
                                 </div>
                                 <div class="card-footer">
-                                    <a class="btn pull-right"
-                                        (click)="dynamicPageRedircation(i)">Read More</a>
+                                    <a class="btn pull-right" (click)="dynamicPageRedircation(i)">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -347,15 +350,17 @@
                         <div class="card-container">
                             <div class="card">
                                 <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
-                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath" [alt]="item.text">
+                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath"
+                                    [alt]="item.text">
 
                                 <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{item.title.length > 10 ? item.titleAr.slice(0,24) + '..' : item.title }}</p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{ item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">
+                                        {{item.title.length > 10 ? item.titleAr.slice(0,24) + '..' : item.title }}</p>
+                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
+                                        item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a  class="btn  pull-right"
-                                        (click)="dynamicPageRedircation(item)">Read More</a>
+                                    <a class="btn  pull-right" (click)="dynamicPageRedircation(item)">Read More</a>
                                 </div>
                             </div>
                         </div>

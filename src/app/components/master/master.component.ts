@@ -75,7 +75,8 @@ export class MasterComponent implements OnInit {
 
   clientsList: Clients[] = [ ];
 
-
+  landingPageImageURL: string = '';
+  visionAndMissionImage: string = '';
 
   clientImagesMobile: Clients[][] = [
    
@@ -262,7 +263,9 @@ export class MasterComponent implements OnInit {
     this.getLanguages();
     this.getLatestNews();
 
-    
+
+    this.landingPageImageURL = "../../../assets/images/landing-page.jpg";
+    this.visionAndMissionImage = "../../../assets//images/Vision&mission.jpeg";
     
 
     window.onscroll = function() {
@@ -537,3 +540,4 @@ export class MasterComponent implements OnInit {
   }
 
 }
+
