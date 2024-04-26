@@ -38,18 +38,18 @@
       <div class="col-12 col-md-4 mb-5 mb-md-0">
         <h5 class="font-weight-bold">{{ "FOOTER.CONTACT_US" | translate }}</h5>
         <ul class="nav flex-column mt-4">
-          <li class="fa fa-phone nav-item mb-2"> <a style="padding-left: 10px" [href]="'tel:'+contactInfo?.phoneNumber1"
-              class="text-muted text-decoration-none">{{contactInfo?.phoneNumber1}}</a></li>
+          <li class="fa fa-phone nav-item mb-2"> <a style="padding-left: 10px" [href]="'tel:'+contactInfo.phoneNumber1"
+              class="text-muted text-decoration-none">{{contactInfo.phoneNumber1}}</a></li>
           <hr>
-          <li class="fa fa-phone nav-item mb-2" *ngIf="contactInfo?.phoneNumber2"> <a style="padding-left: 10px" [href]="'tel:'+contactInfo?.phoneNumber2"
+          <li class="fa fa-phone nav-item mb-2" *ngIf="contactInfo?.phoneNumber2"> <a style="padding-left: 10px" [href]="'tel:'+contactInfo.phoneNumber2"
             class="text-muted text-decoration-none">{{contactInfo?.phoneNumber2}}</a></li>
             <hr *ngIf="contactInfo?.phoneNumber2">
           
-          <li class="fa fa-envelope nav-item mb-2"> <a style="padding-left: 10px" [href]="'mailto:'+contactInfo?.email"
+          <li class="fa fa-envelope nav-item mb-2"> <a style="padding-left: 10px" [href]="'mailto:'+contactInfo.email"
               class="text-muted text-decoration-none">{{contactInfo?.email}}</a></li>
           <hr>
           <li class="fa fa-map-marker nav-item mb-2"> <a style="padding-left: 10px"
-              class="text-muted text-decoration-none" target="_blank" [href]="contactInfo?.locationUrl">
+              class="text-muted text-decoration-none" target="_blank" [href]="contactInfo.locationUrl">
               {{contactInfo?.location}}</a></li>
         </ul>
       </div>

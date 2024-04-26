@@ -104,7 +104,7 @@
             <div class="slider-card" id="sliderCard" *ngFor="let workTeam of workTeams">
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
-                        <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" *ngIf="false">
+                        <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name" >
 
                         <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name"> -->
                     </div>
@@ -130,7 +130,7 @@
                         <div class="avatar-box mob-v">
                             <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath" [alt]="workTeam.name">
 
-                            <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg"> -->
+                            <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg">
                         </div>
                         <h2 class="worker-name mob-v">{{workTeam.name}}</h2>
                         <div class="work-team-section-line"></div>
