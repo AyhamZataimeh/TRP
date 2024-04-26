@@ -20,7 +20,10 @@
         <div class="col-12 d-flex justify-content-center">
             <div id="vision" class="vision-mission">
                 <div class="vision-img-box">
-                    <img src="../../../assets/images/Vision&mission.jpeg">
+                    <!-- <img src="../../../assets/images/Vision&mission.jpeg"> -->
+                    <img [src]="'../../../assets/images/'+ visionMission.imagePathEn">
+                    <img [src]="'../../../assets/images/'+ visionMission.imagePathAr">
+
                 </div>
             </div>
         </div>

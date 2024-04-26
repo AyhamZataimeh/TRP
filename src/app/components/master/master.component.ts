@@ -166,7 +166,8 @@ export class MasterComponent implements OnInit {
   getLandingPgae() {
     this.masterService.getLandingPage().subscribe((response: any)=>{
       if(!response.error) {
-        this.landingPage=response.data;        
+        this.landingPage=response.data; 
+        this.landingPageImageURL = "../../../assets/images/"+this.landingPage.imagePath;       
       }
     })
   }
