@@ -774,7 +774,7 @@ section {
     animation-play-state: paused !important;
 }
 
-.register {
+.register-en {
     z-index: 9999;
     position: sticky;
     padding: 8px 20px;
@@ -784,6 +784,20 @@ section {
     top: 0;
     border-radius: 20px;
 }
+
+.register-ar  {
+    transform: translateX(-149%);
+    z-index: 9999;
+    position: sticky;
+    padding: 8px 20px;
+    width: 25vw;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    top: 0;
+    border-radius: 20px;
+
+}
+
 
 .about-us-show div:nth-child(1),
 .target-groups-show div:nth-child(1),
@@ -1063,3 +1077,5 @@ section {
         align-items: center;
     }
 }
+
+

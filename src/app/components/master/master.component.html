@@ -1,4 +1,4 @@
-<button class="btn btn-primary register">
+<button class="btn btn-primary register" [ngClass]="selectedLang == 'en' ? 'register-en' : 'register-ar'">
     <a [routerLink]="['/courses-register']" class="text-decoration-none text-light">
         {{"NAVBAR.COURSE_REGISTER_NOW" | translate}}
     </a>
@@ -21,8 +21,8 @@
             <div id="vision" class="vision-mission">
                 <div class="vision-img-box">
                     <!-- <img src="../../../assets/images/Vision&mission.jpeg"> -->
-                    <img [src]="'../../../assets/images/'+ visionMission.imagePathEn">
-                    <img [src]="'../../../assets/images/'+ visionMission.imagePathAr">
+                    <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
+                    <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr">
 
                 </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="slider-inner mt-3">
                     <div class="avatar-box">
                         <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath"
-                            [alt]="workTeam.name" *ngIf="false">
+                            [alt]="workTeam.name" >
 
                         <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name"> -->
                     </div>

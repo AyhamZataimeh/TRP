@@ -15,7 +15,11 @@
         "COURSES_ADDRESS":"Courses Address",
         "LOGIN":"Login",
         "PARTNERS":"Our Partners",
-        "COURSE_REGISTER_NOW":"Register now for upcoming courses"
+        "COURSE_REGISTER_NOW":"Register now for upcoming courses",
+        "TITLE-1":"Total Physical Reposne",
+        "TITLE-2":"For Teaching English"
+
+
     },
     "MASTER": {
         "WE_DO_IT_BECAUSE_WE_LOVE_IT":"WE DO IT BECAUSE WE LOVE IT",

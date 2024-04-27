@@ -22,7 +22,11 @@ export class AppComponent implements OnInit {
   }
 
   setLanguage() {
-    this. selectedlanguage= localStorage.getItem("language"); 
+    this. selectedlanguage= localStorage.getItem("language");
+    if(!this.selectedlanguage) {
+      localStorage.setItem('language', 'en');
+      this. selectedlanguage= localStorage.getItem("language");
+    } 
     this.translateService.setDefaultLang('en');
     this.translateService.use(this.selectedlanguage);
 

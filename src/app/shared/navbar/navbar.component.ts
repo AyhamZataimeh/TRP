@@ -4,6 +4,7 @@ import { MasterService } from '../master.service';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/pages/services/main-service.service';
 import { Services } from '../interface/services.model';
+import { ContactUs } from '../interface/contact-us.model';
 
 @Component({
   selector: 'app-navbar',
@@ -45,12 +46,24 @@ export class NavbarComponent implements OnInit {
   }
 
   services:Services[]=[];
+  contactInfo!: ContactUs;
+
 
   constructor(private masterService: MasterService, private router: Router, private mainService: MainService) {}
 
   ngOnInit(): void {
    
     this.getServices();
+    this.getContactInfo();
+  }
+
+  getContactInfo() {
+    this.masterService.getContactUs().subscribe((response: any)=>{
+      if(!response.error) {
+        this.contactInfo= response.data;
+        console.log("contactInfo",this.contactInfo);
+      }
+    })
   }
 
   sctionRedirectHandler(event:number) 

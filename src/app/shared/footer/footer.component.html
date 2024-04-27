@@ -2,18 +2,36 @@
   <div class="container-fluid">
     <div class="row text-center text-center text-md-start">
       <div class="col-12 col-md-4 mb-5 mb-md-0">
-        <h5 class="font-weight-bold" style="text-wrap: nowrap;">Total physical response </h5>
-        <h5 class="font-weight-bold" style="text-wrap: nowrap;">for teaching English</h5>
+        <h5 class="font-weight-bold" style="text-wrap: nowrap">
+          {{ "NAVBAR.TITLE-1" | translate }}
+        </h5>
+        <h5 class="font-weight-bold" style="text-wrap: nowrap">
+          {{ "NAVBAR.TITLE-2" | translate }}
+        </h5>
+
+        <!-- <h5 class="font-weight-bold" style="text-wrap: nowrap;">for teaching English</h5> -->
         <div class="row">
           <div class="col">
-            <a href="https://www.facebook.com/tpr.foundation.jo" target="_blank" class="media">
-              <li class="fa fa-facebook   "></li>
+            <a
+              href="https://www.facebook.com/tpr.foundation.jo"
+              target="_blank"
+              class="media"
+            >
+              <li class="fa fa-facebook"></li>
             </a>
-            <a href="https://www.instagram.com/tpr.foundation/" target="_blank" class="media">
-              <li class="fa fa-instagram  "></li>
+            <a
+              href="https://www.instagram.com/tpr.foundation/"
+              target="_blank"
+              class="media"
+            >
+              <li class="fa fa-instagram"></li>
             </a>
-            <a href="https://www.youtube.com/@TotalPhysicslResponse" target="_blank" class="media">
-              <li class="fa fa-youtube  "></li>
+            <a
+              href="https://www.youtube.com/@TotalPhysicslResponse"
+              target="_blank"
+              class="media"
+            >
+              <li class="fa fa-youtube"></li>
             </a>
           </div>
         </div>
@@ -21,36 +39,106 @@
       <div class="col-12 col-md-4 mb-5 mb-md-0">
         <h5 class="font-weight-bold">{{ "FOOTER.SHORT_LINK" | translate }}</h5>
         <ul class="nav flex-column mt-4 short-link">
-          <li class="nav-item m-2  "><a class="nav-link p-0  fa fa-arrow-right"
-              (click)="sectionHandler(AboutUs)"> <span class="text-muted pl-2">{{ "NAVBAR.ABOUT_US" | translate
-                }}</span></a></li>
-          <li class="nav-item m-2  "><a class="nav-link p-0  fa fa-arrow-right"> <span
-                class="text-muted pl-2">Our Services</span></a></li>
-          <li class="nav-item m-2  "><a class="nav-link p-0  fa fa-arrow-right"> <span
-                class="text-muted pl-2">Latest Blogs</span></a></li>
-          <li class="nav-item m-2  "><a [routerLink]="['/courses-register']" class="nav-link p-0  fa fa-arrow-right"> <span
-                class="text-muted pl-2">{{ "NAVBAR.COURSE_REGISTER" | translate }}</span></a></li>
-          <li class="nav-item m-2  "><a [routerLink]="['/submitting-job']" class="nav-link p-0  fa fa-arrow-right"> <span
-                class="text-muted pl-2">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</span></a></li>
-
+          <li class="nav-item m-2">
+            <a
+              class="nav-link p-0 fa fa-arrow-right"
+              (click)="sectionHandler(AboutUs)"
+            >
+              <span class="text-muted"
+              [ngClass]="selectedLang == 'en' ? 'pl-2' : 'pr-2'"
+              >{{
+                "NAVBAR.ABOUT_US" | translate
+              }}</span></a
+            >
+          </li>
+          <li class="nav-item m-2">
+            <a class="nav-link p-0 fa fa-arrow-right">
+              <span
+                class="text-muted"
+                [ngClass]="selectedLang == 'en' ? 'pl-2' : 'pr-2'"
+                >{{ "NAVBAR.SERVICES" | translate }}</span
+              ></a
+            >
+          </li>
+          <li class="nav-item m-2" (click)="sectionHandler(LatestNews)">
+            <a class="nav-link p-0 fa fa-arrow-right">
+              <span class="text-muted"
+              [ngClass]="selectedLang == 'en' ? 'pl-2' : 'pr-2'"
+              >{{
+                "NAVBAR.LATEST_NEWS" | translate
+              }}</span></a
+            >
+          </li>
+          <li class="nav-item m-2">
+            <a
+              [routerLink]="['/courses-register']"
+              class="nav-link p-0 fa fa-arrow-right"
+            >
+              <span class="text-muted"
+              [ngClass]="selectedLang == 'en' ? 'pl-2' : 'pr-2'"
+              >{{
+                "NAVBAR.COURSE_REGISTER" | translate
+              }}</span></a
+            >
+          </li>
+          <li class="nav-item m-2">
+            <a
+              [routerLink]="['/submitting-job']"
+              class="nav-link p-0 fa fa-arrow-right"
+            >
+              <span class="text-muted"
+              [ngClass]="selectedLang == 'en' ? 'pl-2' : 'pr-2'"
+              >{{
+                "NAVBAR.SUBMITTING_JOB" | translate
+              }}</span></a
+            >
+          </li>
         </ul>
       </div>
       <div class="col-12 col-md-4 mb-5 mb-md-0">
         <h5 class="font-weight-bold">{{ "FOOTER.CONTACT_US" | translate }}</h5>
         <ul class="nav flex-column mt-4">
-          <li class="fa fa-phone nav-item mb-2"> <a style="padding-left: 10px" [href]="'tel:'+contactInfo.phoneNumber1"
-              class="text-muted text-decoration-none">{{contactInfo.phoneNumber1}}</a></li>
-          <hr>
-          <li class="fa fa-phone nav-item mb-2" *ngIf="contactInfo?.phoneNumber2"> <a style="padding-left: 10px" [href]="'tel:'+contactInfo.phoneNumber2"
-            class="text-muted text-decoration-none">{{contactInfo?.phoneNumber2}}</a></li>
-            <hr *ngIf="contactInfo?.phoneNumber2">
-          
-          <li class="fa fa-envelope nav-item mb-2"> <a style="padding-left: 10px" [href]="'mailto:'+contactInfo.email"
-              class="text-muted text-decoration-none">{{contactInfo?.email}}</a></li>
-          <hr>
-          <li class="fa fa-map-marker nav-item mb-2"> <a style="padding-left: 10px"
-              class="text-muted text-decoration-none" target="_blank" [href]="contactInfo.locationUrl">
-              {{contactInfo?.location}}</a></li>
+          <li class="fa fa-phone nav-item mb-2">
+            <a
+              style="padding-left: 10px"
+              [href]="'tel:' + contactInfo.phoneNumber1"
+              class="text-muted text-decoration-none"
+              >{{ contactInfo.phoneNumber1 }}</a
+            >
+          </li>
+          <hr />
+          <li
+            class="fa fa-phone nav-item mb-2"
+            *ngIf="contactInfo?.phoneNumber2"
+          >
+            <a
+              style="padding-left: 10px"
+              [href]="'tel:' + contactInfo.phoneNumber2"
+              class="text-muted text-decoration-none"
+              >{{ contactInfo?.phoneNumber2 }}</a
+            >
+          </li>
+          <hr *ngIf="contactInfo?.phoneNumber2" />
+
+          <li class="fa fa-envelope nav-item mb-2">
+            <a
+              style="padding-left: 10px"
+              [href]="'mailto:' + contactInfo.email"
+              class="text-muted text-decoration-none"
+              >{{ contactInfo?.email }}
+            </a>
+          </li>
+          <hr />
+          <li class="fa fa-map-marker nav-item mb-2">
+            <a
+              style="padding-left: 10px"
+              class="text-muted text-decoration-none"
+              target="_blank"
+              [href]="contactInfo.locationUrl"
+            >
+              {{ contactInfo?.location }}
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -25,6 +25,10 @@ export class FooterComponent implements OnInit {
   public get WorkTeam(): Sections.WorkTeam {
     return Sections.WorkTeam
   }
+  public get LatestNews() : Sections.LatestNews {
+    return Sections.LatestNews;
+  }
+  selectedLang: any;
 
   constructor(private masterService: MasterService){}
 
@@ -40,6 +44,8 @@ export class FooterComponent implements OnInit {
   contactInfo!: ContactUs;
 
   ngOnInit(): void {
+    this.selectedLang = localStorage.getItem('language');
+
     this.getContactInfo();
     
   }
