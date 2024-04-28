@@ -75,7 +75,7 @@
         </div>
         <div class="target-groups-show" id="targetGroupsParent">
             <div id="target-groups-text">
-                <h5 class="font-weight-bold" *ngIf="selectedLang == 'en'">
+                <h5  *ngIf="selectedLang == 'en'">
                     {{targetGroupSections?.textEn}}
                 </h5>
 
@@ -134,7 +134,7 @@
                         </div>
                         <h2 class="worker-name mob-v">{{workTeam.name}}</h2>
                         <div class="work-team-section-line"></div>
-                        <h3 class="worker-position mob-v">{{workTeam.name}}</h3>
+                        <h3 class="worker-position mob-v">{{workTeam.position}}</h3>
                     </div>
                 </div>
             </div>
@@ -358,9 +358,11 @@
 
                                 <div class="card-body">
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">
-                                        {{item.title.length > 10 ? item.titleAr.slice(0,24) + '..' : item.title }}</p>
+                                        {{item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}
+                                    </p>
                                     <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
-                                        item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
+                                        item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}
+                                    </p>
                                 </div>
                                 <div class="card-footer">
                                     <a class="btn  pull-right" (click)="dynamicPageRedircation(item)">Read More</a>

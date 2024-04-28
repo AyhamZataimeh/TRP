@@ -136,7 +136,7 @@ export class MasterComponent implements OnInit {
   get sliderStyles() { 
     //important test
     
-    if(this.clientsList.length > 7) {
+    if(this.clientsList.length > 10) {
       const numSlides = this.clientsList.length;
       return {
         '--num-slides': numSlides - 9
@@ -216,6 +216,8 @@ export class MasterComponent implements OnInit {
       if(!response.error) {
         this.latestNewsListMobile= response.data;
         this.latestNewsList= this.customeLatestNewsList(response.data);
+        console.log("latest", this.latestNewsList);
+        
         
       }
     })
@@ -225,7 +227,9 @@ export class MasterComponent implements OnInit {
     this.masterService.getLanguages().subscribe((response: any)=>{
       if(!response.error) {
         this.languagesMobileList= response.data;
-        this.languagesList= this.customeLangugesList(response.data) ;
+        this.languagesList= this.customeLangugesList(response.data);
+        console.log("languagesList", this.languagesList);
+        
         
         
       }
@@ -497,10 +501,11 @@ export class MasterComponent implements OnInit {
           // push to origin list
           list=[];
         }
-      })
+      });
+      this.clientImagesMobile.push(list)
+
     }
 
-    this.clientImagesMobile.push(list)
   }
 
 
@@ -516,7 +521,10 @@ export class MasterComponent implements OnInit {
       latestList=[];
     }
   });
-  list.push(latestList);
+  if(latestList.length) {
+    list.push(latestList);
+
+  }
   return list;
 
   }
@@ -534,7 +542,10 @@ export class MasterComponent implements OnInit {
       languagesList=[];
     }
   });
-  list.push(languagesList);
+  if(languagesList.length) {
+    list.push(languagesList);
+
+  }
 
 
   return list;

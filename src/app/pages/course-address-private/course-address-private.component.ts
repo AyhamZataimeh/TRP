@@ -45,6 +45,9 @@ export class CourseAddressPrivateComponent implements OnInit {
         if(address) {
           this.coursesAddressList = this.coursesAddressList.filter((courseDetails: CourseDetails)=> courseDetails.address.includes(address));
         }
+
+        this.coursesAddressList.sort(function(a:any, b:any){return b.courcesLocation.locationsId  - a.courcesLocation.locationsId}); // sort array in acc order based on locationsId
+
       }
     });
   }

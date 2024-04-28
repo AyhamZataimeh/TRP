@@ -29,6 +29,9 @@ export class CoursesAddressComponent implements OnInit {
     this.courseAddressService.getCoursesAddress(0).subscribe((response: any)=>{
       if(!response.error) {
         this.coursesAddressList= response.data;
+        
+        this.coursesAddressList.sort(function(a:any, b:any){return b.courcesLocation.locationsId  - a.courcesLocation.locationsId}); // sort array in acc order based locationsId
+
       }
     })
   }

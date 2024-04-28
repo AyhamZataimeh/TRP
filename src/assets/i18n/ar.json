@@ -11,7 +11,7 @@
         "CONVRSATION_CORUSES": "دورات المحادثة",
         "TEACHERS_COURSES": "دورات المعلمين",
         "LATEST_NEWS": "أحدث الأخبار",
-        "LANGUAGES": "اللغات",
+        "LANGUAGES": "المقالات",
         "COURSES_ADDRESS": "عنوان الدورات",
         "LOGIN": "تسجيل الدخول",
         "PARTNERS":"شركائنا",
@@ -28,7 +28,7 @@
         "WHAT_IS_TPR": "ما هو TPR",
         "WORK_TEAM": "فريق العمل",
         "TARGET_GROUPS": "المجموعات المستهدفة",
-        "PARTNERS":"Our Partners"
+        "PARTNERS":"شركائنا"
 
     },
     "COURSE_RIGISTER" : {
@@ -52,8 +52,8 @@
 
     },
     "FOOTER":{
-        "SHORT_LINK":"أختصارات",
-        "CONTACT_US":"تواصل معنأ"
+        "SHORT_LINK":"اختصارات",
+        "CONTACT_US":"تواصل معنا"
     }
  
  

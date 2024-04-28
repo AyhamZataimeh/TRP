@@ -11,17 +11,18 @@ import { Services } from 'src/app/shared/interface/services.model';
 })
 export class ServicesComponent implements OnInit {
 
-  services: any[]=[];
+  services: Services[]=[];
 
   serviceId!: number;
   serviceDetails: ServiceDetails[]=[];
-  service!: Services;
+  service!: Services | undefined;
 
   constructor(private route: ActivatedRoute, private mainService: MainService){}
   ngOnInit(): void {
     
     this.serviceId=this.route.snapshot.params['id'];
     this.getServiceDetails();
+    this.gerService();
   }
 
 
@@ -32,9 +33,17 @@ export class ServicesComponent implements OnInit {
         this.serviceDetails= response.data;
         console.log(this.serviceDetails);
         
-        this.service = this.serviceDetails[0].service;
       }
     })
+   }
+
+   gerService() {
+    this.mainService.geServices().subscribe((response: any)=>{
+      if(!response.error) {
+        this.services = response.data;
+        this.service = this.services.find((service: Services)=> service.id == this.serviceId);
+      }
+     })
    }
 
 }

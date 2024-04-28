@@ -17,6 +17,8 @@ export class DynamicComponent implements OnInit {
     this.selectedLang = localStorage.getItem('language');
     this.masterService.blogsData.subscribe((result:Blogs )=>{
       this.blogsData = result;
+      console.log(this.blogsData);
+      
     });
   }
 
