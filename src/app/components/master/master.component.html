@@ -16,13 +16,13 @@
     <div class="overlay"></div>
 </div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" >
         <div class="col-12 d-flex justify-content-center">
-            <div id="vision" class="vision-mission">
+            <div id="vision" #vision class="vision-mission">
                 <div class="vision-img-box">
-                    <!-- <img src="../../../assets/images/Vision&mission.jpeg"> -->
-                    <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
-                    <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr">
+                    <img src="../../../assets/images/Vision&mission.jpeg">
+                    <!-- <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
+                    <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr"> -->
 
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 }}
             </h1>
         </div>
-        <div class="about-us-show" id="aboutUsParent">
+        <div class="about-us" id="aboutUsParent" #aboutus>
             <div id="aboutUsText">
                 <h5 *ngIf="selectedLang == 'en'">
                     {{aboutUsSections?.textEn }}
@@ -47,8 +47,8 @@
                 </h5>
             </div>
             <div id="trpAboutUsImage">
-                <!-- <img src="../../../assets//images/About-us.jpeg" class="section-images"> -->
-                <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images">
+                <img src="../../../assets//images/About-us.jpeg" class="section-images">
+                <!-- <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images"> -->
 
             </div>
         </div>
@@ -62,7 +62,7 @@
                 }}
             </h1>
         </div>
-        <div class="what-is-trp-show" id="whatIsTrpParent">
+        <div class="what-is-trp" #whatIsTrp id="whatIsTrpParent">
             <div id="trpText">
 
                 <h5 *ngIf="selectedLang == 'en'">
@@ -88,7 +88,7 @@
                 
             </h1>
         </div>
-        <div class="target-groups-show" id="targetGroupsParent">
+        <div class="target-groups" #targetGroup id="targetGroupsParent" (scroll)="onScroll($event)">
             <div id="target-groups-text">
                 <h5  *ngIf="selectedLang == 'en'" >
                     {{targetGroupSections?.textEn}}

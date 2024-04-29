@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, OnInit, NgZone } from '@angular/core';
+import { Component, HostListener, ElementRef, OnInit, NgZone, ViewChild, OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Sections } from "../../shared/enums/enums.model";
 import { MasterService } from 'src/app/shared/master.service';
@@ -34,7 +34,7 @@ import { Languages } from 'src/app/shared/interface/languages.model';
 
 
 })
-export class MasterComponent implements OnInit {
+export class MasterComponent implements OnInit, OnDestroy {
 
   constructor(public el: ElementRef, private masterService: MasterService, private router: Router) { }
 
@@ -247,6 +247,9 @@ export class MasterComponent implements OnInit {
     };
   }
 
+  ngOnDestroy(): void {
+    this.masterService.sectionRedierct.unsubscribe();
+  }
 
   onLatesNewsScroll(index: number) {
 
@@ -289,6 +292,7 @@ export class MasterComponent implements OnInit {
         }
       }
     };
+    
     
 
     const vision = document.getElementById("vision");
@@ -375,7 +379,7 @@ export class MasterComponent implements OnInit {
 
         if (isElementInViewport(vision)) {
 
-          vision?.classList.add("vision-mission-show-animation");
+          // vision?.classList.add("vision-mission-show-animation");
 
 
         } else {
@@ -464,33 +468,88 @@ export class MasterComponent implements OnInit {
 
   }
   pos: number = 0;
+  @ViewChild('vision', { static: true }) visionElement!: any;
+  @ViewChild('aboutus', { static: true }) aboutUsElement!: any;
+  @ViewChild('whatIsTrp', { static: true }) whatIsTrpElement!: any;
+  @ViewChild('targetGroup', { static: true }) targetGroupElement!: any;
+
+
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {
 
+    if (this.isElementInViewport(this.visionElement.nativeElement)) {
+      const vision = document.getElementById("vision");
 
-    document.documentElement.offsetTop
+      console.log('Vision element is in viewport');
+      vision?.classList.add("vision-mission-show-animation");
 
-    this.pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+      // Do something when the element is in viewport
+    }
+
+    if(this.isElementInViewport(this.aboutUsElement.nativeElement)) {
+      const aboutUs = document.getElementById("aboutUs");
+      document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
+      document.getElementById("aboutUsText")?.classList.add("about-us-text");
+      document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
+    }
+
+    if(this.isElementInViewport(this.targetGroupElement.nativeElement)) {
+
+      console.log("target-group");
+      
+      document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
+      document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+      document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+
+    
+    }
+    if(this.isElementInViewport(this.whatIsTrpElement.nativeElement)) {
+
+      document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
+      document.getElementById("trpText")?.classList.add("trp-text");
+      document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+
+    }
+
+  
 
 
 
+  }
+
+  onScroll(event: any) {
+    console.log("target group scroll");
+    
+
+  }
+  isElementInViewport(el: HTMLElement) {
+    
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
 
   latestNewsPageRedircation(latestNewsId: number) {
     this.router.navigate(["latest-news/"+latestNewsId]).then(()=>{
-      window.location.reload();
+      // window.location.reload();
     });
   }
   
   articlesPageRedircation(articelId: number) {
     this.router.navigate(["articles/"+articelId]).then(()=>{
-      window.location.reload();
+      // window.location.reload();
     });
   }
 
 
+
+  
 
   customeImageClientListMobileView() {
 
@@ -561,9 +620,19 @@ export class MasterComponent implements OnInit {
 
   }
 
-  @HostListener("window:resize", [])
-  private onResize() {
+  @HostListener("window:resize", ['$event'])
+  onResize(event: any) {
     console.log("resize");
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+
+    
+    
+    // Check if window width or height is very small, indicating window minimization
+    if (window.innerWidth <= 300 && window.innerHeight <= 300) {
+      // Do something when window is minimized
+      console.log('Window minimized');
+    }
     
   }
 

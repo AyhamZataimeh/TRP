@@ -83,7 +83,7 @@ export class NavbarComponent implements OnInit {
 
   homeRedierction() {
     this.router.navigate(["/home"]).then(()=>{
-      window.location.reload();
+      // window.location.reload();
     })
   }
 
@@ -99,7 +99,7 @@ export class NavbarComponent implements OnInit {
 
   serviceRedierct(serviceId: number) {
     this.router.navigate(["service/"+serviceId]).then(()=>{
-      window.location.reload();
+      // window.location.reload();
     });
   }
 }
