@@ -46,6 +46,10 @@
     align-items: center;
 }
 
+.navbar-nav {
+    padding: 0
+}
+
 .main-nav .logo {
     width: 90px;
     height: 90px;
@@ -60,7 +64,7 @@
 }
 
 .main-nav .logo img {
-    width: 100%;
+    width: inherit;
     height: 100%;
     transform: translateY(-1.5px) scale(1.18);
     &:hover {
@@ -98,7 +102,8 @@
     background-color: white;
     padding: 7px 10px;
     text-align: center;
-    text-wrap: nowrap;
+    text-wrap: wrap;
+    word-wrap: break-word;
     transition: .1s ease-in;
 }
 

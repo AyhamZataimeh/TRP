@@ -426,7 +426,7 @@
 }
 
 .clientsMobileImgBox img {
-    width: 100%;
+    width: inherit;
     height: 100%;
     border-radius: 50%
 }
@@ -1010,6 +1010,11 @@ section {
         right: auto;
         top: 0;
         transform: none;
+    }
+
+    .register-ar {
+        left: auto;
+        right: 50px
     }
 
     .register a {
