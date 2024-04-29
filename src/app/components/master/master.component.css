@@ -360,6 +360,7 @@
 }
 
 .clients-slider-card-ar-animation {
+    padding-right: 8px;
     animation: ar-client 3s linear alternate infinite;
 
 }
@@ -514,11 +515,11 @@ footer p:focus {
 
 @keyframes ar-client {
     0% {
-        transform: translateX(0);
+        transform: translateX(0px);
     }
 
     100% {
-        transform: translateX(calc(100% * var(--num-slides)));
+        transform: translateX(calc(110% * var(--num-slides)));
         /* Adjust the number of slides */
     }
 
@@ -1079,3 +1080,8 @@ section {
 }
 
 
+#target-groups-text h5 {
+
+   white-space: pre-line;
+    
+}

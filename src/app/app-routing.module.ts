@@ -7,6 +7,9 @@ import { CoursesRegisterComponent } from './pages/courses-register/courses-regis
 import { CoursesAddressComponent } from './pages/courses-address/courses-address.component';
 import { CourseAddressPrivateComponent } from './pages/course-address-private/course-address-private.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { LatestNewsComponent } from './shared/latest-news/latest-news.component';
+import { ArticelsComponent } from './shared/articels/articels.component';
+
 
 const routes: Routes = [
   {
@@ -17,8 +20,14 @@ const routes: Routes = [
     path:"home",component:MasterComponent,
   
   },
-  {
-    path:"dynamic",component:DynamicComponent 
+ 
+
+   {
+    path:"latest-news/:id",component:LatestNewsComponent 
+   },
+
+   {
+    path:"articles/:id",component:ArticelsComponent 
    },
    {
     path:"submitting-job", component: SubmittingJobComponent

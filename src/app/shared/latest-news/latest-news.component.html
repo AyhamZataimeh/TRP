@@ -1,0 +1,28 @@
+<section class="main">
+    <div class="container">
+        <h1 class="headerText" *ngIf="selectedLang == 'en'">
+            {{ latesNews?.title }}
+        </h1>
+        <h1 class="headerText" *ngIf="selectedLang == 'ar'">
+            {{ latesNews?.titleAr }}
+        </h1>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="detailsText" *ngIf="selectedLang == 'en'">
+                    {{ latesNews?.text }}
+                </p>
+                <p class="detailsText" *ngIf="selectedLang == 'ar'">
+                    {{ latesNews?.textAr }}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <div class="image-box">
+                        <img [src]="'../../../assets/images/'+latesNews?.imagePath" [alt]="latesNews?.title" width="100%">
+                        <!-- <img src="../../../assets/images/image-1.jpeg" class="personImg" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

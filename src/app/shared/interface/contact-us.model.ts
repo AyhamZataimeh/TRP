@@ -4,5 +4,6 @@ export interface ContactUs {
     phoneNumber1: number, 
     phoneNumber2: number,
     location: string,
+    locationAr: string,
     locationUrl: string 
 }

@@ -188,7 +188,10 @@ export class MasterComponent implements OnInit {
         this.aboutUsSections= response.data[0];
         this.whatIsTprSections= response.data[1];
         this.targetGroupSections= response.data[2];
-      }
+        this.targetGroupSections.textEn.replace("\n", "\t");
+        console.log(this.targetGroupSections);
+          
+        }
     })
   }
 
@@ -475,13 +478,18 @@ export class MasterComponent implements OnInit {
   }
 
 
-
-  dynamicPageRedircation(blogsData: Blogs) {
-
-    this.masterService.blogsData.next(blogsData);
-    this.router.navigate(["/dynamic"]);
-
+  latestNewsPageRedircation(latestNewsId: number) {
+    this.router.navigate(["latest-news/"+latestNewsId]).then(()=>{
+      window.location.reload();
+    });
   }
+  
+  articlesPageRedircation(articelId: number) {
+    this.router.navigate(["articles/"+articelId]).then(()=>{
+      window.location.reload();
+    });
+  }
+
 
 
   customeImageClientListMobileView() {
@@ -551,6 +559,12 @@ export class MasterComponent implements OnInit {
   return list;
   
 
+  }
+
+  @HostListener("window:resize", [])
+  private onResize() {
+    console.log("resize");
+    
   }
 
 }

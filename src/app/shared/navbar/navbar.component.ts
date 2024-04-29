@@ -100,6 +100,6 @@ export class NavbarComponent implements OnInit {
   serviceRedierct(serviceId: number) {
     this.router.navigate(["service/"+serviceId]).then(()=>{
       window.location.reload();
-    })
+    });
   }
 }

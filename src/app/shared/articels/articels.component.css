@@ -1,0 +1,33 @@
+.main {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+.headerText {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.detailsText {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    word-wrap: break-word;
+    padding: 0 15px;
+}
+
+.image-box {
+    width: 450px;
+    height: 338px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box .personImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px
+}

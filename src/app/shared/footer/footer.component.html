@@ -136,7 +136,9 @@
               target="_blank"
               [href]="contactInfo.locationUrl"
             >
-              {{ contactInfo?.location }}
+              {{ 
+               selectedLang == 'en' ? contactInfo?.location:  contactInfo?.locationAr
+              }}
             </a>
           </li>
         </ul>

@@ -17,6 +17,8 @@ import { CoursesRegisterComponent } from './pages/courses-register/courses-regis
 import { CoursesAddressComponent } from './pages/courses-address/courses-address.component';
 import { CourseAddressPrivateComponent } from './pages/course-address-private/course-address-private.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { LatestNewsComponent } from './shared/latest-news/latest-news.component';
+import { ArticelsComponent } from './shared/articels/articels.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { ServicesComponent } from './pages/services/services.component';
     CoursesRegisterComponent,
     CoursesAddressComponent,
     CourseAddressPrivateComponent,
-    ServicesComponent
+    ServicesComponent,
+    LatestNewsComponent,
+    ArticelsComponent
   ],
   imports: [
     BrowserModule,
