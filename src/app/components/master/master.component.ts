@@ -136,7 +136,6 @@ export class MasterComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.selectedLang = localStorage.getItem('language');
-    console.log('languag=',this.selectedLang);
     
     
     this.getSections();
@@ -208,7 +207,6 @@ export class MasterComponent implements OnInit, OnDestroy {
         this.whatIsTprSections= response.data[1];
         this.targetGroupSections= response.data[2];
         this.targetGroupSections.textEn.replace("\n", "\t");
-        console.log(this.targetGroupSections);
           
         }
     })
@@ -238,7 +236,6 @@ export class MasterComponent implements OnInit, OnDestroy {
       if(!response.error) {
         this.latestNewsListMobile= response.data;
         this.latestNewsList= this.customeLatestNewsList(response.data);
-        console.log("latest", this.latestNewsList);
         
         
       }
@@ -250,7 +247,6 @@ export class MasterComponent implements OnInit, OnDestroy {
       if(!response.error) {
         this.languagesMobileList= response.data;
         this.languagesList= this.customeLangugesList(response.data);
-        console.log("languagesList", this.languagesList);
         
         
       }
@@ -297,7 +293,6 @@ export class MasterComponent implements OnInit, OnDestroy {
 
       }
       if (event == this.WorkTeam) {
-        console.log("workteam");
         document.getElementById("workTeam")?.scrollIntoView(false);
 
       }
@@ -318,18 +313,12 @@ export class MasterComponent implements OnInit, OnDestroy {
 
 
   }
-  pos: number = 0;
-
-
-
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {
 
     if (this.isElementInViewport(this.visionElement.nativeElement)) {
       const vision = document.getElementById("vision");
-
-      console.log('Vision element is in viewport');
       vision?.classList.add("vision-mission-show-animation");
 
       // Do something when the element is in viewport
@@ -344,36 +333,62 @@ export class MasterComponent implements OnInit, OnDestroy {
 
     if(this.isElementInViewport(this.targetGroupElement.nativeElement)) {
 
-      console.log("target-group");
       
       document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
       document.getElementById("target-groups-text")?.classList.add("target-groups-text");
       document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
 
     
-    }
+    } 
     if(this.isElementInViewport(this.whatIsTrpElement.nativeElement)) {
 
       document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
       document.getElementById("trpText")?.classList.add("trp-text");
       document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
 
+      setTimeout(()=>{
+        document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
+        document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+        document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+      }, 1000)
+
     }
-
-  
-
-
-
   }
 
-  onScroll(event: any) {
-    console.log("target group scroll");
+  onTouchStart(event: any) {
+    console.log("target group onTouchStart");
     
 
   }
   isElementInViewport(el: HTMLElement) {
     
+    // const rect = el.getBoundingClientRect();
+    // const minViewportWidth = 50; // Example threshold, adjust as needed
+    // const minViewportHeight = 50; // Example threshold, adjust as needed
+    // if(name) {
+    //   console.log(name);
+    //   console.log(
+    //     rect.top >= 0 &&
+    //     rect.left >= 0 &&
+    //     rect.bottom <= Math.max(window.innerHeight || document.documentElement.clientHeight, minViewportHeight) &&
+    //     rect.right <= Math.max(window.innerWidth || document.documentElement.clientWidth, minViewportWidth)
+    //   );
+      
+    // }
+
+    // // Set a minimum threshold for viewport dimensions
+   
+  
+    // return (
+    //   rect.top >= 0 &&
+    //   rect.left >= 0 &&
+    //   rect.bottom <= Math.max(window.innerHeight || document.documentElement.clientHeight, minViewportHeight) &&
+    //   rect.right <= Math.max(window.innerWidth || document.documentElement.clientWidth, minViewportWidth)
+    // );
+    
     const rect = el.getBoundingClientRect();
+    
+    
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
@@ -466,22 +481,6 @@ export class MasterComponent implements OnInit, OnDestroy {
   return list;
   
 
-  }
-
-  @HostListener("window:resize", ['$event'])
-  onResize(event: any) {
-    console.log("resize");
-    console.log(window.innerWidth);
-    console.log(window.innerHeight);
-
-    
-    
-    // Check if window width or height is very small, indicating window minimization
-    if (window.innerWidth <= 300 && window.innerHeight <= 300) {
-      // Do something when window is minimized
-      console.log('Window minimized');
-    }
-    
   }
 
 }

@@ -82,9 +82,11 @@ export class NavbarComponent implements OnInit {
   }
 
   homeRedierction() {
-    this.router.navigate(["/home"]).then(()=>{
-      // window.location.reload();
+    this.masterService.sectionRedierct.next({
+      sectionId:0,
+      redierctUrl:""
     })
+    this.router.navigate(["/home"]);
   }
 
   getServices() {

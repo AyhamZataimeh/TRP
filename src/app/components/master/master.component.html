@@ -118,11 +118,11 @@
     </div>
     <div
       class="target-groups"
-      #targetGroup
+      
       id="targetGroupsParent"
-      (scroll)="onScroll($event)"
-    >
-      <div id="target-groups-text">
+      #targetGroup
+         >
+      <div id="target-groups-text" >
         <h5 *ngIf="selectedLang == 'en'">
           {{ targetGroupSections?.textEn }}
         </h5>
