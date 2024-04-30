@@ -126,7 +126,7 @@
 }
 
 .vision-mission .vision-img-box {
-    width: 60%;
+    width: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,6 +137,8 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 25px;
 }
 
@@ -945,7 +947,7 @@ section {
     }
 
     .vision-mission .vision-img-box {
-        width: 100%;
+        width: 320px
     }
 
     .vision-mission .vision-img-box img {
