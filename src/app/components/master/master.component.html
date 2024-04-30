@@ -1,406 +1,689 @@
-<button class="btn btn-primary register" [ngClass]="selectedLang == 'en' ? 'register-en' : 'register-ar'">
-    <a [routerLink]="['/courses-register']" class="text-decoration-none text-light">
-        {{"NAVBAR.COURSE_REGISTER_NOW" | translate}}
-    </a>
+<button
+  class="btn btn-primary register"
+  [ngClass]="selectedLang == 'en' ? 'register-en' : 'register-ar'"
+>
+  <a
+    [routerLink]="['/courses-register']"
+    class="text-decoration-none text-light"
+  >
+    {{ "NAVBAR.COURSE_REGISTER_NOW" | translate }}
+  </a>
 </button>
-<div class="landing-page" [style.background-image]="'url(' + landingPageImageURL + ')'">
-    <div class="intro">
-        <div class="landing-page-logo">
-            <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath"  class="landing-page-logo-image"> -->
-            <img src="../../../assets//images/logo-removebg-preview.png" class="landing-page-logo-image">
-        </div>
-        <h2 class="landing-page-text" *ngIf="selectedLang == 'en'"> {{landingPage?.header}}</h2>
-        <h2 class="landing-page-text" *ngIf="selectedLang == 'ar'"> {{landingPage?.headerAr}}</h2>
-
+<div
+  class="landing-page"
+  [style.background-image]="'url(' + landingPageImageURL + ')'"
+>
+  <div class="intro">
+    <div class="landing-page-logo">
+      <!-- <img [src]="'../../../assets/images/' +landingPage.imagePath"  class="landing-page-logo-image"> -->
+      <img
+        src="../../../assets//images/logo-removebg-preview.png"
+        class="landing-page-logo-image"
+      />
     </div>
-    <div class="overlay"></div>
+    <h2 class="landing-page-text" *ngIf="selectedLang == 'en'">
+      {{ landingPage?.header }}
+    </h2>
+    <h2 class="landing-page-text" *ngIf="selectedLang == 'ar'">
+      {{ landingPage?.headerAr }}
+    </h2>
+  </div>
+  <div class="overlay"></div>
 </div>
 <div class="container-fluid">
-    <div class="row" >
-        <div class="col-12 d-flex justify-content-center">
-            <div id="vision" #vision class="vision-mission">
-                <div class="vision-img-box">
-                    <img src="../../../assets/images/Vision&mission.jpeg">
-                    <!-- <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <div id="vision" #vision class="vision-mission">
+        <div class="vision-img-box">
+          <img src="../../../assets/images/Vision&mission.jpeg" />
+          <!-- <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
                     <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr"> -->
-
-                </div>
-            </div>
         </div>
+      </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 about-us-main section-mob-v" id="aboutUs">
-        <div class="header">
-            <h1>
-                {{
-                
-                    selectedLang == 'en' ? aboutUsSections?.name : aboutUsSections?.nameAr
-                }}
-            </h1>
-        </div>
-        <div class="about-us" id="aboutUsParent" #aboutus>
-            <div id="aboutUsText">
-                <h5 *ngIf="selectedLang == 'en'">
-                    {{aboutUsSections?.textEn }}
-                </h5>
-                <h5 *ngIf="selectedLang == 'ar'">
-                    {{aboutUsSections?.textAr}}
-                </h5>
-            </div>
-            <div id="trpAboutUsImage">
-                <img src="../../../assets//images/About-us.jpeg" class="section-images">
-                <!-- <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images"> -->
-
-            </div>
-        </div>
+  </div>
+  <div
+    class="col-md-12 col-sm-12 col-xs-12 about-us-main section-mob-v"
+    id="aboutUs"
+  >
+    <div class="header">
+      <h1>
+        {{
+          selectedLang == "en" ? aboutUsSections?.name : aboutUsSections?.nameAr
+        }}
+      </h1>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main section-mob-v" id="whatIsTrp">
-        <div class="header">
-            <h1>
-                {{
-                
-                    selectedLang == 'en' ? whatIsTprSections?.name : whatIsTprSections?.nameAr
-                }}
-            </h1>
-        </div>
-        <div class="what-is-trp" #whatIsTrp id="whatIsTrpParent">
-            <div id="trpText">
-
-                <h5 *ngIf="selectedLang == 'en'">
-                    {{whatIsTprSections?.textEn}}
-                </h5>
-                <h5 *ngIf="selectedLang == 'ar'">
-                    {{whatIsTprSections?.textAr}}
-                </h5>
-            </div>
-            <div id="whatIsTrpImage">
-                <img [src]="'../../../assets/images/'+whatIsTprSections.imagePath" class="section-images">
-
-                <!-- <img src="../../../assets//images/what-is-trp.jpeg" class="section-images"> -->
-            </div>
-        </div>
+    <div class="about-us" id="aboutUsParent" #aboutus>
+      <div id="aboutUsText">
+        <h5 *ngIf="selectedLang == 'en'">
+          {{ aboutUsSections?.textEn }}
+        </h5>
+        <h5 *ngIf="selectedLang == 'ar'">
+          {{ aboutUsSections?.textAr }}
+        </h5>
+      </div>
+      <div id="trpAboutUsImage">
+        <img
+          src="../../../assets//images/About-us.jpeg"
+          class="section-images"
+        />
+        <!-- <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images"> -->
+      </div>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 target-groups-main section-mob-v" id="targetgroups">
-        <div class="header">
-            <h1>
-                {{
-                    selectedLang == 'en' ? targetGroupSections?.name : targetGroupSections?.nameAr
-                }}
-                
-            </h1>
-        </div>
-        <div class="target-groups" #targetGroup id="targetGroupsParent" (scroll)="onScroll($event)">
-            <div id="target-groups-text">
-                <h5  *ngIf="selectedLang == 'en'" >
-                    {{targetGroupSections?.textEn}}
-                </h5>
-
-                <h5 *ngIf="selectedLang == 'ar'" >
-                    {{targetGroupSections?.textAr}}
-                </h5>
-            </div>
-            <div id="targetgroupsImage">
-                <!-- <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images"> -->
-
-                <img src="../../../assets//images/target-groups.jpeg" class="section-images">
-            </div>
-        </div>
+  </div>
+  <div
+    class="col-md-12 col-sm-12 col-xs-12 what-is-trp-main section-mob-v"
+    id="whatIsTrp"
+  >
+    <div class="header">
+      <h1>
+        {{
+          selectedLang == "en"
+            ? whatIsTprSections?.name
+            : whatIsTprSections?.nameAr
+        }}
+      </h1>
     </div>
-    <div>
-    </div>
+    <div class="what-is-trp" #whatIsTrp id="whatIsTrpParent">
+      <div id="trpText">
+        <h5 *ngIf="selectedLang == 'en'">
+          {{ whatIsTprSections?.textEn }}
+        </h5>
+        <h5 *ngIf="selectedLang == 'ar'">
+          {{ whatIsTprSections?.textAr }}
+        </h5>
+      </div>
+      <div id="whatIsTrpImage">
+        <img
+          [src]="'../../../assets/images/' + whatIsTprSections.imagePath"
+          class="section-images"
+        />
 
+        <!-- <img src="../../../assets//images/what-is-trp.jpeg" class="section-images"> -->
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-md-12 col-sm-12 col-xs-12 target-groups-main section-mob-v"
+    id="targetgroups"
+  >
+    <div class="header">
+      <h1>
+        {{
+          selectedLang == "en"
+            ? targetGroupSections?.name
+            : targetGroupSections?.nameAr
+        }}
+      </h1>
+    </div>
+    <div
+      class="target-groups"
+      #targetGroup
+      id="targetGroupsParent"
+      (scroll)="onScroll($event)"
+    >
+      <div id="target-groups-text">
+        <h5 *ngIf="selectedLang == 'en'">
+          {{ targetGroupSections?.textEn }}
+        </h5>
+
+        <h5 *ngIf="selectedLang == 'ar'">
+          {{ targetGroupSections?.textAr }}
+        </h5>
+      </div>
+      <div id="targetgroupsImage">
+        <!-- <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images"> -->
+
+        <img
+          src="../../../assets//images/target-groups.jpeg"
+          class="section-images"
+        />
+      </div>
+    </div>
+  </div>
+  <div></div>
+
+  <section id="workTeam">
     <!-- Start Web View Work Team Carousel -->
-    <div class="team-slider d-none d-sm-block section-mob-v" id="workTeam">
-        <div class="silder-header">
-            <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
-        </div>
-        <div class="slider-section">
-            <div class="slider-card" id="sliderCard" *ngFor="let workTeam of workTeams">
-                <div class="slider-inner mt-3">
-                    <div class="avatar-box">
-                        <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath"
-                            [alt]="workTeam.name" >
+    <div class="team-slider d-none d-sm-block section-mob-v">
+      <div class="silder-header">
+        <h1>{{ "MASTER.WORK_TEAM" | translate }}</h1>
+      </div>
+      <div class="slider-section">
+        <div
+          class="slider-card"
+          id="sliderCard"
+          *ngFor="let workTeam of workTeams"
+        >
+          <div class="slider-inner mt-3">
+            <div class="avatar-box">
+              <img
+                class="avatar-image"
+                [src]="'../../../assets/images/' + workTeam.imagePath"
+                [alt]="workTeam.name"
+              />
 
-                        <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name"> -->
-                    </div>
-                    <h3 class="workTeam-name">{{ workTeam.name }}</h3>
-                    <div class="work-team-section-line"></div>
-                    <h4 class="workTeam-position">{{ workTeam.position }}</h4>
-                </div>
+              <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg" [alt]="workTeam.name"> -->
             </div>
+            <h3 class="workTeam-name">{{ workTeam.name }}</h3>
+            <div class="work-team-section-line"></div>
+            <h4 class="workTeam-position">{{ workTeam.position }}</h4>
+          </div>
         </div>
+      </div>
     </div>
     <!-- End Web View Work Team Carousel -->
 
     <!-- Start Mobile View Work Team Carousel -->
-    <div class="carousel-container d-block d-sm-none section-mob-v" id="MobileViewWorkTeam">
-        <div class="silder-header">
-            <h1>{{ "MASTER.WORK_TEAM" | translate}}</h1>
-        </div>
-        <div id="carouselCaptionsWorkTeam" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let workTeam of workTeams; let index = index; let isFirst = first"
-                    [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption">
-                        <div class="avatar-box mob-v">
-                            <img class="avatar-image" [src]="'../../../assets/images/'+workTeam.imagePath"
-                                [alt]="workTeam.name">
+    <div class="carousel-container d-block d-sm-none section-mob-v">
+      <div class="silder-header">
+        <h1>{{ "MASTER.WORK_TEAM" | translate }}</h1>
+      </div>
+      <div
+        id="carouselCaptionsWorkTeam"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="
+              let workTeam of workTeams;
+              let index = index;
+              let isFirst = first
+            "
+            [ngClass]="{ active: isFirst }"
+          >
+            <div class="carousel-caption">
+              <div class="avatar-box mob-v">
+                <img
+                  class="avatar-image"
+                  [src]="'../../../assets/images/' + workTeam.imagePath"
+                  [alt]="workTeam.name"
+                />
 
-                            <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg"> -->
-                        </div>
-                        <h2 class="worker-name mob-v">{{workTeam.name}}</h2>
-                        <div class="work-team-section-line"></div>
-                        <h3 class="worker-position mob-v">{{workTeam.position}}</h3>
-                    </div>
-                </div>
+                <!-- <img class="avatar-image" src="../../../assets/images/avatar-1.jpeg"> -->
+              </div>
+              <h2 class="worker-name mob-v">{{ workTeam.name }}</h2>
+              <div class="work-team-section-line"></div>
+              <h3 class="worker-position mob-v">{{ workTeam.position }}</h3>
             </div>
-            <a class="carousel-control-prev" href="#carouselCaptionsWorkTeam" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselCaptionsWorkTeam" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+          </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselCaptionsWorkTeam"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselCaptionsWorkTeam"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
     <!-- End Mobile View Work Team Carousel -->
+  </section>
 
-    <section id="clientsSection">
-        <!-- Start Web View Clients Section -->
-        <div class="client-slider d-none d-sm-block section-mob-v" [style]="sliderStyles">
-            <div class="silder-header">
-                <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
+  <section id="clientsSection">
+    <!-- Start Web View Clients Section -->
+    <div
+      class="client-slider d-none d-sm-block section-mob-v"
+      [style]="sliderStyles"
+    >
+      <div class="silder-header">
+        <h1>{{ "MASTER.PARTNERS" | translate }}</h1>
+      </div>
+      <div class="clinet-slider-section">
+        <div
+          class="clients-slider-card"
+          [ngClass]="
+            selectedLang == 'en'
+              ? 'clients-slider-card-en-animation'
+              : 'clients-slider-card-ar-animation'
+          "
+          *ngFor="let client of clientsList"
+        >
+          <div class="slider-inner mt-3">
+            <div class="avatar-box">
+              <img
+                class="avatar-image"
+                [src]="'../../../assets/images/' + client.imagePath"
+                [alt]="client.name"
+              />
+              <!-- <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client"> -->
             </div>
-            <div class="clinet-slider-section">
-                <div class="clients-slider-card"
-                    [ngClass]="selectedLang == 'en' ? 'clients-slider-card-en-animation' : 'clients-slider-card-ar-animation'"
-                    *ngFor="let client of clientsList">
-                    <div class="slider-inner mt-3">
-                        <div class="avatar-box">
-                            <img class="avatar-image" [src]="'../../../assets/images/'+client.imagePath"
-                                [alt]="client.name">
-                            <!-- <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client"> -->
-                        </div>
-    
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Web View Clients Section -->
+
+    <!-- Start Mobile View Clients Section Carousel -->
+    <div class="carousel-container d-block d-sm-none section-mob-v">
+      <div class="silder-header">
+        <h1>{{ "MASTER.PARTNERS" | translate }}</h1>
+      </div>
+      <div
+        id="carouselCaptionsClients"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="4000"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="
+              let imageRow of clientImagesMobile;
+              let index = index;
+              let isFirst = first
+            "
+            [ngClass]="{ active: isFirst }"
+          >
+            <div class="carousel-caption">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-4 my-2" *ngFor="let image of imageRow">
+                    <div class="clientsMobileImgContainer">
+                      <div class="clientsMobileImgBox">
+                        <img
+                          class="avatar-image"
+                          [src]="'../../../assets/images/' + image.imagePath"
+                        />
+
+                        <!-- <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage"> -->
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- End Web View Clients Section -->
-    
-        <!-- Start Mobile View Clients Section Carousel -->
-        <div class="carousel-container d-block d-sm-none section-mob-v">
-            <div class="silder-header">
-                <h1>{{ "MASTER.PARTNERS" | translate}}</h1>
-            </div>
-            <div id="carouselCaptionsClients" class="carousel slide" data-ride="carousel" data-interval="4000">
-                <div class="carousel-inner">
-                    <div class="carousel-item"
-                        *ngFor="let imageRow of clientImagesMobile;  let index = index; let isFirst = first"
-                        [ngClass]="{active:isFirst}">
-                        <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-4 my-2" *ngFor="let image of imageRow">
-                                        <div class="clientsMobileImgContainer">
-                                            <div class="clientsMobileImgBox">
-                                                <img class="avatar-image" [src]="'../../../assets/images/'+image.imagePath">
-    
-                                                <!-- <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage"> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselCaptionsClients"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselCaptionsClients"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!-- End Mobile View Clients Section Carousel -->
+  </section>
+
+  <section id="latestNewsSection">
+    <div class="carousel-container d-none d-md-block">
+      <div class="silder-header">
+        <h1>{{ "NAVBAR.LATEST_NEWS" | translate }}</h1>
+      </div>
+      <div
+        id="carouselCaptionNews"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="4000"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="
+              let item of latestNewsList;
+              let index = index;
+              let isFirst = first
+            "
+            [ngClass]="{ active: isFirst }"
+          >
+            <div class="carousel-caption">
+              <div class="card-container" *ngFor="let i of item">
+                <div class="card">
+                  <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="i.text"> -->
+                  <img
+                    class="card-img-top"
+                    [src]="'../../../assets/images/' + i.imagePath"
+                    [alt]="i.text"
+                  />
+
+                  <div class="card-body">
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'en'"
+                    >
+                      {{
+                        i.title.length > 10
+                          ? i.title.slice(0, 24) + ".."
+                          : i.title
+                      }}
+                    </p>
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'ar'"
+                    >
+                      {{
+                        i.titleAr.length > 10
+                          ? i.titleAr.slice(0, 24) + ".."
+                          : i.titleAr
+                      }}
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      class="btn pull-right"
+                      (click)="latestNewsPageRedircation(i.id)"
+                      >Read More</a
+                    >
+                  </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselCaptionsClients" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselCaptionsClients" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- End Mobile View Clients Section Carousel -->
-    </section>
-
-    <!-- Start Web-View Latest News Section -->
-    <div class="carousel-container d-none d-md-block" id="latestNewsSection" >
-        <div class="silder-header">
-            <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
-        </div>
-        <div id="carouselCaptionNews" class="carousel slide" data-ride="carousel" data-interval="4000">
-            <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let item of latestNewsList; let index = index; let isFirst = first"
-                    [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption">
-                        <div class="card-container" *ngFor="let i of item">
-                            <div class="card">
-                                <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="i.text"> -->
-                                <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
-
-
-                                <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length
-                                        > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
-                                        i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a class="btn pull-right" (click)="latestNewsPageRedircation(i.id)">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <a class="carousel-control-prev" href="#carouselCaptionNews" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselCaptionNews" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselCaptionNews"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselCaptionNews"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
     <!-- End Web-View Latest News Section -->
 
     <!-- Start Mobile-View Latest News Section -->
-        <div class="carousel-container d-block d-md-none section-mob-v" id="latestNewsSection">
-            <div class="silder-header">
-                <h1>{{ "NAVBAR.LATEST_NEWS" | translate}}</h1>
-            </div>
-            <div id="carouselCaptionNewsMobile" class="carousel slide" data-ride="carousel" data-interval="4000">
-                <div class="carousel-inner">
-                    <div class="carousel-item"
-                        *ngFor="let item of latestNewsListMobile; let index = index; let isFirst = first"
-                        [ngClass]="{active:isFirst}">
-                        <div class="carousel-caption">
-                            <div class="card-container">
-                                <div class="card">
-                                    <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
-                                    <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath"
-                                        [alt]="item.text">
-                                    <div class="card-body">
-                                        <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{
-                                            item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}</p>
-                                        <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
-                                            item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a class="btn pull-right" (click)="latestNewsPageRedircation(item.id)">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="carousel-container d-block d-md-none section-mob-v">
+      <div class="silder-header">
+        <h1>{{ "NAVBAR.LATEST_NEWS" | translate }}</h1>
+      </div>
+      <div
+        id="carouselCaptionNewsMobile"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="4000"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="
+              let item of latestNewsListMobile;
+              let index = index;
+              let isFirst = first
+            "
+            [ngClass]="{ active: isFirst }"
+          >
+            <div class="carousel-caption">
+              <div class="card-container">
+                <div class="card">
+                  <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
+                  <img
+                    class="card-img-top"
+                    [src]="'../../../assets/images/' + item.imagePath"
+                    [alt]="item.text"
+                  />
+                  <div class="card-body">
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'en'"
+                    >
+                      {{
+                        item.title.length > 10
+                          ? item.title.slice(0, 24) + ".."
+                          : item.title
+                      }}
+                    </p>
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'ar'"
+                    >
+                      {{
+                        item.titleAr.length > 10
+                          ? item.titleAr.slice(0, 24) + ".."
+                          : item.titleAr
+                      }}
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      class="btn pull-right"
+                      (click)="latestNewsPageRedircation(item.id)"
+                      >Read More</a
+                    >
+                  </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselCaptionNewsMobile" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselCaptionNewsMobile" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+              </div>
             </div>
+          </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselCaptionNewsMobile"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselCaptionNewsMobile"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
 
     <!-- End Mobile-View Latest News Section -->
+  </section>
+  <!-- Start Web-View Latest News Section -->
 
-    <!-- Start Web-View Languages Section -->
-    <div class="carousel-container d-none d-md-block" id="languagesSection">
-        <div class="silder-header">
-            <h1>{{ "NAVBAR.LANGUAGES" | translate}}</h1>
-        </div>
-        <div id="carouselCaptionLanguages" class="carousel slide" data-ride="carousel" data-interval="4000">
-            <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let item of languagesList; let index = index; let isFirst = first"
-                    [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption">
-                        <div class="card-container" *ngFor="let i of item;">
-                            <div class="card">
-                                <!-- <img class="card-img-top"  src="../../../assets/images/image-2.jpeg" [alt]="i.text"> -->
+  <section id="languagesSection">
+    <div class="carousel-container d-none d-md-block">
+      <div class="silder-header">
+        <h1>{{ "NAVBAR.LANGUAGES" | translate }}</h1>
+      </div>
+      <div
+        id="carouselCaptionLanguages"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="4000"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="
+              let item of languagesList;
+              let index = index;
+              let isFirst = first
+            "
+            [ngClass]="{ active: isFirst }"
+          >
+            <div class="carousel-caption">
+              <div class="card-container" *ngFor="let i of item">
+                <div class="card">
+                  <!-- <img class="card-img-top"  src="../../../assets/images/image-2.jpeg" [alt]="i.text"> -->
 
-                                <img class="card-img-top" [src]="'../../../assets/images/'+i.imagePath" [alt]="i.text">
-                                <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">{{ i.title.length
-                                        > 10 ? i.title.slice(0,24) + '..' : i.title }}</p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
-                                        i.titleAr.length > 10 ? i.titleAr.slice(0,24) + '..' : i.titleAr }}</p>
-
-                                </div>
-                                <div class="card-footer">
-                                    <a class="btn pull-right" (click)="articlesPageRedircation(i.id)">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  <img
+                    class="card-img-top"
+                    [src]="'../../../assets/images/' + i.imagePath"
+                    [alt]="i.text"
+                  />
+                  <div class="card-body">
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'en'"
+                    >
+                      {{
+                        i.title.length > 10
+                          ? i.title.slice(0, 24) + ".."
+                          : i.title
+                      }}
+                    </p>
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'ar'"
+                    >
+                      {{
+                        i.titleAr.length > 10
+                          ? i.titleAr.slice(0, 24) + ".."
+                          : i.titleAr
+                      }}
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      class="btn pull-right"
+                      (click)="articlesPageRedircation(i.id)"
+                      >Read More</a
+                    >
+                  </div>
                 </div>
-
+              </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselCaptionLanguages" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next p-5" href="#carouselCaptionLanguages" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+          </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselCaptionLanguages"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next p-5"
+          href="#carouselCaptionLanguages"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
     <!-- End Web-View Languages Section -->
 
     <!-- Start Mobile-View Languages Section -->
-    <div class="carousel-container d-block d-md-none section-mob-v" id="languagesSection">
-        <div class="silder-header">
-            <h1>{{ "NAVBAR.LANGUAGES" | translate}}</h1>
-        </div>
-        <div id="carouselCaptionLanguagesMobile" class="carousel slide" data-ride="carousel" data-interval="4000">
-            <div class="carousel-inner">
-                <div class="carousel-item"
-                    *ngFor="let item of languagesMobileList; let index = index; let isFirst = first"
-                    [ngClass]="{active:isFirst}">
-                    <div class="carousel-caption">
-                        <div class="card-container">
-                            <div class="card">
-                                <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
-                                <img class="card-img-top" [src]=" '../../../assets/images/'+ item.imagePath"
-                                    [alt]="item.text">
+    <div
+      class="carousel-container d-block d-md-none section-mob-v"
+      id="languagesSection"
+    >
+      <div class="silder-header">
+        <h1>{{ "NAVBAR.LANGUAGES" | translate }}</h1>
+      </div>
+      <div
+        id="carouselCaptionLanguagesMobile"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="4000"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item"
+            *ngFor="
+              let item of languagesMobileList;
+              let index = index;
+              let isFirst = first
+            "
+            [ngClass]="{ active: isFirst }"
+          >
+            <div class="carousel-caption">
+              <div class="card-container">
+                <div class="card">
+                  <!-- <img class="card-img-top"  src="../../../assets/images/image-1.jpeg" [alt]="item.text"> -->
+                  <img
+                    class="card-img-top"
+                    [src]="'../../../assets/images/' + item.imagePath"
+                    [alt]="item.text"
+                  />
 
-                                <div class="card-body">
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'en'">
-                                        {{item.title.length > 10 ? item.title.slice(0,24) + '..' : item.title }}
-                                    </p>
-                                    <p class="card-text font-weight-bold" *ngIf="selectedLang == 'ar'">{{
-                                        item.titleAr.length > 10 ? item.titleAr.slice(0,24) + '..' : item.titleAr }}
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <a class="btn  pull-right" (click)="articlesPageRedircation(item.id)">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  <div class="card-body">
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'en'"
+                    >
+                      {{
+                        item.title.length > 10
+                          ? item.title.slice(0, 24) + ".."
+                          : item.title
+                      }}
+                    </p>
+                    <p
+                      class="card-text font-weight-bold"
+                      *ngIf="selectedLang == 'ar'"
+                    >
+                      {{
+                        item.titleAr.length > 10
+                          ? item.titleAr.slice(0, 24) + ".."
+                          : item.titleAr
+                      }}
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      class="btn pull-right"
+                      (click)="articlesPageRedircation(item.id)"
+                      >Read More</a
+                    >
+                  </div>
                 </div>
+              </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselCaptionLanguagesMobile" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselCaptionLanguagesMobile" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+          </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselCaptionLanguagesMobile"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselCaptionLanguagesMobile"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
-
+  </section>
+  <!-- Start Web-View Languages Section -->
 </div>
 
 <app-footer></app-footer>

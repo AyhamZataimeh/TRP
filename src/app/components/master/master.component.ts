@@ -12,6 +12,7 @@ import { WorkTeam } from 'src/app/shared/interface/work-team.model';
 import { Clients } from 'src/app/shared/interface/clients.model';
 import { LatestNews } from 'src/app/shared/interface/latest-news.model';
 import { Languages } from 'src/app/shared/interface/languages.model';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -84,53 +85,15 @@ export class MasterComponent implements OnInit, OnDestroy {
   ];
 
   latestNewsList!:LatestNews[][] 
-  //  = {
-  //   item1: [
-  //     {
-  //       id: 3,
-  //       title: "Optimiza Cybersecurity Event in collaboration with Cisco and under the Patronage of HE Eng. Bassam Maharmeh, President of NCSCJO in Jordan",
-  //       text: "From our Cybersecurity event under the patronage of his excellency Eng. Bassam Maharmeh the  president of the National Cyber Security Center (NCSCJO) in #Jordan and in partnership with Cisco Special thanks to cisco vibrant team Maher Ramadan , Ala AlMasri , Alaa Al-Hunaity , Akram Hamed , Elie Rahal and Rami Abbas",
-  //       imagePath: "../../../assets/images/image-1.jpeg"
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Zakaria bello",
-  //       text: "CHR2",
-  //       imagePath: "../../../assets/images/image-2.jpeg"
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Prime Ministry’s Meeting Room Steps into the Future with State-of-the-Art AV and Lighting Systems",
-  //       text: "We are delighted to announce the successful implementation of a suite of digital transformation solutions at Al Kaseeh Company, a prominent player in the food products industry. The adoption of these digital solutions, which include ImageLinks and Accuality will enhance their operational capabilities and reinforce their position as industry leaders. We extend our sincere appreciation to Al Kaseeh team for their trust and collaboration, which greatly contributed to the success of this project",
-  //       imagePath: "../../../assets/images/landing-page.jpg"
-  //     },
-  //   ],
-  //   item2: [
-  //     {
-  //       id: 3,
-  //       title: "Zakaria bello",
-  //       text: "CHR4",
-  //       imagePath: "../../../assets/images/avatar-3.jpeg"
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Zakaria bello",
-  //       text: "CHR5",
-  //       imagePath: "../../../assets/images/avatar-3.jpeg"
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Zakaria bello",
-  //       text: "CHR6",
-  //       imagePath: "../../../assets/images/avatar-3.jpeg"
-  //     },
-
-  //   ]
-  // }
-
+  
   latestNewsListMobile:LatestNews[] = [];
 
   languagesMobileList: any = [...this.latestNewsListMobile];
+
+  @ViewChild('vision', { static: true }) visionElement!: any;
+  @ViewChild('aboutus', { static: true }) aboutUsElement!: any;
+  @ViewChild('whatIsTrp', { static: true }) whatIsTrpElement!: any;
+  @ViewChild('targetGroup', { static: true }) targetGroupElement!: any;
 
 
   get sliderStyles() { 
@@ -160,6 +123,62 @@ export class MasterComponent implements OnInit, OnDestroy {
   targetGroupSections!:SectionDetails;
   whatIsTprSections!:SectionDetails;
   workTeams: WorkTeam[]=[];
+
+
+  sectiondRed= new BehaviorSubject({
+    sectionId:0,
+    redierctUrl:""
+  });
+  ngOnDestroy(): void {
+    // this.masterService.sectionRedierct.unsubscribe();
+    // this.masterService.sectionRedierct.subscribe();
+
+  }
+  ngOnInit(): void {
+    this.selectedLang = localStorage.getItem('language');
+    console.log('languag=',this.selectedLang);
+    
+    
+    this.getSections();
+    this.getLandingPgae();
+    this.getVisiionAndMission();
+    this.getWorkTeam();
+    this.getClinets();
+    this.getLanguages();
+    this.getLatestNews();
+
+
+    this.landingPageImageURL = "../../../assets/images/landing-page.jpg";
+    this.visionAndMissionImage = "../../../assets//images/Vision&mission.jpeg";
+    
+
+    window.onscroll = function() {
+      // When scrolling occurs, add or remove a class to an element to change its style
+      var registerationBtn = document.querySelector('.register');
+      if (registerationBtn) {
+        if (window.scrollY > 100) {
+          registerationBtn.classList.add('stickyBtnScrolling');
+        } else {
+          registerationBtn.classList.remove('stickyBtnScrolling');
+        }
+      }
+    };
+    
+    
+
+    const vision = document.getElementById("vision");
+
+    this.masterService.sectionRedierct.subscribe((result: SectionRedierction) => {
+
+      if (result.sectionId) {
+        this.router.navigate([result.redierctUrl]);
+        this.sctionRedirectHandler(result.sectionId);
+        vision?.classList.add("vision-mission-show-animation");
+      }
+    });
+ 
+
+  }
 
 
 
@@ -234,180 +253,10 @@ export class MasterComponent implements OnInit, OnDestroy {
         console.log("languagesList", this.languagesList);
         
         
-        
       }
     })
   }
 
-  latestNewSlider: number = 1;
-  get latestNewsSliderStyle() {
-
-    return {
-      '--latest-news-num-slides': this.latestNewSlider * 6
-    };
-  }
-
-  ngOnDestroy(): void {
-    this.masterService.sectionRedierct.unsubscribe();
-  }
-
-  onLatesNewsScroll(index: number) {
-
-
-    this.latestNewSlider = index;
-
-    document.getElementById("cardSlider")?.classList.remove("card-slide");
-    document.getElementById("cardSlider")?.classList.add("card-slide");
-
-
-
-
-  }
-  ngOnInit(): void {
-    this.selectedLang = localStorage.getItem('language');
-    console.log('languag=',this.selectedLang);
-    
-    
-    this.getSections();
-    this.getLandingPgae();
-    this.getVisiionAndMission();
-    this.getWorkTeam();
-    this.getClinets();
-    this.getLanguages();
-    this.getLatestNews();
-
-
-    this.landingPageImageURL = "../../../assets/images/landing-page.jpg";
-    this.visionAndMissionImage = "../../../assets//images/Vision&mission.jpeg";
-    
-
-    window.onscroll = function() {
-      // When scrolling occurs, add or remove a class to an element to change its style
-      var registerationBtn = document.querySelector('.register');
-      if (registerationBtn) {
-        if (window.scrollY > 100) {
-          registerationBtn.classList.add('stickyBtnScrolling');
-        } else {
-          registerationBtn.classList.remove('stickyBtnScrolling');
-        }
-      }
-    };
-    
-    
-
-    const vision = document.getElementById("vision");
-
-    this.masterService.sectionRedierct.subscribe((result: SectionRedierction) => {
-
-      if (result.sectionId) {
-        this.router.navigate([result.redierctUrl]);
-        this.sctionRedirectHandler(result.sectionId);
-        vision?.classList.add("vision-mission-show-animation");
-      }
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-      const targetgroups = document.getElementById("targetgroups");
-      const vision = document.getElementById("vision");
-      const aboutUs = document.getElementById("aboutUs");
-      const whatIsTrp = document.getElementById("whatIsTrp");
-
-      // Create an intersection observer
-      const observer = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-
-            // If the target element is in view, add the animation class
-
-          }
-        });
-      }, { threshold: 0.5 }); // Adjust the threshold as needed
-
-      // Start observing the target element
-      observer.observe(vision as HTMLElement);
-
-
-      
-      window.addEventListener("scroll", function () {
-
-
-        // if (isElementInViewport(aboutUs)) {
-
-        //   console.log("about us");
-          
-        //   // If the element is in the viewport, add your logic here
-        //   document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
-
-        //   document.getElementById("aboutUsText")?.classList.add("about-us-text");
-        //   document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
-
-
-        //   aboutUs?.classList.remove("hide-section");
-
-        // } else {
-        //   console.log("not about us");
-
-        // }
-
-        // if (isElementInViewport(whatIsTrp)) {
-        //   console.log("whatIsTrp");
-
-        //   document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
-
-        //   document.getElementById("trpText")?.classList.add("trp-text");
-        //   document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
-
-
-
-
-        // } else {
-
-        // }
-
-        // if (isElementInViewport(targetgroups)) {
-        //   console.log("targetgroups");
-
-        //   document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
-
-
-        //   document.getElementById("target-groups-text")?.classList.add("target-groups-text");
-        //   document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
-
-        // } else {
-
-        // }
-
-        if (isElementInViewport(vision)) {
-
-          // vision?.classList.add("vision-mission-show-animation");
-
-
-        } else {
-
-        }
-      });
-      function isElementInViewport(el: any) {
-        
-        
-        const rect = el.getBoundingClientRect();
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-
-        return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-      }
-
-    });
-
-
-
-  }
 
 
   slider: any;
@@ -438,6 +287,7 @@ export class MasterComponent implements OnInit, OnDestroy {
 
       }
       if (event == this.WhatIsTrp) {
+        
         document.getElementById("whatIsTrp")?.scrollIntoView();
 
       }
@@ -447,6 +297,7 @@ export class MasterComponent implements OnInit, OnDestroy {
 
       }
       if (event == this.WorkTeam) {
+        console.log("workteam");
         document.getElementById("workTeam")?.scrollIntoView(false);
 
       }
@@ -468,10 +319,7 @@ export class MasterComponent implements OnInit, OnDestroy {
 
   }
   pos: number = 0;
-  @ViewChild('vision', { static: true }) visionElement!: any;
-  @ViewChild('aboutus', { static: true }) aboutUsElement!: any;
-  @ViewChild('whatIsTrp', { static: true }) whatIsTrpElement!: any;
-  @ViewChild('targetGroup', { static: true }) targetGroupElement!: any;
+
 
 
 
@@ -637,4 +485,106 @@ export class MasterComponent implements OnInit, OnDestroy {
   }
 
 }
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const targetgroups = document.getElementById("targetgroups");
+//   const vision = document.getElementById("vision");
+//   const aboutUs = document.getElementById("aboutUs");
+//   const whatIsTrp = document.getElementById("whatIsTrp");
+
+//   // Create an intersection observer
+//   const observer = new IntersectionObserver(entries => {
+
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+
+//         // If the target element is in view, add the animation class
+
+//       }
+//     });
+//   }, { threshold: 0.5 }); // Adjust the threshold as needed
+
+//   // Start observing the target element
+//   observer.observe(vision as HTMLElement);
+
+
+  
+//   window.addEventListener("scroll", function () {
+
+
+//     // if (isElementInViewport(aboutUs)) {
+
+//     //   console.log("about us");
+      
+//     //   // If the element is in the viewport, add your logic here
+//     //   document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
+
+//     //   document.getElementById("aboutUsText")?.classList.add("about-us-text");
+//     //   document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
+
+
+//     //   aboutUs?.classList.remove("hide-section");
+
+//     // } else {
+//     //   console.log("not about us");
+
+//     // }
+
+//     // if (isElementInViewport(whatIsTrp)) {
+//     //   console.log("whatIsTrp");
+
+//     //   document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
+
+//     //   document.getElementById("trpText")?.classList.add("trp-text");
+//     //   document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+
+
+
+
+//     // } else {
+
+//     // }
+
+//     // if (isElementInViewport(targetgroups)) {
+//     //   console.log("targetgroups");
+
+//     //   document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
+
+
+//     //   document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+//     //   document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+
+//     // } else {
+
+//     // }
+
+//     if (isElementInViewport(vision)) {
+
+//       // vision?.classList.add("vision-mission-show-animation");
+
+
+//     } else {
+
+//     }
+//   });
+//   function isElementInViewport(el: any) {
+    
+    
+//     const rect = el.getBoundingClientRect();
+//     rect.top >= 0 &&
+//     rect.left >= 0 &&
+//     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+//     return (
+//       rect.top >= 0 &&
+//       rect.left >= 0 &&
+//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//     );
+//   }
+
+// });
 
