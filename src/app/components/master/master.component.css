@@ -1022,6 +1022,11 @@ section {
     .register a {
         font-size: 15px;
     }
+
+    .section-text {
+        text-align: center;
+        line-height: 1.5
+    }
 }
 
 @media screen and (max-width: 991px) {

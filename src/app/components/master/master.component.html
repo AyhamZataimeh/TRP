@@ -54,10 +54,10 @@
     </div>
     <div class="about-us" id="aboutUsParent" #aboutus>
       <div id="aboutUsText">
-        <h5 *ngIf="selectedLang == 'en'">
+        <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ aboutUsSections?.textEn }}
         </h5>
-        <h5 *ngIf="selectedLang == 'ar'">
+        <h5 *ngIf="selectedLang == 'ar'" class="section-text">
           {{ aboutUsSections?.textAr }}
         </h5>
       </div>
@@ -82,10 +82,10 @@
     </div>
     <div class="what-is-trp" #whatIsTrp id="whatIsTrpParent">
       <div id="trpText">
-        <h5 *ngIf="selectedLang == 'en'">
+        <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ whatIsTprSections?.textEn }}
         </h5>
-        <h5 *ngIf="selectedLang == 'ar'">
+        <h5 *ngIf="selectedLang == 'ar'" class="section-text">
           {{ whatIsTprSections?.textAr }}
         </h5>
       </div>
@@ -119,11 +119,11 @@
       #targetGroup
          >
       <div id="target-groups-text" >
-        <h5 *ngIf="selectedLang == 'en'">
+        <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ targetGroupSections?.textEn }}
         </h5>
 
-        <h5 *ngIf="selectedLang == 'ar'">
+        <h5 *ngIf="selectedLang == 'ar'" class="section-text">
           {{ targetGroupSections?.textAr }}
         </h5>
       </div>
