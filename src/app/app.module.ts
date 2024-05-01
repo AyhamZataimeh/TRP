@@ -19,6 +19,8 @@ import { CourseAddressPrivateComponent } from './pages/course-address-private/co
 import { ServicesComponent } from './pages/services/services.component';
 import { LatestNewsComponent } from './shared/latest-news/latest-news.component';
 import { ArticelsComponent } from './shared/articels/articels.component';
+import { FacebookModule } from "ngx-facebook";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,7 @@ import { ArticelsComponent } from './shared/articels/articels.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FacebookModule.forRoot(),
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,

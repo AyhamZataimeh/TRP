@@ -15,9 +15,8 @@
         "COURSES_ADDRESS":"Courses Address",
         "LOGIN":"Login",
         "PARTNERS":"Our Partners",
-        "COURSE_REGISTER_NOW":"Register now for upcoming courses",
-        "TITLE-1":"Total Physical Reposne",
-        "TITLE-2":"For Teaching English"
+        "COURSE_REGISTER_NOW":"Register now for upcoming courses"
+      
 
 
     },
@@ -53,7 +52,9 @@
     },
     "FOOTER":{
         "SHORT_LINK":"Short Link",
-        "CONTACT_US":"Contact Us"
+        "CONTACT_US":"Contact Us",
+        "TITLE_1":"Total Physical Reposne",
+        "TITLE_2":"For Teaching English"
     }
  
 

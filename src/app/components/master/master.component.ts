@@ -2,7 +2,6 @@ import { Component, HostListener, ElementRef, OnInit, NgZone, ViewChild, OnDestr
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Sections } from "../../shared/enums/enums.model";
 import { MasterService } from 'src/app/shared/master.service';
-import { Blogs } from 'src/app/shared/interface/blogs';
 import { Router } from '@angular/router';
 import { SectionRedierction } from 'src/app/shared/interface/section-redirction.model';
 import { LandingPage } from 'src/app/shared/interface/landing-page.model';
@@ -13,6 +12,7 @@ import { Clients } from 'src/app/shared/interface/clients.model';
 import { LatestNews } from 'src/app/shared/interface/latest-news.model';
 import { Languages } from 'src/app/shared/interface/languages.model';
 import { BehaviorSubject } from 'rxjs';
+import { FacebookService, InitParams } from "ngx-facebook";
 
 
 
@@ -37,7 +37,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MasterComponent implements OnInit, OnDestroy {
 
-  constructor(public el: ElementRef, private masterService: MasterService, private router: Router) { }
+  constructor(public el: ElementRef, private masterService: MasterService, private router: Router,
+    private facebookService: FacebookService
+  ) { }
+
 
   public get AboutUs(): Sections.AboutUs {
     return Sections.AboutUs;
@@ -99,7 +102,7 @@ export class MasterComponent implements OnInit, OnDestroy {
   get sliderStyles() { 
     //important test
     
-    if(this.clientsList.length > 10) {
+    if(this.clientsList.length >= 10) {
       const numSlides = this.clientsList.length;
       return {
         '--num-slides': numSlides - 9
@@ -129,12 +132,18 @@ export class MasterComponent implements OnInit, OnDestroy {
     sectionId:0,
     redierctUrl:""
   });
+
+  private initFacebookService(): void {
+    const initParams: InitParams = { xfbml:true, version:"v3.2"};
+    this.facebookService.init(initParams);
+  }
   ngOnDestroy(): void {
     // this.masterService.sectionRedierct.unsubscribe();
     // this.masterService.sectionRedierct.subscribe();
 
   }
   ngOnInit(): void {
+    this.initFacebookService();
     this.selectedLang = localStorage.getItem('language');
     
     

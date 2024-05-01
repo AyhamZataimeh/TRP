@@ -840,7 +840,7 @@ section {
     }
 
     to {
-        transform: translateX(110px);
+        transform: translateX(0px);
         opacity: 1;
     }
 }
@@ -860,15 +860,15 @@ section {
 
 @keyframes trp-image {
 
-    from {
+    /* from {
         transform: translateX(0px);
         opacity: 0;
     }
 
     to {
-        transform: translateX(29px);
+        transform: translateX(-99px);
         opacity: 1;
-    }
+    } */
 }
 
 @keyframes trp-image-mobile {
