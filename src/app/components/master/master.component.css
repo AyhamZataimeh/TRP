@@ -372,11 +372,11 @@
 }
 
 .carousel .carousel-item {
-    height: 330px;
+    height: 390px;
 }
 
 #clientsSection .carousel-item {
-    height: 330px;
+    height: 390px;
 }
 
 #clientsSection .carousel-caption {
@@ -423,8 +423,8 @@
 }
 
 .clientsMobileImgBox {
-    width: 60px;
-    height: 60px
+    width: 72px;
+    height: 72px
 }
 
 .clientsMobileImgBox img {
@@ -1040,6 +1040,10 @@ section {
     .section-text {
         text-align: center;
         line-height: 1.5
+    }
+
+    .clients-mb-v {
+        padding: 0
     }
 }
 
