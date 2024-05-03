@@ -30,18 +30,22 @@
   </div>
   <div class="overlay"></div>
 </div>
+
+
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" data-aos="fade-right" data-aos-duration="3000">
     <div class="col-12 d-flex justify-content-center">
       <div id="vision" #vision class="vision-mission">
         <div class="vision-img-box">
-         <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
-          <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr"> 
+          <img *ngIf="selectedLang == 'en'" src="../../../assets//images/Vision&mission.jpeg">
+         <!-- <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
+          <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr">  -->
         </div>
       </div>
     </div>
   </div>
   <div
+
     class="col-md-12 col-sm-12 col-xs-12 about-us-main section-mob-v"
     id="aboutUs"
   >
@@ -52,8 +56,8 @@
         }}
       </h1>
     </div>
-    <div class="about-us" id="aboutUsParent" #aboutus>
-      <div id="aboutUsText">
+    <div class="about-us-show" id="aboutUsParent" #aboutus>
+      <div id="aboutUsText"  data-aos="fade-left" data-aos-duration="3000">
         <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ aboutUsSections?.textEn }}
         </h5>
@@ -61,9 +65,10 @@
           {{ aboutUsSections?.textAr }}
         </h5>
       </div>
-      <div id="trpAboutUsImage">
+      <div id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="3000">
+        <img src="../../../assets/images/About-us.jpeg" class="section-images" alt="">
     
-        <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images">
+        <!-- <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images"> -->
       </div>
     </div>
   </div>
@@ -80,8 +85,8 @@
         }}
       </h1>
     </div>
-    <div class="what-is-trp" #whatIsTrp id="whatIsTrpParent">
-      <div id="trpText">
+    <div class="what-is-trp-show" #whatIsTrp id="whatIsTrpParent">
+      <div id="trpText"  data-aos="fade-right" data-aos-duration="3000"  data-aos-delay="1000">
         <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ whatIsTprSections?.textEn }}
         </h5>
@@ -89,13 +94,13 @@
           {{ whatIsTprSections?.textAr }}
         </h5>
       </div>
-      <div id="whatIsTrpImage">
-        <img
+      <div id="whatIsTrpImage" data-aos="fade-left" data-aos-duration="3000"  data-aos-delay="1000">
+        <!-- <img
           [src]="'../../../assets/images/' + whatIsTprSections.imagePath"
           class="section-images"
-        />
+        /> -->
 
-        <!-- <img src="../../../assets//images/what-is-trp.jpeg" class="section-images"> -->
+        <img src="../../../assets//images/what-is-trp.jpeg" class="section-images" >
       </div>
     </div>
   </div>
@@ -113,13 +118,13 @@
       </h1>
     </div>
     <div
-      class="target-groups"
+      class="target-groups-show"
       
       id="targetGroupsParent"
       #targetGroup
          >
       <div id="target-groups-text" >
-        <h5 *ngIf="selectedLang == 'en'" class="section-text">
+        <h5 *ngIf="selectedLang == 'en'" class="section-text" data-aos="fade-left" data-aos-duration="3000">
           {{ targetGroupSections?.textEn }}
         </h5>
 
@@ -127,13 +132,13 @@
           {{ targetGroupSections?.textAr }}
         </h5>
       </div>
-      <div id="targetgroupsImage">
-        <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images">
+      <div id="targetgroupsImage" data-aos="fade-right" data-aos-duration="3000">
+        <!-- <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images"> -->
 
-        <!-- <img
+        <img
           src="../../../assets//images/target-groups.jpeg"
           class="section-images"
-        /> -->
+        />
       </div>
     </div>
   </div>

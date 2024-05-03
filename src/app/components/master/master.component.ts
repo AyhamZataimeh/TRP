@@ -13,6 +13,8 @@ import { LatestNews } from 'src/app/shared/interface/latest-news.model';
 import { Languages } from 'src/app/shared/interface/languages.model';
 import { BehaviorSubject } from 'rxjs';
 import { FacebookService, InitParams } from "ngx-facebook";
+import * as AOS from "aos";
+
 
 
 
@@ -20,20 +22,6 @@ import { FacebookService, InitParams } from "ngx-facebook";
   selector: 'app-master',
   templateUrl: './master.component.html',
   styleUrls: ['./master.component.css'],
-  animations: [
-    trigger('slideAnimation', [
-      transition(':increment', [
-        style({ transform: 'translateX(-100%)' }),
-        animate('500ms ease-out', style({ transform: 'translateX(0)' })),
-      ]),
-      transition(':decrement', [
-        style({ transform: 'translateX(100%)' }),
-        animate('500ms ease-out', style({ transform: 'translateX(0)' })),
-      ]),
-    ]),
-  ]
-
-
 })
 export class MasterComponent implements OnInit, OnDestroy {
 
@@ -143,6 +131,8 @@ export class MasterComponent implements OnInit, OnDestroy {
 
   }
   ngOnInit(): void {
+    AOS.init();
+
     this.initFacebookService();
     this.selectedLang = localStorage.getItem('language');
     
@@ -326,42 +316,42 @@ export class MasterComponent implements OnInit, OnDestroy {
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {
 
-    if (this.isElementInViewport(this.visionElement.nativeElement)) {
-      const vision = document.getElementById("vision");
-      vision?.classList.add("vision-mission-show-animation");
+    // if (this.isElementInViewport(this.visionElement.nativeElement)) {
+    //   const vision = document.getElementById("vision");
+    //   vision?.classList.add("vision-mission-show-animation");
 
-      // Do something when the element is in viewport
-    }
+    //   // Do something when the element is in viewport
+    // }
 
-    if(this.isElementInViewport(this.aboutUsElement.nativeElement)) {
-      const aboutUs = document.getElementById("aboutUs");
-      document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
-      document.getElementById("aboutUsText")?.classList.add("about-us-text");
-      document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
-    }
+    // if(this.isElementInViewport(this.aboutUsElement.nativeElement)) {
+    //   const aboutUs = document.getElementById("aboutUs");
+    //   document.getElementById("aboutUsParent")?.classList.replace("about-us", "about-us-show");
+    //   document.getElementById("aboutUsText")?.classList.add("about-us-text");
+    //   document.getElementById("trpAboutUsImage")?.classList.add("trp-image-about-us");
+    // }
 
-    if(this.isElementInViewport(this.targetGroupElement.nativeElement)) {
+    // if(this.isElementInViewport(this.targetGroupElement.nativeElement)) {
 
       
-      document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
-      document.getElementById("target-groups-text")?.classList.add("target-groups-text");
-      document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+    //   document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
+    //   document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+    //   document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
 
     
-    } 
-    if(this.isElementInViewport(this.whatIsTrpElement.nativeElement)) {
+    // } 
+    // if(this.isElementInViewport(this.whatIsTrpElement.nativeElement)) {
 
-      document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
-      document.getElementById("trpText")?.classList.add("trp-text");
-      document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
+    //   document.getElementById("whatIsTrpParent")?.classList.replace("what-is-trp", "what-is-trp-show");
+    //   document.getElementById("trpText")?.classList.add("trp-text");
+    //   document.getElementById("whatIsTrpImage")?.classList.add("trp-image");
 
-      setTimeout(()=>{
-        document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
-        document.getElementById("target-groups-text")?.classList.add("target-groups-text");
-        document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
-      }, 1000)
+    //   setTimeout(()=>{
+    //     document.getElementById("targetGroupsParent")?.classList.replace("target-groups", "target-groups-show");
+    //     document.getElementById("target-groups-text")?.classList.add("target-groups-text");
+    //     document.getElementById("targetgroupsImage")?.classList.add("trp-image-target-group");
+    //   }, 1000)
 
-    }
+    // }
   }
 
   onTouchStart(event: any) {

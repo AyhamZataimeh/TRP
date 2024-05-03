@@ -105,7 +105,7 @@
 
 .vision-mission-show-animation {
     /* background-color: red; */
-    animation: vision-mission-show 1.5s .5s both;
+    animation: vision-mission-show .5s  .5s both;
 
 }
 
@@ -122,7 +122,7 @@
     width: 70%;
     height: 480px;
     margin-top: 10px;
-    opacity: 0;
+    opacity: 1;
 }
 
 .vision-mission .vision-img-box {
@@ -136,7 +136,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
+    width: 150%;
     height: 100%;
     object-fit: cover;
     border-radius: 25px;
@@ -357,13 +357,13 @@
 }
 
 .clients-slider-card-en-animation {
-    animation: en-client 3s linear alternate infinite;
+    animation: en-client 5s linear alternate infinite;
 
 }
 
 .clients-slider-card-ar-animation {
-    padding-right: 8px;
-    animation: ar-client 3s linear alternate infinite;
+    padding-right: 10px;
+    animation: ar-client 5s linear alternate infinite;
 
 }
 
@@ -508,10 +508,14 @@ footer p:focus {
         transform: translateX(0);
     }
 
-    100% {
-        transform: translateX(calc(-110% * var(--num-slides)));
+    50% {
+        transform: translateX(calc(-140% * var(--num-slides)));
         /* Adjust the number of slides */
     }
+    0% {
+        transform: translateX(0px);
+    }
+
 
 }
 
@@ -520,9 +524,12 @@ footer p:focus {
         transform: translateX(0px);
     }
 
-    100% {
-        transform: translateX(calc(110% * var(--num-slides)));
+    50% {
+        transform: translateX(calc(150% * var(--num-slides)));
         /* Adjust the number of slides */
+    }
+    0% {
+        transform: translateX(0px);
     }
 
 }
@@ -549,14 +556,17 @@ footer p:focus {
     width: 100%;
     overflow-wrap: break-word;
     color: #FFFFFF;
-    margin: 0
+    margin: 0;
+    text-wrap: nowrap;
 }
 
 .slider-inner .workTeam-position {
     width: 100%;
     overflow-wrap: break-word;
     color: #FFFFFF;
-    margin: 8px 0 0
+    margin: 8px 0 0;
+    text-wrap: nowrap;
+
 }
 
 .slider-section::-webkit-scrollbar {
@@ -612,11 +622,12 @@ footer p:focus {
 .carousel .worker-name,
 .carousel .worker-position {
     color: #FFFFFF;
+    text-wrap: nowrap;
 }
 
 .carousel .worker-name.mob-v,
 .carousel .worker-position.mob-v {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -947,11 +958,14 @@ section {
     }
 
     .vision-mission .vision-img-box {
-        width: 320px
+        width: 320px;
+
     }
 
     .vision-mission .vision-img-box img {
         border-radius: 15px;
+        width: 125%;
+
     }
 
     .about-us-show {
