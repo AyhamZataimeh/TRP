@@ -211,6 +211,9 @@
 
 }
 
+.carousel-custom-container {
+    padding: 0
+}
 
 .about-us-text {
     color: black;
