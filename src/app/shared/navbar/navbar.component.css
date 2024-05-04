@@ -66,7 +66,7 @@
 .main-nav .logo img {
     width: inherit;
     height: 100%;
-    transform: translateY(-1.5px) scale(1.18);
+    transform: translate(0.5px, -1.5px) scale(1.22);
     &:hover {
         cursor: pointer;
     }

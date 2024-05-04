@@ -61,7 +61,7 @@
 .landing-page-logo-image {
     width: 100%;
     height: 100%;
-    transform: translateY(-1.5px) scale(1.18);
+    transform: translate(0.5px, -1.8px) scale(1.23);
     background-position: center;
     background-size: contain;
 }
