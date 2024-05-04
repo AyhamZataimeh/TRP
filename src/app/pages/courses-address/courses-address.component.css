@@ -5,6 +5,10 @@
 .card-body {
     position: relative;
     min-height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-body a {
@@ -13,6 +17,7 @@
     top: 80%;
     transform: translate(-50%, -80%); */
     display: inline-block;
+    width: 100%;
 }
 .card-header p {
     border: 1px solid #ffefd3e8 ;
@@ -37,7 +42,7 @@
     background: #ffefd3e8 ;
     border-radius: 10px;
     padding: 5px;
-
+    width: 80%;
 }
 
 .img-header{
