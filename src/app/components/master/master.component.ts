@@ -206,6 +206,9 @@ export class MasterComponent implements OnInit, OnDestroy {
         this.whatIsTprSections= response.data[1];
         this.targetGroupSections= response.data[2];
         this.targetGroupSections.textEn.replace("\n", "\t");
+        this.whatIsTprSections.textEn.replace("\n", "\t");
+        this.aboutUsSections.textEn.replace("\n", "\t");
+
           
         }
     })
@@ -234,7 +237,12 @@ export class MasterComponent implements OnInit, OnDestroy {
     this.masterService.getLatestNews().subscribe((response: any)=>{
       if(!response.error) {
         this.latestNewsListMobile= response.data;
+        this.latestNewsList = response.data;
+        this.latestNewsList.sort(function(a:any, b:any){return b.id - a.id}); 
+
         this.latestNewsList= this.customeLatestNewsList(response.data);
+        
+        
         
         
       }
@@ -245,9 +253,9 @@ export class MasterComponent implements OnInit, OnDestroy {
     this.masterService.getLanguages().subscribe((response: any)=>{
       if(!response.error) {
         this.languagesMobileList= response.data;
+        this.languagesList = response.data;
+        this.languagesList.sort(function(a:any, b:any){return b.id - a.id}); 
         this.languagesList= this.customeLangugesList(response.data);
-        
-        
       }
     })
   }

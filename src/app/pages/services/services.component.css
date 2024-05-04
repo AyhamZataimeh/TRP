@@ -10,4 +10,6 @@ img {
 .serviceText {
     word-wrap: break-word;
     padding: 0 15px;
+    white-space: pre-line;
+
 }

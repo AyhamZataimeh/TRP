@@ -1,7 +1,9 @@
 <footer class="py-5 mt-5 border-top">
   <div class="container-fluid">
     <div class="row text-center text-center text-md-start">
-      <div class="col-12 col-md-4 mb-5 mb-md-0">
+      <div class="col-12 col-md-1 mb-5 mb-md-0"></div>
+
+      <div class="col-12 col-md-3 mb-5 mb-md-0 " style="text-align: start;">
         <h5 class="font-weight-bold" style="text-wrap: nowrap">
           {{ "FOOTER.TITLE_1" | translate }}
         </h5>
@@ -36,7 +38,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-4 mb-5 mb-md-0">
+      <div class="col-12 col-md-1 mb-5 mb-md-0"></div>
+
+      <div class="col-12 col-md-3 mb-5 mb-md-0" style="text-align: start;">
         <h5 class="font-weight-bold">{{ "FOOTER.SHORT_LINK" | translate }}</h5>
         <ul class="nav flex-column mt-4 short-link">
           <li class="nav-item m-2">
@@ -95,36 +99,40 @@
           </li>
         </ul>
       </div>
-      <div class="col-12 col-md-4 mb-5 mb-md-0">
+
+      <div class="col-12 col-md-1 mb-5 mb-md-0" *ngIf="this.selectedLang == 'en'"></div>
+      <div class="col-12 col-md-3 mb-5 mb-md-0" style="text-align: start;">
         <h5 class="font-weight-bold">{{ "FOOTER.CONTACT_US" | translate }}</h5>
         <ul class="nav flex-column mt-4">
-          <li class="fa fa-phone nav-item mb-2">
+          <li class="fa fa-phone nav-item mb-2" [ngClass]="selectedLang == 'ar'? 'd-flex ' : ''">
             <a
               style="padding-left: 10px"
-              [href]="'tel:' + contactInfo.phoneNumber1"
-              class="text-muted text-decoration-none"
-              >{{ contactInfo.phoneNumber1 }}</a
+              [href]="'tel:' + contactInfo?.phoneNumber1"
+              class="text-muted text-decoration-none px-2"
+              >{{ contactInfo?.phoneNumber1 }}</a
             >
           </li>
           <hr />
           <li
+          [ngClass]="selectedLang == 'ar'? 'd-flex ' : ''"
             class="fa fa-phone nav-item mb-2"
             *ngIf="contactInfo?.phoneNumber2"
           >
             <a
               style="padding-left: 10px"
-              [href]="'tel:' + contactInfo.phoneNumber2"
-              class="text-muted text-decoration-none"
+              [href]="'tel:' + contactInfo?.phoneNumber2"
+              class="text-muted text-decoration-none px-2"
               >{{ contactInfo?.phoneNumber2 }}</a
             >
           </li>
           <hr *ngIf="contactInfo?.phoneNumber2" />
 
-          <li class="fa fa-envelope nav-item mb-2">
+          <li class="fa fa-envelope nav-item mb-2" [ngClass]="selectedLang == 'ar'? 'd-flex  ' : ''">
             <a
+          
               style="padding-left: 10px"
-              [href]="'mailto:' + contactInfo.email"
-              class="text-muted text-decoration-none"
+              [href]="'mailto:' + contactInfo?.email"
+              class="text-muted text-decoration-none px-2"
               >{{ contactInfo?.email }}
             </a>
           </li>
@@ -132,9 +140,9 @@
           <li class="fa fa-map-marker nav-item mb-2">
             <a
               style="padding-left: 10px"
-              class="text-muted text-decoration-none"
+              class="text-muted text-decoration-none "
               target="_blank"
-              [href]="contactInfo.locationUrl"
+              [href]="contactInfo?.locationUrl"
             >
               {{ 
                selectedLang == 'en' ? contactInfo?.location:  contactInfo?.locationAr
@@ -143,6 +151,9 @@
           </li>
         </ul>
       </div>
+      <div class="col-12 col-md-1 mb-5 mb-md-0" *ngIf="this.selectedLang == 'ar'"></div>
+
+  
     </div>
   </div>
 </footer>

@@ -1,13 +1,13 @@
 <div class="container pb-5">
     <div class="row">
         <div class="img-header" >
-            <img src="../../../assets//images/logo-background.png" alt="" width="70%" height="70%"  >
+            <img src="../../../assets//images/logo-background.png" alt="" width="70%" height="95%"  >
         </div>
     </div>
 
     <div class="row tpr-info font-weight-bold">
         <div class="col-md-1"></div>
-        <div class="col-md-2 col-sm-6 col-xs-12 text-center">
+        <div class="col-md-2 col-sm-6 col-xs-12 text-center ">
             <p>
                 {{ headerLeft }}
 
@@ -17,7 +17,7 @@
         <div class="col-md-2 co-sm-6 col-xs-12 horizntal-line">
         </div>
 
-        <div class="col-md-2 co-sm-6 col-xs-12 text-center">
+        <div class="col-md-2 co-sm-6 col-xs-12 text-center ">
             {{ headerCenter }}
 
         </div>
@@ -42,8 +42,10 @@
                     <p>{{ course.courcesLocation.name}}</p>
 
                 </div>
-                <div class="card-body">
-                    <p>{{ course.location}}</p>
+                <div class="card-body text-center">
+                 
+                    <p class="course-location">{{ course.location}}</p>
+                
 
                     <p>{{ course.address}}</p>
 

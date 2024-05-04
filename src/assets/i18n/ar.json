@@ -26,7 +26,7 @@
         "ABOUT_US": "معلومات عنا",
         "WHAT_IS_TPR": "ما هو TPR",
         "WORK_TEAM": "فريق العمل",
-        "TARGET_GROUPS": "المجموعات المستهدفة",
+        "TARGET_GROUPS": "الفئات العمرية",
         "PARTNERS":"شركائنا",
         "READ_MORE":"أقرأ المزيد"
 
@@ -34,7 +34,7 @@
     },
     "COURSE_RIGISTER" : {
         "RESERVE_SEAT_NOW":"احجز مقعد الآن",
-        "NEW_COURSE_WILL_START":"دورات جديدة رح تبدأ",
+        "NEW_COURSE_WILL_START":"سجل طفلك في الدورة القادمة",
         "REGISTER_NOW":"سجل الأن"
 
 
@@ -55,7 +55,7 @@
     "FOOTER":{
         "SHORT_LINK":"اختصارات",
         "CONTACT_US":"تواصل معنا",
-        "TITLE_1":"الاستاجبة الحسيه الكاملة",
+        "TITLE_1":"الاستجابة الحسيه الكاملة",
         "TITLE_2":"لتعليم اللغة الانجلزية"
     }
  

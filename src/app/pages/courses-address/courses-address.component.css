@@ -32,6 +32,14 @@
 
 }
 
+.course-location {
+    border: 1px solid #ffefd3e8 ;
+    background: #ffefd3e8 ;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
 .img-header{
 text-align: center;
 }
@@ -54,6 +62,7 @@ hr {
 }
 
 .horizntal-line {
+    margin: 10px;
     border: 1px solid;
     border-color: white;
     height: 0px;
