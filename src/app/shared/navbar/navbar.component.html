@@ -4,14 +4,16 @@
     <li class="fa fa-phone"><a href="tel:+96297026511" class="text-decoration-none"> <span style="padding-left: 5px">  {{contactInfo?.phoneNumber1}}</span></a> </li>
   </div>
   <div class="media">
-    <a  href="https://www.facebook.com/tpr.foundation.jo" target="_blank">
+    <a                
+    [href]="contactInfo.facebookUrl"
+    target="_blank">
       <li class="fa fa-facebook"></li>
     </a>
-    <a href=" https://www.instagram.com/tpr.for.english/" target="_blank">
+    <a  [href]="contactInfo.instagramUrl" target="_blank">
       <li class="fa fa-instagram"></li>
 
     </a>
-    <a href="https://www.youtube.com/@TotalPhysicslResponse" target="_blank">
+    <a [href]="contactInfo.youtubeUrl" target="_blank">
       <li class="fa fa-youtube"></li>
 
     </a>

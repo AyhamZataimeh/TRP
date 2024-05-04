@@ -5,5 +5,10 @@ export interface ContactUs {
     phoneNumber2: number,
     location: string,
     locationAr: string,
-    locationUrl: string 
+    locationUrl: string,
+    instagramUrl: string,
+    facebookUrl: string,
+    youtubeUrl: string,
+
+
 }

@@ -54,7 +54,6 @@ export class FooterComponent implements OnInit {
     this.masterService.getContactUs().subscribe((response: any)=>{
       if(!response.error) {
         this.contactInfo= response.data;
-        console.log("contactInfo",this.contactInfo);
       }
     })
   }
