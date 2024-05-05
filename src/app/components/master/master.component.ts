@@ -26,7 +26,7 @@ import * as AOS from "aos";
 export class MasterComponent implements OnInit, OnDestroy {
 
   constructor(public el: ElementRef, private masterService: MasterService, private router: Router,
-    private facebookService: FacebookService
+    
   ) { }
 
 
@@ -121,10 +121,7 @@ export class MasterComponent implements OnInit, OnDestroy {
     redierctUrl:""
   });
 
-  private initFacebookService(): void {
-    const initParams: InitParams = { xfbml:true, version:"v3.2"};
-    this.facebookService.init(initParams);
-  }
+ 
   ngOnDestroy(): void {
     // this.masterService.sectionRedierct.unsubscribe();
     // this.masterService.sectionRedierct.subscribe();
@@ -133,7 +130,6 @@ export class MasterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     AOS.init();
 
-    this.initFacebookService();
     this.selectedLang = localStorage.getItem('language');
     
     

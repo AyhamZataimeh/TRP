@@ -47,6 +47,7 @@ export class NavbarComponent implements OnInit {
 
   services:Services[]=[];
   contactInfo!: ContactUs;
+  displayNav: boolean = false; 
 
 
   constructor(private masterService: MasterService, private router: Router, private mainService: MainService) {}
@@ -66,8 +67,8 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-  sctionRedirectHandler(event:number) 
-  {
+  sctionRedirectHandler(event:number) {
+    this.displayNav = false;
     this.masterService.sectionRedierct.next({
       sectionId: event,
       redierctUrl:"/home"
@@ -82,6 +83,8 @@ export class NavbarComponent implements OnInit {
   }
 
   homeRedierction() {
+    this.displayNav = false;
+
     this.masterService.sectionRedierct.next({
       sectionId:0,
       redierctUrl:""
@@ -90,6 +93,7 @@ export class NavbarComponent implements OnInit {
   }
 
   getServices() {
+
     this.mainService.geServices().subscribe((response: any)=>{
       if(!response.error) {
         this.services= response.data;
@@ -100,6 +104,8 @@ export class NavbarComponent implements OnInit {
   }
 
   serviceRedierct(serviceId: number) {
+    this.displayNav = false;
+
     this.router.navigate(["service/"+serviceId]).then(()=>{
       // window.location.reload();
     });

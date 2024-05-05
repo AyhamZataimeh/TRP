@@ -5,15 +5,15 @@
   </div>
   <div class="media">
     <a                
-    [href]="contactInfo.facebookUrl"
+    [href]="contactInfo?.facebookUrl"
     target="_blank">
       <li class="fa fa-facebook"></li>
     </a>
-    <a  [href]="contactInfo.instagramUrl" target="_blank">
+    <a  [href]="contactInfo?.instagramUrl" target="_blank">
       <li class="fa fa-instagram"></li>
 
     </a>
-    <a [href]="contactInfo.youtubeUrl" target="_blank">
+    <a [href]="contactInfo?.youtubeUrl" target="_blank">
       <li class="fa fa-youtube"></li>
 
     </a>
@@ -24,10 +24,10 @@
 <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-light main-nav sticky-top">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" (click)="displayNav = !displayNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse test" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse test" id="navbarNavDropdown" [style.display]="displayNav ? 'block' : 'none'">
       <span class="logo">
         <img src="../../../assets//images/logo-removebg-preview.png" (click)="homeRedierction()"  alt="">
       </span>
@@ -51,10 +51,10 @@
           <a class="nav-link" (click)="sctionRedirectHandler(OurPartners)" >{{ "NAVBAR.PARTNERS" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [routerLink]="['/courses-register']">{{ "NAVBAR.COURSE_REGISTER" | translate }} </a>
+          <a class="nav-link"  [routerLink]="['/courses-register']" (click)="displayNav = false">{{ "NAVBAR.COURSE_REGISTER" | translate }} </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [routerLink]="['/submitting-job']">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</a>
+          <a class="nav-link"  [routerLink]="['/submitting-job']" (click)="displayNav = false">{{ "NAVBAR.SUBMITTING_JOB" | translate }}</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">

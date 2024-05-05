@@ -37,9 +37,9 @@
     <div class="col-12 d-flex justify-content-center">
       <div id="vision" #vision class="vision-mission">
         <div class="vision-img-box">
-          <img *ngIf="selectedLang == 'en'" src="../../../assets//images/Vision&mission.jpeg">
-         <!-- <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
-          <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr">  -->
+          <!-- <img *ngIf="selectedLang == 'en'" src="../../../assets//images/Vision&mission.jpeg"> -->
+         <img *ngIf="selectedLang == 'en'" [src]="'../../../assets/images/'+ visionMission.imagePathEn">
+          <img *ngIf="selectedLang == 'ar'" [src]="'../../../assets/images/'+ visionMission.imagePathAr"> 
         </div>
       </div>
     </div>
@@ -66,9 +66,9 @@
         </h5>
       </div>
       <div id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="3000">
-        <img src="../../../assets/images/About-us.jpeg" class="section-images" alt="">
+        <!-- <img src="../../../assets/images/About-us.jpeg" class="section-images" alt=""> -->
     
-        <!-- <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images"> -->
+        <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images">
       </div>
     </div>
   </div>
@@ -95,12 +95,12 @@
         </h5>
       </div>
       <div id="whatIsTrpImage" data-aos="fade-left" data-aos-duration="3000"  data-aos-delay="1000">
-        <!-- <img
+        <img
           [src]="'../../../assets/images/' + whatIsTprSections.imagePath"
           class="section-images"
-        /> -->
+        />
 
-        <img src="../../../assets//images/what-is-trp.jpeg" class="section-images" >
+        <!-- <img src="../../../assets//images/what-is-trp.jpeg" class="section-images" > -->
       </div>
     </div>
   </div>
@@ -133,12 +133,12 @@
         </h5>
       </div>
       <div id="targetgroupsImage" data-aos="fade-right" data-aos-duration="3000">
-        <!-- <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images"> -->
+        <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images">
 
-        <img
+        <!-- <img
           src="../../../assets//images/target-groups.jpeg"
           class="section-images"
-        />
+        /> -->
       </div>
     </div>
   </div>
@@ -255,12 +255,12 @@
         >
           <div class="slider-inner mt-3">
             <div class="avatar-box">
-              <!-- <img
+              <img
                 class="avatar-image"
                 [src]="'../../../assets/images/' + client.imagePath"
                 [alt]="client.name"
-              /> -->
-              <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client">
+              />
+              <!-- <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client"> -->
             </div>
           </div>
         </div>
@@ -295,12 +295,12 @@
                   <div class="col-4 my-2" *ngFor="let image of imageRow">
                     <div class="clientsMobileImgContainer">
                       <div class="clientsMobileImgBox">
-                        <!-- <img
+                        <img
                           class="avatar-image"
                           [src]="'../../../assets/images/' + image.imagePath"
-                        /> -->
+                        />
 
-                        <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage">
+                        <!-- <img src="../../../assets/images/client-1.jpeg" class="d-block" alt="ClientImage"> -->
                       </div>
                     </div>
                   </div>
@@ -700,6 +700,3 @@
 
 <app-footer></app-footer>
 
-<div class="fb-customerchat"
-     page_id="<PAGE_ID>">
-</div>
