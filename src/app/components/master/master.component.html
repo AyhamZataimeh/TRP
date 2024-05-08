@@ -1,14 +1,4 @@
-<button
-  class="btn btn-primary register"
-  [ngClass]="selectedLang == 'en' ? 'register-en' : 'register-ar'"
->
-  <a
-    [routerLink]="['/courses-register']"
-    class="text-decoration-none text-light"
-  >
-    {{ "NAVBAR.COURSE_REGISTER_NOW" | translate }}
-  </a>
-</button>
+
 <div
   class="landing-page"
   [style.background-image]="'url(' + landingPageImageURL + ')'"
@@ -57,7 +47,7 @@
       </h1>
     </div>
     <div class="about-us-show" id="aboutUsParent" #aboutus>
-      <div id="aboutUsText"  data-aos="fade-left" data-aos-duration="3000">
+      <div id="aboutUsText"  data-aos="fade-left" data-aos-duration="1000">
         <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ aboutUsSections?.textEn }}
         </h5>
@@ -65,7 +55,7 @@
           {{ aboutUsSections?.textAr }}
         </h5>
       </div>
-      <div id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="3000">
+      <div id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="1000">
         <!-- <img src="../../../assets/images/About-us.jpeg" class="section-images" alt=""> -->
     
         <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images">
@@ -86,7 +76,7 @@
       </h1>
     </div>
     <div class="what-is-trp-show" #whatIsTrp id="whatIsTrpParent">
-      <div id="trpText"  data-aos="fade-right" data-aos-duration="3000"  data-aos-delay="1000">
+      <div id="trpText"  data-aos="fade-right" data-aos-duration="1000"  >
         <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ whatIsTprSections?.textEn }}
         </h5>
@@ -94,7 +84,7 @@
           {{ whatIsTprSections?.textAr }}
         </h5>
       </div>
-      <div id="whatIsTrpImage" data-aos="fade-left" data-aos-duration="3000"  data-aos-delay="1000">
+      <div id="whatIsTrpImage" data-aos="fade-left" data-aos-duration="1000"  >
         <img
           [src]="'../../../assets/images/' + whatIsTprSections.imagePath"
           class="section-images"
@@ -124,7 +114,7 @@
       #targetGroup
          >
       <div id="target-groups-text" >
-        <h5 *ngIf="selectedLang == 'en'" class="section-text" data-aos="fade-left" data-aos-duration="3000">
+        <h5 *ngIf="selectedLang == 'en'" class="section-text" data-aos="fade-left" data-aos-duration="1000">
           {{ targetGroupSections?.textEn }}
         </h5>
 
@@ -132,7 +122,7 @@
           {{ targetGroupSections?.textAr }}
         </h5>
       </div>
-      <div id="targetgroupsImage" data-aos="fade-right" data-aos-duration="3000">
+      <div id="targetgroupsImage" data-aos="fade-right" data-aos-duration="1000">
         <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images">
 
         <!-- <img

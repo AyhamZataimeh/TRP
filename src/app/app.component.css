@@ -13,11 +13,70 @@
     font-style: normal;
 }
 
+.register-en {
+    z-index: 9999;
+    position: sticky;
+    padding: 8px 20px;
+    width: 25vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    border-radius: 20px;
+}
+
+.register-ar  {
+    transform: translateX(-149%);
+    z-index: 9999;
+    position: sticky;
+    padding: 8px 20px;
+    width: 25vw;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    top: 0;
+    border-radius: 20px;
+
+}
+
+
 @media screen and (max-width: 767px) {
     .main-box {
         background-color: #ffefd3e8 !important;
         overflow: hidden;
     }
+
+    .register {
+        width: calc(100% - 100px);
+        left: 50px;
+        right: auto;
+        top: 0;
+        transform: none;
+    }
+
+    .register-ar {
+        left: auto;
+        right: 50px
+    }
+
+    .register a {
+        font-size: 15px;
+    }
+
 }
 
 
+
+
+@media screen and (max-width: 991px) {
+
+
+    .stickyBtnScrolling {
+        z-index: 9999;
+        position: fixed;
+        padding: 8px 20px;
+        width: calc(100% - 100px);
+        left: 50px;
+        right: auto;
+        top: 0;
+        transform: none;
+    }
+}

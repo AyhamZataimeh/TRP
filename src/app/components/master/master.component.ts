@@ -146,17 +146,7 @@ export class MasterComponent implements OnInit, OnDestroy {
     this.visionAndMissionImage = "../../../assets//images/Vision&mission.jpeg";
     
 
-    window.onscroll = function() {
-      // When scrolling occurs, add or remove a class to an element to change its style
-      var registerationBtn = document.querySelector('.register');
-      if (registerationBtn) {
-        if (window.scrollY > 100) {
-          registerationBtn.classList.add('stickyBtnScrolling');
-        } else {
-          registerationBtn.classList.remove('stickyBtnScrolling');
-        }
-      }
-    };
+   
     
     
 

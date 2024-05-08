@@ -1,6 +1,17 @@
 
 <div [ngClass]="selectedlanguage == 'en' ? 'en-language ' : 'ar-language'" class="main-box">
   <app-navbar></app-navbar>
+  <button
+  class="btn btn-primary register"
+  [ngClass]="selectedlanguage == 'en' ? 'register-en' : 'register-ar'"
+>
+  <a
+    [routerLink]="['/courses-register']"
+    class="text-decoration-none text-light"
+  >
+    {{ "NAVBAR.COURSE_REGISTER_NOW" | translate }}
+  </a>
+</button>
   <!-- <app-master></app-master> -->
 <router-outlet></router-outlet>
 
