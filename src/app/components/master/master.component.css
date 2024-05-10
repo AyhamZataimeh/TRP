@@ -333,13 +333,29 @@
 }
 
 .clinet-slider-section {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     overflow-x: hidden;
-    padding: 10px 10px 15px;
+    padding: 10px 10px 15px; */
+    /* animation: card-rotate 5s linear alternate infinite; */
+
 
 }
 
+@keyframes card-rotate {
+
+    from 
+    {
+        transform: rotate(0deg);
+    }
+
+    to 
+    {
+        transform: rotate(360deg);
+
+    }
+    
+}
 .clients-slider-card {
     /* width: 340px; */
     border-radius: 10px;
@@ -360,7 +376,7 @@
 }
 
 .clients-slider-card-en-animation {
-    animation: en-client 5s linear alternate infinite;
+    animation: en-client 5s linear  infinite;
 
 }
 
@@ -397,7 +413,7 @@
 
 .card-img-top {
     width: 100%;
-    height: 200px;
+    height: 178px;
 }
 
 #clientsSection .carousel-control-prev-icon {
@@ -496,7 +512,7 @@ footer p:focus {
 
 @keyframes latest-news-slider {
     0% {
-        transform: translateX(0);
+        transform: translateX(calc(100% * var(--latest-news-num-slides)));
     }
 
     100% {
@@ -508,16 +524,15 @@ footer p:focus {
 
 @keyframes en-client {
     0% {
-        transform: translateX(0);
+        transform: translateX(calc(140% * var(--num-slides))); 
     }
 
-    50% {
-        transform: translateX(calc(-140% * var(--num-slides)));
-        /* Adjust the number of slides */
+   100% {
+        transform: translateX(calc(-140% * var(--num-slides))); 
     }
-    0% {
-        transform: translateX(0px);
-    }
+
+
+   
 
 
 }
@@ -1120,3 +1135,7 @@ section {
    white-space: pre-line;
     
 }
+
+.ng-image-slider img {
+    border-radius: 50%; /* Make the images rounded */
+  }

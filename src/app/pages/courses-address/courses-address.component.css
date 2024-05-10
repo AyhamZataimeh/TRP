@@ -70,5 +70,7 @@ hr {
     margin: 10px;
     border: 1px solid;
     border-color: white;
-    height: 0px;
+    height: 5px;
+    background-color: white;
+    border-radius: 10px;
 }

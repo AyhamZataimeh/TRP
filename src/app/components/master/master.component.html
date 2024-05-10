@@ -58,7 +58,7 @@
       <div id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="1000">
         <!-- <img src="../../../assets/images/About-us.jpeg" class="section-images" alt=""> -->
     
-        <img [src]="'../../../assets/images/'+aboutUsSections.imagePath" class="section-images">
+        <img [src]="'../../../assets/images/'+aboutUsSections?.imagePath" class="section-images">
       </div>
     </div>
   </div>
@@ -233,8 +233,8 @@
       <div class="silder-header">
         <h1>{{ "MASTER.PARTNERS" | translate }}</h1>
       </div>
-      <div class="clinet-slider-section">
-        <div
+      <div class="clinet-slider-section" >
+        <!-- <div
           class="clients-slider-card"
           [ngClass]="
             selectedLang == 'en'
@@ -250,10 +250,17 @@
                 [src]="'../../../assets/images/' + client.imagePath"
                 [alt]="client.name"
               />
-              <!-- <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client"> -->
+              <img class="avatar-image" src="../../../assets/images/client-1.jpeg" alt="Client">
             </div>
           </div>
-        </div>
+        </div> -->
+        <ng-image-slider #nav
+        [images]="imageObject"
+        [infinite]="true"
+        [autoSlide]="2"
+        style="border-radius: 50%;"
+        [imageSize]="{width: '15%', height: '' }"
+        slideImage=""></ng-image-slider>
       </div>
     </div>
     <!-- End Web View Clients Section -->
@@ -690,3 +697,6 @@
 
 <app-footer></app-footer>
 
+<div class="fb-customerchat"
+     page_id="110442057449367">
+</div>

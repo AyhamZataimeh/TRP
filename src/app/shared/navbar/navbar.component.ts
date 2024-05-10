@@ -107,7 +107,7 @@ export class NavbarComponent implements OnInit {
     this.displayNav = false;
 
     this.router.navigate(["service/"+serviceId]).then(()=>{
-      // window.location.reload();
+      window.location.reload();
     });
   }
 }

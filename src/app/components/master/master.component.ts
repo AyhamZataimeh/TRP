@@ -26,6 +26,7 @@ import * as AOS from "aos";
 export class MasterComponent implements OnInit, OnDestroy {
 
   constructor(public el: ElementRef, private masterService: MasterService, private router: Router,
+    private facebookService: FacebookService
     
   ) { }
 
@@ -121,6 +122,35 @@ export class MasterComponent implements OnInit, OnDestroy {
     redierctUrl:""
   });
 
+  imageObject = [{
+    image: '../../../assets/images/client-1.jpeg',
+    thumbImage: './../../assets/images/client-1.jpeg',
+}, {
+    image: '../../../assets/images/client-3.jpeg',
+    thumbImage: '../../../assets/images/client-3.jpeg'
+}, 
+{
+    image: '../../../assets/images/client-2.jpeg',
+    thumbImage: '../../../assets/images/client-2.jpeg',
+},
+{
+    image: '../../../assets/images/client-2.jpeg',
+    thumbImage: '../../../assets/images/client-4.jpeg',
+},
+{
+    image: '../../../assets/images/client-2.jpeg',
+    thumbImage: '../../../assets/images/client-5.jpeg',
+},
+{
+    image: '../../../assets/images/client-2.jpeg',
+    thumbImage: '../../../assets/images/client-6.jpeg',
+},
+{
+    image: '../../../assets/images/client-2.jpeg',
+    thumbImage: '../../../assets/images/client-7.jpeg',
+},
+
+];
  
   ngOnDestroy(): void {
     // this.masterService.sectionRedierct.unsubscribe();
@@ -129,6 +159,7 @@ export class MasterComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     AOS.init();
+    this.initFacebookService();
 
     this.selectedLang = localStorage.getItem('language');
     
@@ -164,6 +195,10 @@ export class MasterComponent implements OnInit, OnDestroy {
 
   }
 
+  private initFacebookService(): void {
+    const initParams: InitParams = { xfbml:true, version:"v3.2"};
+    this.facebookService.init(initParams);
+  }
 
 
   getLandingPgae() {

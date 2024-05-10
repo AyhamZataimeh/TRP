@@ -20,6 +20,8 @@ import { ServicesComponent } from './pages/services/services.component';
 import { LatestNewsComponent } from './shared/latest-news/latest-news.component';
 import { ArticelsComponent } from './shared/articels/articels.component';
 import { FacebookModule } from "ngx-facebook";
+import { NgImageSliderModule } from 'ng-image-slider';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { FacebookModule } from "ngx-facebook";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    NgImageSliderModule,
     FacebookModule.forRoot(),
     TranslateModule.forRoot({
         loader: {

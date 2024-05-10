@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MainService } from './main-service.service';
 import { ServiceDetails } from 'src/app/shared/interface/service-details.model';
 import { Services } from 'src/app/shared/interface/services.model';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent implements OnInit, OnDestroy {
 
   services: Services[]=[];
 
@@ -21,6 +22,8 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
     
     this.serviceId=this.route.snapshot.params['id'];
+    console.log(this.serviceId);
+    
     this.getServiceDetails();
     this.gerService();
   }
@@ -31,10 +34,9 @@ export class ServicesComponent implements OnInit {
     this.mainService.getServiceDetailsById(this.serviceId).subscribe((response: any)=>{
       if(!response.error) {
         this.serviceDetails= response.data;
-        console.log(this.serviceDetails);
         
       }
-    })
+    });
    }
 
    gerService() {
@@ -44,6 +46,11 @@ export class ServicesComponent implements OnInit {
         this.service = this.services.find((service: Services)=> service.id == this.serviceId);
       }
      })
+   }
+
+   ngOnDestroy(): void {
+
+    
    }
 
 }
