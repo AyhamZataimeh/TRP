@@ -47,7 +47,7 @@
       </h1>
     </div>
     <div class="about-us-show" id="aboutUsParent" #aboutus>
-      <div id="aboutUsText"  data-aos="fade-left" data-aos-duration="1000">
+      <div class="my-1 order-2 order-sm-1" id="aboutUsText"  data-aos="fade-left" data-aos-duration="1000">
         <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ aboutUsSections?.textEn }}
         </h5>
@@ -55,7 +55,7 @@
           {{ aboutUsSections?.textAr }}
         </h5>
       </div>
-      <div id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="1000">
+      <div class="my-1 order-1 order-sm-2" id="trpAboutUsImage" data-aos="fade-right" data-aos-duration="1000">
         <!-- <img src="../../../assets/images/About-us.jpeg" class="section-images" alt=""> -->
     
         <img [src]="'../../../assets/images/'+aboutUsSections?.imagePath" class="section-images">
@@ -76,7 +76,7 @@
       </h1>
     </div>
     <div class="what-is-trp-show" #whatIsTrp id="whatIsTrpParent">
-      <div id="trpText"  data-aos="fade-right" data-aos-duration="1000"  >
+      <div class="my-1 order-2 order-sm-1" id="trpText"  data-aos="fade-right" data-aos-duration="1000"  >
         <h5 *ngIf="selectedLang == 'en'" class="section-text">
           {{ whatIsTprSections?.textEn }}
         </h5>
@@ -84,7 +84,7 @@
           {{ whatIsTprSections?.textAr }}
         </h5>
       </div>
-      <div id="whatIsTrpImage" data-aos="fade-left" data-aos-duration="1000"  >
+      <div class="my-1 order-1 order-sm-2" id="whatIsTrpImage" data-aos="fade-left" data-aos-duration="1000"  >
         <img
           [src]="'../../../assets/images/' + whatIsTprSections.imagePath"
           class="section-images"
@@ -113,7 +113,7 @@
       id="targetGroupsParent"
       #targetGroup
          >
-      <div id="target-groups-text" >
+      <div class="my-1 order-2 order-sm-1" id="target-groups-text" >
         <h5 *ngIf="selectedLang == 'en'" class="section-text" data-aos="fade-left" data-aos-duration="1000">
           {{ targetGroupSections?.textEn }}
         </h5>
@@ -122,7 +122,7 @@
           {{ targetGroupSections?.textAr }}
         </h5>
       </div>
-      <div id="targetgroupsImage" data-aos="fade-right" data-aos-duration="1000">
+      <div class="my-1 order-1 order-sm-2" id="targetgroupsImage" data-aos="fade-right" data-aos-duration="1000">
         <img [src]="'../../../assets/images/'+targetGroupSections.imagePath" class="section-images">
 
         <!-- <img
