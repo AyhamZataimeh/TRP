@@ -1139,3 +1139,14 @@ section {
 .ng-image-slider img {
     border-radius: 50%; /* Make the images rounded */
   }
+
+
+
+  .rtl {
+    direction: rtl;
+  }
+
+  
+  .ltr {
+    direction: ltr !important;
+  }

@@ -14,6 +14,7 @@ import { Languages } from 'src/app/shared/interface/languages.model';
 import { BehaviorSubject } from 'rxjs';
 import { FacebookService, InitParams } from "ngx-facebook";
 import * as AOS from "aos";
+import { CustomeClinetList } from 'src/app/shared/interface/clients-cutome-list.model';
 
 
 
@@ -28,7 +29,14 @@ export class MasterComponent implements OnInit, OnDestroy {
   constructor(public el: ElementRef, private masterService: MasterService, private router: Router,
     private facebookService: FacebookService
     
-  ) { }
+  ) { 
+    const initParams: InitParams = {
+      appId: '110442057449367',
+      xfbml: true,
+      version: 'v10.0'
+    };
+    facebookService.init(initParams);
+  }
 
 
   public get AboutUs(): Sections.AboutUs {
@@ -67,6 +75,8 @@ export class MasterComponent implements OnInit, OnDestroy {
   currentIndex = 0;
 
   clientsList: Clients[] = [ ];
+
+  customeList: CustomeClinetList[]=[];
 
   landingPageImageURL: string = '';
   visionAndMissionImage: string = '';
@@ -122,6 +132,7 @@ export class MasterComponent implements OnInit, OnDestroy {
     redierctUrl:""
   });
 
+  
   imageObject = [{
     image: '../../../assets/images/client-1.jpeg',
     thumbImage: './../../assets/images/client-1.jpeg',
@@ -159,7 +170,7 @@ export class MasterComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     AOS.init();
-    this.initFacebookService();
+    // this.initFacebookService();
 
     this.selectedLang = localStorage.getItem('language');
     
@@ -247,7 +258,8 @@ export class MasterComponent implements OnInit, OnDestroy {
   getClinets() {
     this.masterService.searchClients().subscribe((response: any)=>{
       if(!response.error) {
-        this.clientsList= response.data;
+        this.clientsList = response.data;
+        this.customeList=this.customeImageClientListWebView( response.data);        
         this.customeImageClientListMobileView();
         
       }
@@ -441,7 +453,21 @@ export class MasterComponent implements OnInit, OnDestroy {
 
 
   
+  customeImageClientListWebView(clientsList: Clients): CustomeClinetList[] {
+    let list:CustomeClinetList[] =[];
 
+    this.clientsList.forEach((clinet: Clients)=>{
+      const clinetObject: CustomeClinetList={
+        image: "../../../assets/images/"+ clinet.imagePath,
+        thumbImage : "../../../assets/images/"+ clinet.imagePath
+      };
+      list.push(clinetObject);
+    });
+
+    return list;
+
+  }
+  
   customeImageClientListMobileView() {
 
     let list:any[]=[]
