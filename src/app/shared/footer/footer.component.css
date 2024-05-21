@@ -18,7 +18,9 @@ footer li {
 }
 
 footer hr {
-    width: 68%
+    width: 68%;
+    display: flex;
+    align-self: center
 }
 
 footer .media  {

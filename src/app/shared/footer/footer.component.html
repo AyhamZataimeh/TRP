@@ -1,6 +1,6 @@
 <footer class="py-5 mt-5 border-top">
   <div class="container-fluid">
-    <div class="row text-center text-center text-md-start">
+    <div class="row text-center text-center">
 
       <div class="col-12 col-md-4 mb-5 mb-md-0 " >
         <h5 class="font-weight-bold" style="text-wrap: nowrap">
@@ -39,29 +39,32 @@
 
       <div class="col-12 col-md-4 mb-5 mb-md-0" >
         <h5 class="font-weight-bold">{{ "FOOTER.SHORT_LINK" | translate }}</h5>
-        <ul class="nav flex-column mt-4 short-link">
+        <ul class="nav flex-column mt-4 short-link p-0">
           <li class="nav-item m-2">
             <a
-              class="nav-link p-0 fa fa-arrow-right"
+              class="nav-link p-0"
               (click)="sectionHandler(AboutUs)"
             >
-              <span class="text-muted"
+            <i class="fa fa-arrow-right"></i>
+              <span class="text-muted px-2"
               >{{
                 "NAVBAR.ABOUT_US" | translate
               }}</span></a
             >
           </li>
           <li class="nav-item m-2">
-            <a class="nav-link p-0 fa fa-arrow-right">
+            <a class="nav-link p-0">
+              <i class="fa fa-arrow-right"></i>
               <span
-                class="text-muted"
+                class="text-muted px-2"
                 >{{ "NAVBAR.SERVICES" | translate }}</span
               ></a
             >
           </li>
           <li class="nav-item m-2" (click)="sectionHandler(LatestNews)">
-            <a class="nav-link p-0 fa fa-arrow-right">
-              <span class="text-muted"
+            <a class="nav-link p-0">
+              <i class="fa fa-arrow-right"></i>
+              <span class="text-muted px-2"
               >{{
                 "NAVBAR.LATEST_NEWS" | translate
               }}</span></a
@@ -70,10 +73,10 @@
           <li class="nav-item m-2">
             <a
               [routerLink]="['/courses-register']"
-              class="nav-link p-0 fa fa-arrow-right"
+              class="nav-link p-0"
             >
-              <span class="text-muted"
-              [ngClass]="selectedLang == 'en' ? 'pl-2' : 'pr-2'"
+            <i class="fa fa-arrow-right"></i>
+              <span class="text-muted px-2"
               >{{
                 "NAVBAR.COURSE_REGISTER" | translate
               }}</span></a
@@ -82,9 +85,10 @@
           <li class="nav-item m-2">
             <a
               [routerLink]="['/submitting-job']"
-              class="nav-link p-0 fa fa-arrow-right"
+              class="nav-link p-0"
             >
-              <span class="text-muted"
+            <i class="fa fa-arrow-right"></i>
+              <span class="text-muted px-2"
               >{{
                 "NAVBAR.SUBMITTING_JOB" | translate
               }}</span></a
@@ -95,7 +99,7 @@
 
       <div class="col-12 col-md-4 mb-5 mb-md-0" >
         <h5 class="font-weight-bold">{{ "FOOTER.CONTACT_US" | translate }}</h5>
-        <ul class="nav flex-column mt-4">
+        <ul class="nav flex-column mt-4 p-0">
           <li class="fa fa-phone nav-item mb-2" >
             <a
               style="padding-left: 10px"
@@ -142,8 +146,6 @@
           </li>
         </ul>
       </div>
-
-  
     </div>
   </div>
 </footer>
