@@ -20,7 +20,7 @@
     width: 25vw;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
+    top: 5px;
     border-radius: 20px;
 }
 
