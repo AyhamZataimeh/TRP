@@ -61,3 +61,7 @@ footer .fa-arrow-right {
         align-content: center;
     }
 }
+
+.fa-copyright {
+    transform: translateY(40px);
+}
