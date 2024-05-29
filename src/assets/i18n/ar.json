@@ -14,8 +14,8 @@
         "LANGUAGES": "المقالات",
         "COURSES_ADDRESS": "عنوان الدورات",
         "LOGIN": "تسجيل الدخول",
-        "PARTNERS":"شركائنا",
-        "COURSE_REGISTER_NOW":"سجل الان في الدورات القادمة"
+        "PARTNERS":"شركائنا"
+       
    
 
 
@@ -56,7 +56,12 @@
         "SHORT_LINK":"اختصارات",
         "CONTACT_US":"تواصل معنا",
         "TITLE_1":"الاستجابة الحسيه الكاملة",
-        "TITLE_2":"لتعليم اللغة الانجلزية"
+        "TITLE_2":"لتعليم اللغة الانجلزية",
+        "COURSE_REGISTER_NOW":"سجل الان في الدورات القادمة",
+        "ALL_RIGHTS_RESERVED":"كل الحقوق محفوظة.",
+        "MADE_WITH":"تم صنعه ",
+        "BY_THE":"بواسطة",
+        "DEVELOPMENT_TEAM":"فريق التطوير."
     }
  
  

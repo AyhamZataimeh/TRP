@@ -17,6 +17,7 @@
         "PARTNERS":"Our Partners",
         "COURSE_REGISTER_NOW":"Register now for upcoming courses"
       
+      
 
 
     },
@@ -54,7 +55,11 @@
         "SHORT_LINK":"Short Link",
         "CONTACT_US":"Contact Us",
         "TITLE_1":"Total Physical Reposne",
-        "TITLE_2":"For Teaching English"
+        "TITLE_2":"For Teaching English",
+        "ALL_RIGHTS_RESERVED":". All Rights Reserved.",
+        "MADE_WITH":"Made with",
+        "BY_THE":"By The",
+        "DEVELOPMENT_TEAM":"Development Team."
     }
  
 
