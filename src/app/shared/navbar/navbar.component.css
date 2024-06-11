@@ -12,7 +12,9 @@
 .upper-nav .media {
     margin-right: 30px;
 }
-
+.upper-nav div li:hover a {
+    color: #f77f00;
+}
 .upper-nav div li  {
     color: white;
     margin-left: 10px;
